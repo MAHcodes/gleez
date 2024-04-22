@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 200 90% 5%;
+
+    --neutral: 216 5% 40;
+    --neutral-foreground: 135, 10%, 90%;
+
+    --primary: 300 90% 50%;
+    --primary-foreground: 135, 10%, 20%;
+
+    --secondary: 240 90% 50%;
+    --secondary-foreground: 135, 10%, 90%;
+
+    --success: 135 90% 50%;
+    --success-foreground: 135, 10%, 20%;
+
+    --info: 200 90% 50%;
+    --info-foreground: 135, 10%, 20%;
+
+    --warning: 50 80% 50%;
+    --warning-foreground: 135, 10%, 20%;
+
+    --danger: 10 90% 50%;
+    --danger-foreground: 135, 10%, 20%;
+  }
+
+  .dark {
+    --background: 200 90% 5%;
+    --foreground: 0 0% 100%;
+
+    --neutral: 216 5% 40;
+    --neutral-foreground: 135, 10%, 90%;
+
+    --primary: 300 90% 50%;
+    --primary-foreground: 135, 10%, 20%;
+
+    --secondary: 270 90% 50%;
+    --secondary-foreground: 135, 10%, 90%;
+
+    --success: 135 90% 50%;
+    --success-foreground: 135, 10%, 20%;
+
+    --info: 200 90% 50%;
+    --info-foreground: 135, 10%, 20%;
+
+    --warning: 50 90% 50%;
+    --warning-foreground: 135, 10%, 20%;
+
+    --danger: 10 90% 50%;
+    --danger-foreground: 135, 10%, 20%;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+  }
+}
