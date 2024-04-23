@@ -3,22 +3,6 @@ import lustre/attribute.{type Attribute, attribute}
 import lustre/element.{type Element}
 import lustre/element/html
 
-pub fn button(attributes: List(Attribute(a)), children: List(Element(a))) {
-  html.button(
-    [
-      attribute.class(
-        [
-          "font-bold flex gap-2 items-center justify-center",
-          "active:enabled:scale-[98%] transition-all disabled:opacity-50 disabled:cursor-not-allowed",
-        ]
-        |> string.join(" "),
-      ),
-      ..attributes
-    ],
-    children,
-  )
-}
-
 pub type Colors {
   Neutral
   Primary
@@ -27,6 +11,22 @@ pub type Colors {
   Info
   Warning
   Danger
+}
+
+pub fn button(attributes: List(Attribute(a)), children: List(Element(a))) {
+  html.button(
+    [
+      attribute.class(
+        [
+          "font-bold flex gap-2 items-center justify-center transition-all ",
+          "active:enabled:scale-[98%] disabled:opacity-50 disabled:cursor-not-allowed",
+        ]
+        |> string.join(" "),
+      ),
+      ..attributes
+    ],
+    children,
+  )
 }
 
 pub fn solid(color: Colors) -> Attribute(a) {

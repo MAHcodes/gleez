@@ -1,6 +1,6 @@
 import lustre
 import lustre/element/html.{div}
-import sections/buttons
+import sections/section
 
 pub fn main() {
   let app = lustre.simple(init, update, view)
@@ -26,5 +26,8 @@ fn update(model, msg) {
 }
 
 fn view(_) {
-  div([], [buttons.buttons()])
+  div([], [
+    section.inputs(),
+    section.buttons(),
+  ])
 }
