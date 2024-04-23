@@ -7,7 +7,7 @@ pub fn button(attributes: List(Attribute(a)), children: List(Element(a))) {
   html.button(
     [
       attribute.class(
-        "hover:scale-[102%] active:scale-[98%] transition-all font-bold",
+        "active:scale-[98%] transition-all font-bold",
       ),
       ..attributes
     ],

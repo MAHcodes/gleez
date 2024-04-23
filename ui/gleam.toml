@@ -1,6 +1,6 @@
 name = "gleez_ui"
 target = "javascript"
-version = "1.0.0"
+version = "0.0.1"
 
 [javascript]
 typescript_declarations=true
@@ -9,7 +9,7 @@ typescript_declarations=true
 # your project to the Hex package manager.
 #
 # description = ""
-# licences = ["Apache-2.0"]
+# licences = ["MIT"]
 # repository = { type = "github", user = "username", repo = "project" }
 # links = [{ title = "Website", href = "https://gleam.run" }]
 #

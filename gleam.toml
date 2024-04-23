@@ -2,7 +2,7 @@ name = "gleez"
 version = "0.0.1"
 
 description = "gleez cli, an experimental source installer"
-licences = ["GPL-3.0"]
+licences = ["MIT"]
 repository = { type = "github", user = "MAHcodes", repo = "gleez" }
 
 [dependencies]
