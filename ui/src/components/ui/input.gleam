@@ -1,7 +1,7 @@
 import gleam/string
-import lustre/attribute.{type Attribute, attribute}
+import lustre/attribute.{type Attribute, class}
 import lustre/element.{type Element}
-import lustre/element/html
+import lustre/element/html.{div, text}
 
 pub type Colors {
   Neutral
@@ -15,8 +15,11 @@ pub type Colors {
 
 pub fn input(attributes: List(Attribute(a))) {
   html.input([
-    attribute.class(
-      ["w-full", "disabled:opacity-50 disabled:cursor-not-allowed"]
+    class(
+      [
+        "w-full", "disabled:opacity-50 disabled:cursor-not-allowed",
+        "transition-all",
+      ]
       |> string.join(" "),
     ),
     ..attributes
@@ -39,33 +42,59 @@ pub fn flat(color: Colors) -> Attribute(a) {
     Danger ->
       "text-danger placeholder-danger bg-danger/20 hover:enabled:bg-danger/30"
   }
-  |> attribute.class
+  |> string.append(" focus:outline-none focus:ring-2 focus:ring-current")
+  |> class
 }
 
 pub fn outline(color: Colors) -> Attribute(a) {
   case color {
-    Neutral -> "border-neutral placeholder-neutral text-neutral"
-    Primary -> "border-primary placeholder-primary text-primary"
-    Secondary -> "border-secondary placeholder-secondary text-secondary"
-    Success -> "border-success placeholder-success text-success"
-    Info -> "border-info placeholder-info text-info"
-    Warning -> "border-warning placeholder-warning text-warning"
-    Danger -> "border-danger placeholder-danger text-danger"
+    Neutral -> "border-neutral focus:enabled:border-neutral hover:enabled:border-neutral text-neutral"
+    Primary -> "border-primary focus:enabled:border-primary hover:enabled:border-primary text-primary"
+    Secondary -> "border-secondary focus:enabled:border-secondary hover:enabled:border-secondary text-secondary"
+    Success -> "border-success focus:enabled:border-success hover:enabled:border-success text-success"
+    Info -> "border-info focus:enabled:border-info hover:enabled:border-info text-info"
+    Warning -> "border-warning focus:enabled:border-warning hover:enabled:border-warning text-warning"
+    Danger -> "border-danger focus:enabled:border-danger hover:enabled:border-danger text-danger"
   }
   |> string.append(
-    " bg-transparent border-2 border-opacity-20 hover:enabled:border-opacity-100 focus:enabled:border-opacity-100",
+    [
+      " bg-transparent border-2 border-opacity-50 placeholder-opacity-70",
+      "hover:enabled:border-opacity-100 focus:enabled:border-opacity-100",
+      "focus:outline-none focus:ring-2 focus:ring-current",
+    ]
+    |> string.join(" "),
   )
-  |> attribute.class
+  |> class
+}
+
+pub fn light(color: Colors) -> Attribute(a) {
+  case color {
+    Neutral -> "bg-neutral placeholder-neutral text-neutral"
+    Primary -> "bg-primary placeholder-primary text-primary"
+    Secondary -> "bg-secondary placeholder-secondary text-secondary"
+    Success -> "bg-success placeholder-success text-success"
+    Info -> "bg-info placeholder-info text-info"
+    Warning -> "bg-warning placeholder-warning text-warning"
+    Danger -> "bg-danger placeholder-danger text-danger"
+  }
+  |> string.append(
+    [
+      " bg-opacity-0 outline-none",
+      "hover:enabled:bg-opacity-20 focus:enabled:bg-opacity-30",
+    ]
+    |> string.join(" "),
+  )
+  |> class
 }
 
 pub fn sm() -> Attribute(a) {
-  attribute.class("rounded-sm px-3.5 py-1.5 text-sm")
+  class("rounded-sm px-3.5 py-1.5 text-sm")
 }
 
 pub fn md() -> Attribute(a) {
-  attribute.class("rounded-md px-4 py-2 text-base")
+  class("rounded-md px-4 py-2 text-base")
 }
 
 pub fn lg() -> Attribute(a) {
-  attribute.class("rounded-lg px-5 py-2.5 text-lg")
+  class("rounded-lg px-5 py-2.5 text-lg")
 }

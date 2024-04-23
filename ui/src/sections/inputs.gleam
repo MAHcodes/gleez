@@ -12,6 +12,41 @@ pub fn inputs() -> Element(a) {
     ],
     [
       input([
+        input.outline(input.Neutral),
+        input.md(),
+        attribute.placeholder("Outline Neutral"),
+      ]),
+      input([
+        input.outline(input.Primary),
+        input.md(),
+        attribute.placeholder("Outline Primary"),
+      ]),
+      input([
+        input.outline(input.Secondary),
+        input.md(),
+        attribute.placeholder("Outline Secondary"),
+      ]),
+      input([
+        input.outline(input.Success),
+        input.md(),
+        attribute.placeholder("Outline Success"),
+      ]),
+      input([
+        input.outline(input.Info),
+        input.md(),
+        attribute.placeholder("Outline Info"),
+      ]),
+      input([
+        input.outline(input.Warning),
+        input.md(),
+        attribute.placeholder("Outline Warning"),
+      ]),
+      input([
+        input.outline(input.Danger),
+        input.md(),
+        attribute.placeholder("Outline Danger"),
+      ]),
+      input([
         input.flat(input.Neutral),
         input.md(),
         attribute.placeholder("Flat Neutral"),
@@ -47,39 +82,39 @@ pub fn inputs() -> Element(a) {
         attribute.placeholder("Flat Danger"),
       ]),
       input([
-        input.outline(input.Neutral),
+        input.light(input.Neutral),
         input.md(),
-        attribute.placeholder("Outline Neutral"),
+        attribute.placeholder("Light Neutral"),
       ]),
       input([
-        input.outline(input.Primary),
+        input.light(input.Primary),
         input.md(),
-        attribute.placeholder("Outline Primary"),
+        attribute.placeholder("Light Primary"),
       ]),
       input([
-        input.outline(input.Secondary),
+        input.light(input.Secondary),
         input.md(),
-        attribute.placeholder("Outline Secondary"),
+        attribute.placeholder("Light Secondary"),
       ]),
       input([
-        input.outline(input.Success),
+        input.light(input.Success),
         input.md(),
-        attribute.placeholder("Outline Success"),
+        attribute.placeholder("Light Success"),
       ]),
       input([
-        input.outline(input.Info),
+        input.light(input.Info),
         input.md(),
-        attribute.placeholder("Outline Info"),
+        attribute.placeholder("Light Info"),
       ]),
       input([
-        input.outline(input.Warning),
+        input.light(input.Warning),
         input.md(),
-        attribute.placeholder("Outline Warning"),
+        attribute.placeholder("Light Warning"),
       ]),
       input([
-        input.outline(input.Danger),
+        input.light(input.Danger),
         input.md(),
-        attribute.placeholder("Outline Danger"),
+        attribute.placeholder("Light Danger"),
       ]),
       input([
         input.flat(input.Neutral),

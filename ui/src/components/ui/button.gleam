@@ -1,5 +1,5 @@
 import gleam/string
-import lustre/attribute.{type Attribute, attribute}
+import lustre/attribute.{type Attribute, class}
 import lustre/element.{type Element}
 import lustre/element/html
 
@@ -16,9 +16,9 @@ pub type Colors {
 pub fn button(attributes: List(Attribute(a)), children: List(Element(a))) {
   html.button(
     [
-      attribute.class(
+      class(
         [
-          "font-bold flex gap-2 items-center justify-center transition-all ",
+          "flex gap-2 items-center justify-center transition-all",
           "active:enabled:scale-[98%] disabled:opacity-50 disabled:cursor-not-allowed",
         ]
         |> string.join(" "),
@@ -40,7 +40,7 @@ pub fn solid(color: Colors) -> Attribute(a) {
     Warning -> "bg-warning text-warning-foreground hover:enabled:bg-warning/90"
     Danger -> "bg-danger text-danger-foreground hover:enabled:bg-danger/90"
   }
-  |> attribute.class
+  |> class
 }
 
 pub fn outline(color: Colors) -> Attribute(a) {
@@ -54,7 +54,7 @@ pub fn outline(color: Colors) -> Attribute(a) {
     Danger -> "border-danger text-danger hover:enabled:bg-danger/20"
   }
   |> string.append(" bg-transparent border-2")
-  |> attribute.class
+  |> class
 }
 
 pub fn light(color: Colors) -> Attribute(a) {
@@ -68,7 +68,7 @@ pub fn light(color: Colors) -> Attribute(a) {
     Danger -> "text-danger hover:enabled:bg-danger/20"
   }
   |> string.append(" bg-transparent")
-  |> attribute.class
+  |> class
 }
 
 pub fn flat(color: Colors) -> Attribute(a) {
@@ -81,7 +81,7 @@ pub fn flat(color: Colors) -> Attribute(a) {
     Warning -> "text-warning bg-warning/20 hover:enabled:bg-warning/30"
     Danger -> "text-danger bg-danger/20 hover:enabled:bg-danger/30"
   }
-  |> attribute.class
+  |> class
 }
 
 pub fn ghost(color: Colors) -> Attribute(a) {
@@ -102,7 +102,7 @@ pub fn ghost(color: Colors) -> Attribute(a) {
       "border-danger text-danger hover:enabled:bg-danger hover:enabled:text-danger-foreground"
   }
   |> string.append(" bg-transparent border-2")
-  |> attribute.class
+  |> class
 }
 
 pub fn link(color: Colors) -> Attribute(a) {
@@ -116,21 +116,21 @@ pub fn link(color: Colors) -> Attribute(a) {
     Danger -> "text-danger"
   }
   |> string.append(" bg-transparent hover:enabled:underline underline-offset-4")
-  |> attribute.class
+  |> class
 }
 
 pub fn sm() -> Attribute(a) {
-  attribute.class("rounded-sm px-3.5 py-1.5 text-sm")
+  class("rounded-sm px-3.5 py-1.5 text-sm")
 }
 
 pub fn md() -> Attribute(a) {
-  attribute.class("rounded-md px-4 py-2 text-base")
+  class("rounded-md px-4 py-2 text-base")
 }
 
 pub fn lg() -> Attribute(a) {
-  attribute.class("rounded-lg px-5 py-2.5 text-lg")
+  class("rounded-lg px-5 py-2.5 text-lg")
 }
 
 pub fn icon() -> Attribute(a) {
-  attribute.class("rounded-md p-2")
+  class("rounded-md p-2")
 }

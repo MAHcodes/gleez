@@ -55,10 +55,6 @@
     --danger-foreground: 135 10% 20%;
   }
 
-  * {
-    @apply focus:outline-none focus:ring-2 focus:ring-current;
-  }
-
   body {
     @apply bg-background text-foreground;
   }
