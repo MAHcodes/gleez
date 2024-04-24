@@ -1,7 +1,6 @@
 import gleam/string
 import lustre/attribute.{type Attribute, class}
-import lustre/element.{type Element}
-import lustre/element/html.{div, text}
+import lustre/element/html
 
 pub type Colors {
   Neutral
@@ -48,13 +47,20 @@ pub fn flat(color: Colors) -> Attribute(a) {
 
 pub fn outline(color: Colors) -> Attribute(a) {
   case color {
-    Neutral -> "border-neutral focus:enabled:border-neutral hover:enabled:border-neutral text-neutral"
-    Primary -> "border-primary focus:enabled:border-primary hover:enabled:border-primary text-primary"
-    Secondary -> "border-secondary focus:enabled:border-secondary hover:enabled:border-secondary text-secondary"
-    Success -> "border-success focus:enabled:border-success hover:enabled:border-success text-success"
-    Info -> "border-info focus:enabled:border-info hover:enabled:border-info text-info"
-    Warning -> "border-warning focus:enabled:border-warning hover:enabled:border-warning text-warning"
-    Danger -> "border-danger focus:enabled:border-danger hover:enabled:border-danger text-danger"
+    Neutral ->
+      "border-neutral focus:enabled:border-neutral hover:enabled:border-neutral text-neutral"
+    Primary ->
+      "border-primary focus:enabled:border-primary hover:enabled:border-primary text-primary"
+    Secondary ->
+      "border-secondary focus:enabled:border-secondary hover:enabled:border-secondary text-secondary"
+    Success ->
+      "border-success focus:enabled:border-success hover:enabled:border-success text-success"
+    Info ->
+      "border-info focus:enabled:border-info hover:enabled:border-info text-info"
+    Warning ->
+      "border-warning focus:enabled:border-warning hover:enabled:border-warning text-warning"
+    Danger ->
+      "border-danger focus:enabled:border-danger hover:enabled:border-danger text-danger"
   }
   |> string.append(
     [
@@ -81,6 +87,28 @@ pub fn light(color: Colors) -> Attribute(a) {
     [
       " bg-opacity-0 outline-none",
       "hover:enabled:bg-opacity-20 focus:enabled:bg-opacity-30",
+    ]
+    |> string.join(" "),
+  )
+  |> class
+}
+
+pub fn material(color: Colors) -> Attribute(a) {
+  case color {
+    Neutral -> "bg-neutral border-neutral placeholder-neutral text-neutral"
+    Primary -> "bg-primary border-primary placeholder-primary text-primary"
+    Secondary ->
+      "bg-secondary border-secondary placeholder-secondary text-secondary"
+    Success -> "bg-success border-success placeholder-success text-success"
+    Info -> "bg-info border-info placeholder-info text-info"
+    Warning -> "bg-warning border-warning placeholder-warning text-warning"
+    Danger -> "bg-danger border-danger placeholder-danger text-danger"
+  }
+  |> string.append(
+    [
+      " bg-opacity-20 border-opacity-20 border-b-2 outline-none rounded-b-none",
+      "hover:enabled:bg-opacity-30 focus:enabled:bg-opacity-30",
+      "focus:enabled:border-opacity-100",
     ]
     |> string.join(" "),
   )

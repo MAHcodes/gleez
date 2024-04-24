@@ -47,6 +47,41 @@ pub fn inputs() -> Element(a) {
         attribute.placeholder("Outline Danger"),
       ]),
       input([
+        input.material(input.Neutral),
+        input.md(),
+        attribute.placeholder("Material Neutral"),
+      ]),
+      input([
+        input.material(input.Primary),
+        input.md(),
+        attribute.placeholder("Material Primary"),
+      ]),
+      input([
+        input.material(input.Secondary),
+        input.md(),
+        attribute.placeholder("Material Secondary"),
+      ]),
+      input([
+        input.material(input.Success),
+        input.md(),
+        attribute.placeholder("Material Success"),
+      ]),
+      input([
+        input.material(input.Info),
+        input.md(),
+        attribute.placeholder("Material Info"),
+      ]),
+      input([
+        input.material(input.Warning),
+        input.md(),
+        attribute.placeholder("Material Warning"),
+      ]),
+      input([
+        input.material(input.Danger),
+        input.md(),
+        attribute.placeholder("Material Danger"),
+      ]),
+      input([
         input.flat(input.Neutral),
         input.md(),
         attribute.placeholder("Flat Neutral"),
@@ -130,6 +165,29 @@ pub fn inputs() -> Element(a) {
         input.flat(input.Neutral),
         input.lg(),
         attribute.placeholder("Size Large"),
+      ]),
+      div([], [
+        html.label([class("pl-2 text-xs text-primary")], [
+          html.text("Enter Your Full Name"),
+        ]),
+        input([
+          input.flat(input.Primary),
+          input.md(),
+          attribute.placeholder("With Label"),
+        ]),
+      ]),
+      div([], [
+        html.label([class("pl-2 text-xs text-primary")], [
+          html.text("Enter Your Full Name"),
+        ]),
+        input([
+          input.flat(input.Primary),
+          input.md(),
+          attribute.placeholder("With Helper Text"),
+        ]),
+        html.span([class("pl-2 text-xs text-neutral")], [
+          html.text("This is a helper text"),
+        ]),
       ]),
     ],
   )

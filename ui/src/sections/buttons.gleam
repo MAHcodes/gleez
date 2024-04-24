@@ -1,5 +1,5 @@
 import components/ui/button.{button}
-import lustre/attribute.{class}
+import lustre/attribute.{class, classes}
 import lustre/element.{type Element, text}
 import lustre/element/html.{div}
 import lustre/ui/icon
@@ -135,7 +135,10 @@ pub fn buttons() -> Element(a) {
       ),
       button(
         [button.solid(button.Neutral), button.md(), attribute.disabled(True)],
-        [icon.update([class("w-5 animate-spin")]), text("Loading...")],
+        [
+          icon.update([class("w-5"), classes([#("animate-spin", True)])]),
+          text("Loading..."),
+        ],
       ),
     ],
   )
