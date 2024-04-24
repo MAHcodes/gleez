@@ -1,33 +1,66 @@
+import gleam/uri.{type Uri}
 import lustre
-import lustre/element/html.{div}
-import sections/section
+import lustre/attribute
+import lustre/effect.{type Effect, batch}
+import lustre/element.{type Element}
+import lustre/element/html
+import modem
+import pages/page
 
 pub fn main() {
-  let app = lustre.simple(init, update, view)
+  let app = lustre.application(init, update, view)
   let assert Ok(_) = lustre.start(app, "#app", Nil)
-
-  Nil
 }
 
-fn init(_flags) {
-  0
+pub type Route {
+  Home
+  Demo
+  Docs
 }
 
-type Msg {
-  Incr
-  Decr
+fn init(_) -> #(Route, Effect(Msg)) {
+  #(Docs, batch([modem.init(on_url_change), highlight_all()]))
 }
 
-fn update(model, msg) {
-  case msg {
-    Incr -> model + 1
-    Decr -> model - 1
+fn on_url_change(uri: Uri) -> Msg {
+  case uri.path_segments(uri.path) {
+    ["home"] -> OnRouteChange(Home)
+    ["demo"] -> OnRouteChange(Demo)
+    ["docs"] -> OnRouteChange(Docs)
+    _ -> OnRouteChange(Home)
   }
 }
 
-fn view(_) {
-  div([], [
-    section.inputs(),
-    section.buttons(),
+pub opaque type Msg {
+  OnRouteChange(Route)
+}
+
+@external(javascript, "./assets/js/highlight/gleam.ffi.mjs", "highlight_all")
+fn do_highlight_all() -> Nil {
+  Nil
+}
+
+fn highlight_all() -> Effect(a) {
+  effect.from(fn(_) { do_highlight_all() })
+}
+
+fn update(_: Route, msg: Msg) -> #(Route, Effect(Msg)) {
+  case msg {
+    OnRouteChange(route) -> #(route, highlight_all())
+  }
+}
+
+fn view(route: Route) -> Element(Msg) {
+  html.div([], [
+    html.nav([attribute.class("flex gap-4")], [
+      html.a([attribute.href("/home")], [element.text("Home")]),
+      html.a([attribute.href("/demo")], [element.text("Demo")]),
+      html.a([attribute.href("/docs")], [element.text("Docs")]),
+    ]),
+    case route {
+      Home -> html.h1([], [element.text("You're on home")])
+      Demo -> page.demo()
+      Docs -> page.docs()
+    },
   ])
 }
