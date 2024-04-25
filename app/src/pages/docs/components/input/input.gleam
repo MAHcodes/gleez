@@ -1,12 +1,12 @@
 import components/preview.{preview}
 import components/ui/input.{input}
 import gleam/string
-import lustre/attribute.{placeholder}
+import lustre/attribute.{class, placeholder}
 import lustre/element.{type Element}
 import lustre/element/html.{div, text}
 
 pub fn docs() -> Element(a) {
-  div([], [
+  div([class("flex-shrink flex-grow-0")], [
     preview(
       [
         input([

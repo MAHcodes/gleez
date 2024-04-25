@@ -8,10 +8,11 @@ import lustre/element/html.{div}
 import lustre/route.{type Route}
 import modem
 import pages/demo.{demo}
-import pages/home.{home}
-import plinth/browser/window
 import pages/docs/components/button/button
 import pages/docs/components/input/input
+import pages/home.{home}
+import plinth/browser/window
+import components/aside.{aside}
 
 pub fn main() {
   let app = lustre.application(init, update, view)
@@ -19,18 +20,16 @@ pub fn main() {
 }
 
 fn init(_) -> #(Route, Effect(Msg)) {
-  #(route.DocsComponentsInput, batch([modem.init(on_url_change), on_load()]))
+  #(route.ComponentsInput, batch([modem.init(on_url_change), on_load()]))
 }
 
 fn on_url_change(uri: Uri) -> Msg {
   case uri.path_segments(uri.path) {
     ["home"] -> OnRouteChange(route.Home)
     ["demo"] -> OnRouteChange(route.Demo)
-    ["docs"] -> OnRouteChange(route.Docs)
     ["docs", "components", "button"] ->
-      OnRouteChange(route.DocsComponentsButton)
-    ["docs", "components", "input"] ->
-      OnRouteChange(route.DocsComponentsInput)
+      OnRouteChange(route.ComponentsButton)
+    ["docs", "components", "input"] -> OnRouteChange(route.ComponentsInput)
     _ -> OnRouteChange(route.Home)
   }
 }
@@ -71,7 +70,7 @@ fn update(route: Route, msg: Msg) -> #(Route, Effect(Msg)) {
 }
 
 fn view(route: Route) -> Element(Msg) {
-  html.div([], [
+  div([], [
     header.header(),
     div([class("container")], [
       case route {
@@ -84,9 +83,12 @@ fn view(route: Route) -> Element(Msg) {
 }
 
 fn docs_view(route: Route) -> Element(Msg) {
-  case route {
-    route.DocsComponentsButton -> button.docs()
-    route.DocsComponentsInput -> input.docs()
-    _ -> home()
-  }
+  html.main([class("flex gap-4")], [
+    aside(route),
+    case route {
+      route.ComponentsButton -> button.docs()
+      route.ComponentsInput -> input.docs()
+      _ -> home()
+    },
+  ])
 }

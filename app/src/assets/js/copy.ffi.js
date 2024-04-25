@@ -1,5 +1,4 @@
 export function attach() {
-  console.log("attach fired")
   const codes = document.querySelectorAll("pre.hljs")
 
   if (codes.length === 0) return
@@ -16,18 +15,19 @@ export function attach() {
       try {
         await navigator.clipboard.writeText(code.innerText);
         success.classList.remove("invisible")
+        danger.classList.add("invisible")
       } catch (error) {
         console.error(error.message);
+        success.classList.add("invisible")
         danger.classList.remove("invisible")
       } finally {
         setTimeout(function () {
           success.classList.add("invisible")
           danger.classList.add("invisible")
-          copy.classList.remove("hidden")
         }, 2000)
         setTimeout(function () {
           copy.classList.remove("opacity-0")
-        }, 2100)
+        }, 2200)
       }
     })
   })
