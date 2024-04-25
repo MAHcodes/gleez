@@ -6,6 +6,7 @@ import lustre/element.{type Element}
 import lustre/element/html
 import modem
 import pages/page
+import plinth/browser/window
 
 pub fn main() {
   let app = lustre.application(init, update, view)
@@ -19,7 +20,7 @@ pub type Route {
 }
 
 fn init(_) -> #(Route, Effect(Msg)) {
-  #(Docs, batch([modem.init(on_url_change), highlight_all()]))
+  #(Docs, batch([modem.init(on_url_change), on_load()]))
 }
 
 fn on_url_change(uri: Uri) -> Msg {
@@ -40,13 +41,29 @@ fn do_highlight_all() -> Nil {
   Nil
 }
 
+@external(javascript, "./assets/js/copy.ffi.js", "attach")
+fn attach() -> Nil {
+  Nil
+}
+
+fn attach_copy() -> Effect(a) {
+  effect.from(fn(_) {
+    window.request_animation_frame(attach)
+    Nil
+  })
+}
+
 fn highlight_all() -> Effect(a) {
   effect.from(fn(_) { do_highlight_all() })
 }
 
-fn update(_: Route, msg: Msg) -> #(Route, Effect(Msg)) {
+fn on_load() -> Effect(a) {
+  effect.batch([highlight_all(), attach_copy()])
+}
+
+fn update(route: Route, msg: Msg) -> #(Route, Effect(Msg)) {
   case msg {
-    OnRouteChange(route) -> #(route, highlight_all())
+    OnRouteChange(r) -> #(r, highlight_all())
   }
 }
 
