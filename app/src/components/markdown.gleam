@@ -24,7 +24,7 @@ fn parse(md: String) -> String {
 }
 
 fn porse(content: String) -> Element(a) {
-  div([attribute("dangerous-unescaped-html", content), class("prose prose-invert w-full")], [])
+  div([attribute("dangerous-unescaped-html", content), class("prose w-full")], [])
 }
 
 fn read_file(path: String) -> String {

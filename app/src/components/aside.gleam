@@ -5,22 +5,22 @@ import gleam/uri
 import lustre/attribute.{class, classes, href}
 import lustre/element.{type Element, text}
 import lustre/element/html.{a, div, h2, h3, li, ul}
-import lustre/route.{type Route, type Page}
+import lustre/route.{type Page, type Pages}
 
-fn is_active(route: Route, page: Page) -> Bool {
+fn is_active(route: Pages, page: Page) -> Bool {
   case route {
-    route.ComponentsButton -> page.path == route.components_button
-    route.ComponentsInput -> page.path == route.components_input
+    route.Button -> page.path == route.button
+    route.Input -> page.path == route.input
     _ -> False
   }
 }
 
-pub fn aside(route: Route) -> Element(a) {
+pub fn aside(route: Pages) -> Element(a) {
   html.aside(
     [
       class(
         [
-          "pr-8 py-8 sticky top-0 h-screen overflow-y-auto",
+          "pr-8 top-20 py-8 top-0 sticky z-10 max-h-screen overflow-y-auto",
           "flex flex-col gap-4 min-w-max",
         ]
         |> string.join(" "),
@@ -30,7 +30,7 @@ pub fn aside(route: Route) -> Element(a) {
   )
 }
 
-fn list(route: Route, page: Page) -> Element(a) {
+fn list(route: Pages, page: Page) -> Element(a) {
   div([class("flex flex-col gap-4")], [
     h2([class("text-bold text-lg")], [text(get_page_name(page))]),
     ul(
@@ -40,7 +40,7 @@ fn list(route: Route, page: Page) -> Element(a) {
   ])
 }
 
-fn item(route: Route, page: Page) -> Element(a) {
+fn item(route: Pages, page: Page) -> Element(a) {
   case list.length(page.sub_pages) > 0 {
     True -> list(route, page)
     False ->

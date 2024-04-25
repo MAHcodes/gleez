@@ -3,9 +3,10 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
+  :root,
+  .light {
     --background: 220 13% 31%;
-    --foreground: 219 31% 86%;
+    --foreground: 219 11% 16%;
 
     --neutral: 0 0% 50%;
     --neutral-foreground: 0 0% 100%;
@@ -56,12 +57,16 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-code text-foreground;
   }
 
   .preview {
     background-image: radial-gradient(hsl(var(--foreground) / 0.2) 1px, var(--code-background) 1px);
     background-size: 20px 20px;
     background-position: 0px 0px, 10px 10px;
+  }
+
+  .dark .prose {
+    @apply prose-invert;
   }
 }

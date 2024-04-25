@@ -6,13 +6,9 @@ import lustre/attribute.{class}
 import lustre/effect.{type Effect, batch}
 import lustre/element.{type Element}
 import lustre/element/html.{div}
-import lustre/route.{type Route}
+import lustre/route.{type Pages}
 import modem
-import pages/demo.{demo}
-import pages/docs/components/button/button
-import pages/docs/components/input/input
-import pages/docs/guide/introduction/introduction
-import pages/home.{home}
+import pages/page
 import plinth/browser/window
 
 pub fn main() {
@@ -20,7 +16,7 @@ pub fn main() {
   let assert Ok(_) = lustre.start(app, "#app", Nil)
 }
 
-fn init(_) -> #(Route, Effect(Msg)) {
+fn init(_) -> #(Pages, Effect(Msg)) {
   #(route.Intro, batch([modem.init(on_url_change), on_load()]))
 }
 
@@ -29,14 +25,14 @@ fn on_url_change(uri: Uri) -> Msg {
     ["home"] -> OnRouteChange(route.Home)
     ["demo"] -> OnRouteChange(route.Demo)
     ["guide", "introduction"] -> OnRouteChange(route.Intro)
-    ["docs", "components", "button"] -> OnRouteChange(route.ComponentsButton)
-    ["docs", "components", "input"] -> OnRouteChange(route.ComponentsInput)
+    ["docs", "components", "button"] -> OnRouteChange(route.Button)
+    ["docs", "components", "input"] -> OnRouteChange(route.Input)
     _ -> OnRouteChange(route.Home)
   }
 }
 
 pub opaque type Msg {
-  OnRouteChange(Route)
+  OnRouteChange(Pages)
 }
 
 @external(javascript, "./assets/js/highlight/gleam.ffi.mjs", "highlight_all")
@@ -64,34 +60,34 @@ fn on_load() -> Effect(a) {
   effect.batch([highlight_all(), attach_copy()])
 }
 
-fn update(route: Route, msg: Msg) -> #(Route, Effect(Msg)) {
+fn update(route: Pages, msg: Msg) -> #(Pages, Effect(Msg)) {
   case msg {
     OnRouteChange(r) -> #(r, on_load())
   }
 }
 
-fn view(route: Route) -> Element(Msg) {
+fn view(route: Pages) -> Element(Msg) {
   div([], [
     header.header(),
     div([class("container")], [
       case route {
-        route.Home -> home()
-        route.Demo -> demo()
-        _ -> docs_view(route)
+        route.Home -> page.home()
+        route.Demo -> page.demo()
+        _ -> with_aside(route)
       },
     ]),
   ])
 }
 
-fn docs_view(route: Route) -> Element(Msg) {
+fn with_aside(route: Pages) -> Element(Msg) {
   html.main([class("flex gap-4")], [
     aside(route),
     div([class("py-8 pl-8")], [
       case route {
-        route.ComponentsButton -> button.docs()
-        route.ComponentsInput -> input.docs()
-        route.Intro -> introduction.docs()
-        _ -> home()
+        route.Button -> page.button()
+        route.Input -> page.input()
+        route.Intro -> page.intro()
+        _ -> page.home()
       },
     ]),
   ])

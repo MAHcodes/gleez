@@ -3,9 +3,11 @@ import components/ui/button.{button}
 import gleam/string
 import lustre/element.{type Element}
 import lustre/element/html.{div, text}
+import pages/docs/components/button/intro
 
 pub fn docs() -> Element(a) {
   div([], [
+    intro.docs(),
     preview(
       [
         button([button.solid(button.Neutral), button.md()], [
