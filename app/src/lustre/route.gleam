@@ -11,9 +11,9 @@ pub const home = "/"
 
 pub const demo = "/demo"
 
-pub const intro = "/guide/introduction"
+pub const intro = "/docs/guide/introduction"
 
-pub const components = "/components"
+pub const docs = intro
 
 pub const button = "/docs/components/button"
 
@@ -27,10 +27,19 @@ pub const pages: List(Page) = [
   Page(
     "Guide",
     [
-      Page("/guide/introduction", []),
-      Page("/guide/installation", []),
-      Page("/guide/cli", []),
+      Page("/docs/guide/introduction", []),
+      Page("/docs/guide/installation", []),
+      Page("/docs/guide/cli", []),
     ],
   ),
   Page("Components", [Page(button, []), Page(input, [])]),
 ]
+
+pub fn is_active(ps: Pages, p: Page) -> Bool {
+  case ps {
+    Button -> p.path == button
+    Input -> p.path == input
+    Intro -> p.path == intro
+    _ -> False
+  }
+}

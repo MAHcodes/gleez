@@ -5,15 +5,7 @@ import gleam/uri
 import lustre/attribute.{class, classes, href}
 import lustre/element.{type Element, text}
 import lustre/element/html.{a, div, h2, h3, li, ul}
-import lustre/route.{type Page, type Pages}
-
-fn is_active(route: Pages, page: Page) -> Bool {
-  case route {
-    route.Button -> page.path == route.button
-    route.Input -> page.path == route.input
-    _ -> False
-  }
-}
+import lustre/route.{type Page, type Pages, is_active}
 
 pub fn aside(route: Pages) -> Element(a) {
   html.aside(
@@ -51,7 +43,7 @@ fn item(route: Pages, page: Page) -> Element(a) {
               class(
                 "text-foreground/50 hover:text-foreground transition-colors",
               ),
-              classes([#("text-primary", is_active(route, page))]),
+              classes([#("text-primary hover:text-primary", is_active(route, page))]),
               href(page.path),
             ],
             [text(get_page_name(page))],

@@ -24,7 +24,7 @@ fn on_url_change(uri: Uri) -> Msg {
   case uri.path_segments(uri.path) {
     ["home"] -> OnRouteChange(route.Home)
     ["demo"] -> OnRouteChange(route.Demo)
-    ["guide", "introduction"] -> OnRouteChange(route.Intro)
+    ["docs", "guide", "introduction"] -> OnRouteChange(route.Intro)
     ["docs", "components", "button"] -> OnRouteChange(route.Button)
     ["docs", "components", "input"] -> OnRouteChange(route.Input)
     _ -> OnRouteChange(route.Home)
