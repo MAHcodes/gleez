@@ -1,6 +1,7 @@
 pub type Route {
   Home
   Demo
+  Intro
   Components
   ComponentsButton
   ComponentsInput
@@ -9,6 +10,8 @@ pub type Route {
 pub const home = "/"
 
 pub const demo = "/demo"
+
+pub const intro = "/guide/introduction"
 
 pub const components = "/components"
 

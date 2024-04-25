@@ -1,3 +1,4 @@
+import components/aside.{aside}
 import components/header
 import gleam/uri.{type Uri}
 import lustre
@@ -10,9 +11,9 @@ import modem
 import pages/demo.{demo}
 import pages/docs/components/button/button
 import pages/docs/components/input/input
+import pages/docs/guide/introduction/introduction
 import pages/home.{home}
 import plinth/browser/window
-import components/aside.{aside}
 
 pub fn main() {
   let app = lustre.application(init, update, view)
@@ -20,15 +21,15 @@ pub fn main() {
 }
 
 fn init(_) -> #(Route, Effect(Msg)) {
-  #(route.ComponentsInput, batch([modem.init(on_url_change), on_load()]))
+  #(route.Intro, batch([modem.init(on_url_change), on_load()]))
 }
 
 fn on_url_change(uri: Uri) -> Msg {
   case uri.path_segments(uri.path) {
     ["home"] -> OnRouteChange(route.Home)
     ["demo"] -> OnRouteChange(route.Demo)
-    ["docs", "components", "button"] ->
-      OnRouteChange(route.ComponentsButton)
+    ["guide", "introduction"] -> OnRouteChange(route.Intro)
+    ["docs", "components", "button"] -> OnRouteChange(route.ComponentsButton)
     ["docs", "components", "input"] -> OnRouteChange(route.ComponentsInput)
     _ -> OnRouteChange(route.Home)
   }
@@ -85,10 +86,13 @@ fn view(route: Route) -> Element(Msg) {
 fn docs_view(route: Route) -> Element(Msg) {
   html.main([class("flex gap-4")], [
     aside(route),
-    case route {
-      route.ComponentsButton -> button.docs()
-      route.ComponentsInput -> input.docs()
-      _ -> home()
-    },
+    div([class("py-8 pl-8")], [
+      case route {
+        route.ComponentsButton -> button.docs()
+        route.ComponentsInput -> input.docs()
+        route.Intro -> introduction.docs()
+        _ -> home()
+      },
+    ]),
   ])
 }

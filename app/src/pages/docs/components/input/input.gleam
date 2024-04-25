@@ -3,10 +3,10 @@ import components/ui/input.{input}
 import gleam/string
 import lustre/attribute.{class, placeholder}
 import lustre/element.{type Element}
-import lustre/element/html.{div, text}
+import lustre/element/html.{div}
 
 pub fn docs() -> Element(a) {
-  div([class("flex-shrink flex-grow-0")], [
+  div([class("")], [
     preview(
       [
         input([

@@ -21,7 +21,7 @@ pub fn aside(route: Route) -> Element(a) {
       class(
         [
           "pr-8 py-8 sticky top-0 h-screen overflow-y-auto",
-          "flex-grow flex-shrink-0 flex flex-col gap-4",
+          "flex flex-col gap-4 min-w-max",
         ]
         |> string.join(" "),
       ),
