@@ -1,4 +1,5 @@
 export function attach() {
+  console.log("attach fired")
   const codes = document.querySelectorAll("pre.hljs")
 
   if (codes.length === 0) return
