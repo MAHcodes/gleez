@@ -11,7 +11,7 @@ pub fn header() -> Element(a) {
     [
       class(
         [
-          "sticky top-0 container py-4 bg-background z-30 transition-colors",
+          "sticky top-0 container py-4 bg-background z-30",
           "flex gap-4 items-center justify-between",
         ]
         |> string.join(" "),

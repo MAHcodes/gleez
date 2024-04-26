@@ -5,14 +5,14 @@
 @layer base {
   :root,
   .light {
-    --background: 331 82% 97%;
+    --background: 240 4.88% 83.92%;
     --foreground: 219 11% 16%;
 
-    --neutral: 0 0% 50%;
+    --neutral: 240 10% 40%;
     --neutral-foreground: 0 0% 100%;
 
     --primary: 331 82% 64%;
-    --primary-foreground: 135 10% 90%;
+    --secondary-foreground: 135 10% 20%;
 
     --secondary: 30 81% 63%;
     --secondary-foreground: 135 10% 90%;
@@ -32,16 +32,16 @@
 
   .dark {
     --background: 0 0 7%;
-    --foreground: 219 14% 71%;
+    --foreground: 219 14% 81%;
 
-    --neutral: 0 0% 50%;
+    --neutral: 240 10% 60%;
     --neutral-foreground: 0 0% 100%;
 
     --primary: 331 82% 64%;
     --primary-foreground: 135 10% 90%;
 
     --secondary: 30 81% 63%;
-    --secondary-foreground: 135 10% 90%;
+    --secondary-foreground: 135 10% 20%;
 
     --success: 95 38% 62%;
     --success-foreground: 135 10% 20%;
@@ -57,7 +57,7 @@
   }
 
   body {
-    @apply bg-background text-foreground transition-colors;
+    @apply bg-background text-foreground;
   }
 
   .preview {
@@ -68,5 +68,32 @@
 
   .dark .prose {
     @apply prose-invert;
+  }
+
+  aside {
+    max-height: calc(100vh - 5rem);
+  }
+}
+
+*::selection {
+  @apply bg-primary text-primary-foreground;
+}
+
+/* Modern browsers with `scrollbar-*` support */
+@supports (scrollbar-width: auto) {
+  * {
+    scrollbar-color: hsl(var(--primary)) transparent;
+    scrollbar-width: thin;
+    scrollbar-gutter: stable;
+  }
+}
+
+/* Legacy browsers with `::-webkit-scrollbar-*` support */
+@supports selector(::-webkit-scrollbar) {
+  .scroller::-webkit-scrollbar-thumb {
+    @apply bg-primary;
+  }
+  .scroller::-webkit-scrollbar-track {
+    @apply bg-transparent;
   }
 }

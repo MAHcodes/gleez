@@ -17,7 +17,7 @@ pub fn main() {
 }
 
 fn init(_) -> #(Pages, Effect(Msg)) {
-  #(route.Intro, batch([modem.init(on_url_change), on_load()]))
+  #(route.Link, batch([modem.init(on_url_change), on_load()]))
 }
 
 fn on_url_change(uri: Uri) -> Msg {
@@ -27,6 +27,7 @@ fn on_url_change(uri: Uri) -> Msg {
     ["docs", "guide", "introduction"] -> OnRouteChange(route.Intro)
     ["docs", "components", "button"] -> OnRouteChange(route.Button)
     ["docs", "components", "input"] -> OnRouteChange(route.Input)
+    ["docs", "components", "link"] -> OnRouteChange(route.Link)
     _ -> OnRouteChange(route.Home)
   }
 }
@@ -78,10 +79,11 @@ fn view(route: Pages) -> Element(Msg) {
 fn with_aside(route: Pages) -> Element(Msg) {
   html.main([class("flex gap-4")], [
     aside(route),
-    div([class("py-8 pl-8")], [
+    div([class("py-8 pl-8 flex-1")], [
       case route {
         route.Button -> page.button()
         route.Input -> page.input()
+        route.Link -> page.link()
         route.Intro -> page.intro()
         _ -> page.home()
       },
