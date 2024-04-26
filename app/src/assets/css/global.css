@@ -5,17 +5,17 @@
 @layer base {
   :root,
   .light {
-    --background: 240 4.88% 83.92%;
+    --background: 240 5% 90%;
     --foreground: 219 11% 16%;
 
     --neutral: 240 10% 40%;
     --neutral-foreground: 0 0% 100%;
 
     --primary: 331 82% 64%;
-    --secondary-foreground: 135 10% 20%;
+    --primary-foreground: 135 10% 90%;
 
     --secondary: 30 81% 63%;
-    --secondary-foreground: 135 10% 90%;
+    --secondary-foreground: 135 10% 20%;
 
     --success: 95 66% 74%;
     --success-foreground: 135 10% 20%;
@@ -35,7 +35,7 @@
     --foreground: 219 14% 81%;
 
     --neutral: 240 10% 60%;
-    --neutral-foreground: 0 0% 100%;
+    --neutral-foreground: 0 0% 10%;
 
     --primary: 331 82% 64%;
     --primary-foreground: 135 10% 90%;
@@ -82,7 +82,7 @@
 /* Modern browsers with `scrollbar-*` support */
 @supports (scrollbar-width: auto) {
   * {
-    scrollbar-color: hsl(var(--primary)) transparent;
+    scrollbar-color: hsl(var(--neutral)) transparent;
     scrollbar-width: thin;
     scrollbar-gutter: stable;
   }
@@ -91,9 +91,9 @@
 /* Legacy browsers with `::-webkit-scrollbar-*` support */
 @supports selector(::-webkit-scrollbar) {
   .scroller::-webkit-scrollbar-thumb {
-    @apply bg-primary;
+    @apply bg-neutral;
   }
   .scroller::-webkit-scrollbar-track {
-    @apply bg-transparent;
+    @apply bg-neutral;
   }
 }

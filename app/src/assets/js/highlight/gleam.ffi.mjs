@@ -6,6 +6,7 @@
  */
 
 import hljs from "./highlight.min.js";
+import shell from "./shell.min.js";
 import * as regexes from "./regexes.js";
 
 /**
@@ -260,7 +261,7 @@ const COMMENTS = {
 };
 
 /**
- * Register the Gleam lang to HLJS global exported from `./highlight.core.min.js`
+ * Register the Gleam lang to HLJS global exported from `./highlight.min.js`
  */
 hljs.registerLanguage("gleam", function (hljs) {
   return {
@@ -287,6 +288,8 @@ hljs.registerLanguage("gleam", function (hljs) {
     ],
   };
 });
+
+hljs.registerLanguage("shell", shell)
 
 export function highlight_all() {
   window.requestAnimationFrame(hljs.highlightAll)

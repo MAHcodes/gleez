@@ -1,6 +1,7 @@
 *.beam
 *.ez
 /build
+/dist
 erl_crash.dump
 
 node_modules
