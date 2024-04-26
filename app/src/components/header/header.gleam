@@ -1,6 +1,6 @@
-import components/header/logo.{logo}
 import components/header/actions.{actions}
-import components/nav
+import components/header/logo.{logo}
+import components/nav.{nav}
 import gleam/string
 import lustre/attribute.{class}
 import lustre/element.{type Element}
@@ -17,6 +17,6 @@ pub fn header() -> Element(a) {
         |> string.join(" "),
       ),
     ],
-    [logo(), nav.nav(), actions()],
+    [logo(), nav(), actions()],
   )
 }

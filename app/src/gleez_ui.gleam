@@ -64,7 +64,7 @@ fn update(route: Pages, msg: Msg) -> #(Pages, Effect(Msg)) {
 }
 
 fn view(route: Pages) -> Element(Msg) {
-  div([], [
+  html.main([], [
     header.header(),
     div([class("container")], [
       case route {
@@ -77,9 +77,9 @@ fn view(route: Pages) -> Element(Msg) {
 }
 
 fn with_aside(route: Pages) -> Element(Msg) {
-  html.main([class("flex gap-4")], [
+  div([class("flex gap-10")], [
     aside(route),
-    div([class("py-8 pl-8 flex-1")], [
+    div([class("py-8 flex-1")], [
       case route {
         route.Button -> page.button()
         route.Input -> page.input()

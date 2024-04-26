@@ -6,9 +6,9 @@ import lustre/route
 pub fn logo() -> Element(a) {
   a([href(route.home)], [
     img([
-      src("/src/assets/imgs/Gleez.svg"),
+      src("/imgs/Gleez.svg"),
       alt("Gleez UI"),
-      class("h-10 w-auto object-contain"),
+      class("min-w-24 h-10 w-auto object-contain"),
     ]),
   ])
 }

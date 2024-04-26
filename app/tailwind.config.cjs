@@ -11,6 +11,9 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        main: "'IBM Plex Sans', sans-serif",
+      },
       colors: {
         background: "hsl(var(--background) / <alpha-value>)",
         foreground: "hsl(var(--foreground) / <alpha-value>)",

@@ -5,15 +5,12 @@ import lustre/element.{type Element}
 import lustre/element/html.{div, pre, text}
 import lustre/ui/icon
 
-pub fn code(c: String) -> Element(a) {
+pub fn code(c: String, lang: String) -> Element(a) {
   div([class("relative group")], [
     pre(
       [
         class(
-          [
-            "language-gleam hljs",
-            "rounded-b-md border-b-2 border-x-2 border-foreground/10 p-4",
-          ]
+          ["language-" <> lang, "hljs", "overflow-auto rounded-md border-2 border-foreground/10 p-4"]
           |> string.join(" "),
         ),
       ],
@@ -21,7 +18,7 @@ pub fn code(c: String) -> Element(a) {
     ),
     button(
       [
-        class("copy absolute top-4 right-4 invisible group-hover:visible"),
+        class("copy absolute top-3 right-3 invisible group-hover:visible"),
         button.icon(),
         button.flat(button.Neutral),
       ],
@@ -29,7 +26,7 @@ pub fn code(c: String) -> Element(a) {
     ),
     button(
       [
-        class("copy-success absolute top-4 right-4 invisible"),
+        class("copy-success absolute top-3 right-3 invisible"),
         button.icon(),
         button.flat(button.Success),
       ],
@@ -37,7 +34,7 @@ pub fn code(c: String) -> Element(a) {
     ),
     button(
       [
-        class("copy-danger absolute top-4 right-4 invisible"),
+        class("copy-danger absolute top-2 right-3 invisible"),
         button.icon(),
         button.flat(button.Danger),
       ],

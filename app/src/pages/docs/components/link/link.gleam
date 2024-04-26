@@ -1,14 +1,29 @@
+import components/code.{code}
 import components/preview.{preview}
 import components/ui/a.{a}
 import gleam/string
-import lustre/attribute.{href}
+import lustre/attribute.{class, href}
 import lustre/element.{type Element}
-import lustre/element/html.{div, text}
-import pages/docs/components/link/intro
+import lustre/element/html.{div, h1, h2, p, text}
 
 pub fn docs() -> Element(a) {
   div([], [
-    intro.docs(),
+    div([class("prose max-w-none")], [
+      h1([], [text("Link")]),
+      p([], [
+        text(
+          "Links allow users to click their way from page to page. This component is styled to resemble a hyperlink and semantically renders an src",
+        ),
+      ]),
+      h2([], [text("Installation")]),
+      code("gleam run -m gleez add link", "shell"),
+      h2([], [text("Variants")]),
+      p([], [
+        text(
+          "Links allow users to click their way from page to page. This component is styled to resemble a hyperlink and semantically renders an src",
+        ),
+      ]),
+    ]),
     preview(
       [
         a([href("#"), a.link(a.Neutral)], [text("Link Primary")]),

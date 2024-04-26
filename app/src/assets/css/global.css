@@ -1,78 +1,44 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@font-face {
+  font-family: "IBM Plex Sans";
+  src: url("/fonts/IBMPlexSans/IBMPlexSans-Thin.woff2") format("woff2");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
 
-@layer base {
-  :root,
-  .light {
-    --background: 240 5% 90%;
-    --foreground: 219 11% 16%;
+@font-face {
+  font-family: "IBM Plex Sans";
+  src: url("/fonts/IBMPlexSans/IBMPlexSans-Medium.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
-    --neutral: 240 10% 40%;
-    --neutral-foreground: 0 0% 100%;
+@font-face {
+  font-family: "IBM Plex Sans";
+  src: url("/fonts/IBMPlexSans/IBMPlexSans-Bold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
 
-    --primary: 331 82% 64%;
-    --primary-foreground: 135 10% 90%;
+html,
+body {
+  @apply font-main;
+}
 
-    --secondary: 30 81% 63%;
-    --secondary-foreground: 135 10% 20%;
+.preview {
+  background-image: radial-gradient(hsl(var(--foreground) / 0.2) 1px, var(--code-background) 1px);
+  background-size: 20px 20px;
+  background-position: 0px 0px, 10px 10px;
+}
 
-    --success: 95 66% 74%;
-    --success-foreground: 135 10% 20%;
+.dark .prose {
+  @apply prose-invert;
+}
 
-    --info: 207 100% 71%;
-    --info-foreground: 135 10% 20%;
-
-    --warning: 39 100% 77%;
-    --warning-foreground: 135 10% 20%;
-
-    --danger: 355 100% 74%;
-    --danger-foreground: 135 10% 20%;
-  }
-
-  .dark {
-    --background: 0 0 7%;
-    --foreground: 219 14% 81%;
-
-    --neutral: 240 10% 60%;
-    --neutral-foreground: 0 0% 10%;
-
-    --primary: 331 82% 64%;
-    --primary-foreground: 135 10% 90%;
-
-    --secondary: 30 81% 63%;
-    --secondary-foreground: 135 10% 20%;
-
-    --success: 95 38% 62%;
-    --success-foreground: 135 10% 20%;
-
-    --info: 207 82% 66%;
-    --info-foreground: 135 10% 20%;
-
-    --warning: 39 67% 69%;
-    --warning-foreground: 135 10% 20%;
-
-    --danger: 355 65% 65%;
-    --danger-foreground: 135 10% 20%;
-  }
-
-  body {
-    @apply bg-background text-foreground;
-  }
-
-  .preview {
-    background-image: radial-gradient(hsl(var(--foreground) / 0.2) 1px, var(--code-background) 1px);
-    background-size: 20px 20px;
-    background-position: 0px 0px, 10px 10px;
-  }
-
-  .dark .prose {
-    @apply prose-invert;
-  }
-
-  aside {
-    max-height: calc(100vh - 5rem);
-  }
+aside {
+  max-height: calc(100vh - 5rem);
 }
 
 *::selection {

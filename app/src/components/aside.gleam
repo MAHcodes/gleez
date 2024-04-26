@@ -13,7 +13,7 @@ pub fn aside(route: Pages) -> Element(a) {
     [
       class(
         [
-          "pr-8 top-20 py-8 top-0 sticky z-10 overflow-y-auto",
+          "top-20 pr-16 py-8 top-0 sticky z-10 overflow-y-auto",
           "flex flex-col gap-4 min-w-max",
         ]
         |> string.join(" "),

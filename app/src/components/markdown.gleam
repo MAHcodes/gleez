@@ -2,7 +2,7 @@ import gleam/result
 import lustre/attribute.{attribute, class}
 import lustre/element.{type Element}
 import lustre/element/html.{div}
-import render_md
+import kirala/markdown/html_renderer
 import simplifile
 
 pub fn from_path(path: String) -> Element(a) {
@@ -20,7 +20,7 @@ pub fn from_text(text: String) -> Element(a) {
 
 fn parse(md: String) -> String {
   md
-  |> render_md.render
+  |> html_renderer.convert
 }
 
 fn porse(content: String) -> Element(a) {
