@@ -1,5 +1,5 @@
 import components/aside.{aside}
-import components/header
+import components/header/header
 import gleam/uri.{type Uri}
 import lustre
 import lustre/attribute.{class}
@@ -36,18 +36,14 @@ pub opaque type Msg {
 }
 
 @external(javascript, "./assets/js/highlight/gleam.ffi.mjs", "highlight_all")
-fn do_highlight_all() -> Nil {
-  Nil
-}
+fn do_highlight_all() -> Nil
 
-@external(javascript, "./assets/js/copy.ffi.js", "attach")
-fn attach() -> Nil {
-  Nil
-}
+@external(javascript, "./assets/js/ffi.js", "attach_all")
+fn do_attach_all() -> Nil
 
-fn attach_copy() -> Effect(a) {
+fn attach_all() -> Effect(a) {
   effect.from(fn(_) {
-    window.request_animation_frame(attach)
+    window.request_animation_frame(do_attach_all)
     Nil
   })
 }
@@ -57,7 +53,7 @@ fn highlight_all() -> Effect(a) {
 }
 
 fn on_load() -> Effect(a) {
-  effect.batch([highlight_all(), attach_copy()])
+  effect.batch([highlight_all(), attach_all()])
 }
 
 fn update(route: Pages, msg: Msg) -> #(Pages, Effect(Msg)) {

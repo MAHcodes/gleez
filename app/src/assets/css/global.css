@@ -5,16 +5,16 @@
 @layer base {
   :root,
   .light {
-    --background: 220 13% 31%;
+    --background: 331 82% 97%;
     --foreground: 219 11% 16%;
 
     --neutral: 0 0% 50%;
     --neutral-foreground: 0 0% 100%;
 
-    --primary: 286 100% 77%;
-    --primary-foreground: 135 10% 20%;
+    --primary: 331 82% 64%;
+    --primary-foreground: 135 10% 90%;
 
-    --secondary: 187 74% 66%;
+    --secondary: 30 81% 63%;
     --secondary-foreground: 135 10% 90%;
 
     --success: 95 66% 74%;
@@ -31,16 +31,16 @@
   }
 
   .dark {
-    --background: 220 13% 18%;
+    --background: 0 0 7%;
     --foreground: 219 14% 71%;
 
     --neutral: 0 0% 50%;
     --neutral-foreground: 0 0% 100%;
 
-    --primary: 286 60% 67%;
+    --primary: 331 82% 64%;
     --primary-foreground: 135 10% 90%;
 
-    --secondary: 187 47% 55%;
+    --secondary: 30 81% 63%;
     --secondary-foreground: 135 10% 90%;
 
     --success: 95 38% 62%;
@@ -57,7 +57,7 @@
   }
 
   body {
-    @apply bg-code text-foreground;
+    @apply bg-background text-foreground transition-colors;
   }
 
   .preview {
