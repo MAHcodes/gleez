@@ -39,7 +39,7 @@ fn item(route: Pages, page: Page) -> Element(a) {
     False ->
       li([], [
         h3([], [
-          a([active_variant(is_active(route, page)), href(page.path)], [
+          a([active_variant(is_active(route, page.path)), href(page.path)], [
             text(route.get_page_name(page)),
           ]),
         ]),

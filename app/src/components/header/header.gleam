@@ -5,8 +5,9 @@ import gleam/string
 import lustre/attribute.{class}
 import lustre/element.{type Element}
 import lustre/element/html
+import lustre/route.{type Pages}
 
-pub fn header() -> Element(a) {
+pub fn header(route: Pages) -> Element(a) {
   html.header(
     [
       class(
@@ -17,6 +18,6 @@ pub fn header() -> Element(a) {
         |> string.join(" "),
       ),
     ],
-    [logo(), nav(), actions()],
+    [logo(), nav(route), actions()],
   )
 }

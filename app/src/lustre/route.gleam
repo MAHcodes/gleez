@@ -43,12 +43,14 @@ pub const pages: List(Page) = [
   Page("Components", [Page(button, []), Page(input, []), Page(link, [])]),
 ]
 
-pub fn is_active(ps: Pages, p: Page) -> Bool {
-  case ps {
-    Button -> p.path == button
-    Input -> p.path == input
-    Link -> p.path == link
-    Intro -> p.path == intro
+pub fn is_active(pages: Pages, path: String) -> Bool {
+  case pages {
+    Home -> path == home
+    Demo -> path == demo
+    Intro -> path == intro
+    Button -> path == button
+    Input -> path == input
+    Link -> path == link
     _ -> False
   }
 }

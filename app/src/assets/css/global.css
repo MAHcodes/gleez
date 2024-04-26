@@ -37,6 +37,10 @@ body {
   @apply prose-invert;
 }
 
+.prose {
+  @apply max-w-none;
+}
+
 aside {
   max-height: calc(100vh - 5rem);
 }

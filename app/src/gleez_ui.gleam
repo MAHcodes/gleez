@@ -65,7 +65,7 @@ fn update(route: Pages, msg: Msg) -> #(Pages, Effect(Msg)) {
 
 fn view(route: Pages) -> Element(Msg) {
   html.main([], [
-    header.header(),
+    header.header(route),
     div([class("container")], [
       case route {
         route.Home -> page.home()

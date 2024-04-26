@@ -8,7 +8,7 @@ import lustre/element/html.{div, h1, h2, p, text}
 
 pub fn docs() -> Element(a) {
   div([], [
-    div([class("prose max-w-none")], [
+    div([class("prose")], [
       h1([], [text("Link")]),
       p([], [
         text(
