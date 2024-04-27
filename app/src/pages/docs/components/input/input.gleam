@@ -9,41 +9,17 @@ pub fn docs() -> Element(a) {
   div([class("")], [
     preview(
       [
-        input([
-          input.outline(input.Neutral),
-          input.md(),
-          placeholder("Outline Neutral"),
-        ]),
-        input([
-          input.outline(input.Primary),
-          input.md(),
-          placeholder("Outline Primary"),
-        ]),
+        input([input.outline(input.Neutral), input.md(), placeholder("Neutral")]),
+        input([input.outline(input.Primary), input.md(), placeholder("Primary")]),
         input([
           input.outline(input.Secondary),
           input.md(),
-          placeholder("Outline Secondary"),
+          placeholder("Secondary"),
         ]),
-        input([
-          input.outline(input.Success),
-          input.md(),
-          placeholder("Outline Success"),
-        ]),
-        input([
-          input.outline(input.Info),
-          input.md(),
-          placeholder("Outline Info"),
-        ]),
-        input([
-          input.outline(input.Warning),
-          input.md(),
-          placeholder("Outline Warning"),
-        ]),
-        input([
-          input.outline(input.Danger),
-          input.md(),
-          placeholder("Outline Danger"),
-        ]),
+        input([input.outline(input.Success), input.md(), placeholder("Success")]),
+        input([input.outline(input.Info), input.md(), placeholder("Info")]),
+        input([input.outline(input.Warning), input.md(), placeholder("Warning")]),
+        input([input.outline(input.Danger), input.md(), placeholder("Danger")]),
       ],
       solid_code(),
     ),
@@ -62,33 +38,33 @@ pub fn buttons() -> Element(a) {
     input([
       input.outline(input.Neutral),
       input.md(),
-      placeholder(\"Outline Neutral\"),
+      placeholder(\"Neutral\"),
     ]),
     input([
       input.outline(input.Primary),
       input.md(),
-      placeholder(\"Outline Primary\"),
+      placeholder(\"Primary\"),
     ]),
     input([
       input.outline(input.Secondary),
       input.md(),
-      placeholder(\"Outline Secondary\"),
+      placeholder(\"Secondary\"),
     ]),
     input([
       input.outline(input.Success),
       input.md(),
-      placeholder(\"Outline Success\"),
+      placeholder(\"Success\"),
     ]),
-    input([input.outline(input.Info), input.md(), placeholder(\"Outline Info\")]),
+    input([input.outline(input.Info), input.md(), placeholder(\"Info\")]),
     input([
       input.outline(input.Warning),
       input.md(),
-      placeholder(\"Outline Warning\"),
+      placeholder(\"Warning\"),
     ]),
     input([
       input.outline(input.Danger),
       input.md(),
-      placeholder(\"Outline Danger\"),
+      placeholder(\"Danger\"),
     ]),
   ])
 }

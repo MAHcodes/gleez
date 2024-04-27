@@ -1,33 +1,35 @@
-:root {
-  --code-background-dark: #2B2B2D;
-  --code-token-base-dark: #CDD3D8;
-  --code-token-punctuation-dark: #818896;
-  --code-token-operator-dark: #C792EA;
-  --code-token-keyword-dark: #C792EA;
-  --code-token-string-dark: #C3E88D;
-  --code-token-comment-dark: #5c6370;
-  --code-token-attribute-dark: #818896;
-  --code-token-function-dark: #75A5FF;
-  --code-token-function-name-dark: #75A5FF;
-  --code-token-function-param-dark: #abb2bf;
-  --code-token-boolean-dark: #F77669;
-  --code-token-number-dark: #F77669;
-  --code-token-selector-dark: #FFCB68;
-  --code-token-type-dark: #80CBBF;
+:root, .light {
+  --code-background: #f2f2f2;
+  --code-token-base: #37474f;
+  --code-token-punctuation: #686b77;
+  --code-token-operator: #9c27b0;
+  --code-token-keyword: #9c27b0;
+  --code-token-string: #3b9188;
+  --code-token-comment: #a0a1a7;
+  --code-token-attribute: #686b77;
+  --code-token-function: #3b78e7;
+  --code-token-function-name: #3b78e7;
+  --code-token-function-param: #383a42;
+  --code-token-boolean: #E53935;
+  --code-token-number: #E53935;
+  --code-token-selector: #c18401;
+  --code-token-type: #0184bb;
+}
 
-  --code-background-light: #FAFAFA;
-  --code-token-base-light: #37474f;
-  --code-token-punctuation-light: #686b77;
-  --code-token-operator-light: #9c27b0;
-  --code-token-keyword-light: #9c27b0;
-  --code-token-string-light: #3b9188;
-  --code-token-comment-light: #a0a1a7;
-  --code-token-attribute-light: #686b77;
-  --code-token-function-light: #3b78e7;
-  --code-token-function-name-light: #3b78e7;
-  --code-token-function-param-light: #383a42;
-  --code-token-boolean-light: #E53935;
-  --code-token-number-light: #E53935;
-  --code-token-selector-light: #c18401;
-  --code-token-type-light: #0184bb;
+.dark {
+  --code-background: #1A1A1A;
+  --code-token-base: #CDD3D8;
+  --code-token-punctuation: #818896;
+  --code-token-operator: #C792EA;
+  --code-token-keyword: #C792EA;
+  --code-token-string: #C3E88D;
+  --code-token-comment: #5c6370;
+  --code-token-attribute: #818896;
+  --code-token-function: #75A5FF;
+  --code-token-function-name: #75A5FF;
+  --code-token-function-param: #abb2bf;
+  --code-token-boolean: #F77669;
+  --code-token-number: #F77669;
+  --code-token-selector: #FFCB68;
+  --code-token-type: #80CBBF;
 }

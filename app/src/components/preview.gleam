@@ -5,7 +5,7 @@ import lustre/element.{type Element}
 import lustre/element/html.{div}
 
 pub fn preview(children: List(Element(a)), content: String) -> Element(a) {
-  div([class("flex flex-col gap-2 py-8")], [
+  div([class("flex flex-col gap-2 py-2 not-prose")], [
     div(
       [
         class(

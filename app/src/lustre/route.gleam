@@ -1,7 +1,7 @@
-import gleam/uri
 import gleam/list
 import gleam/result
 import gleam/string
+import gleam/uri
 
 pub type Pages {
   Home
@@ -11,6 +11,7 @@ pub type Pages {
   Link
   Button
   Input
+  Badge
 }
 
 pub const home = "/"
@@ -27,6 +28,8 @@ pub const input = "/docs/components/input"
 
 pub const link = "/docs/components/link"
 
+pub const badge = "/docs/components/badge"
+
 pub type Page {
   Page(path: String, sub_pages: List(Page))
 }
@@ -40,7 +43,10 @@ pub const pages: List(Page) = [
       Page("/docs/guide/cli", []),
     ],
   ),
-  Page("Components", [Page(button, []), Page(input, []), Page(link, [])]),
+  Page(
+    "Components",
+    [Page(button, []), Page(input, []), Page(link, []), Page(badge, [])],
+  ),
 ]
 
 pub fn is_active(pages: Pages, path: String) -> Bool {
@@ -51,6 +57,7 @@ pub fn is_active(pages: Pages, path: String) -> Bool {
     Button -> path == button
     Input -> path == input
     Link -> path == link
+    Badge -> path == badge
     _ -> False
   }
 }

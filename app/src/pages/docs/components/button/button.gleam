@@ -10,25 +10,15 @@ pub fn docs() -> Element(a) {
     intro.docs(),
     preview(
       [
-        button([button.solid(button.Neutral), button.md()], [
-          text("Solid Neutral"),
-        ]),
-        button([button.solid(button.Primary), button.md()], [
-          text("Solid Primary"),
-        ]),
+        button([button.solid(button.Neutral), button.md()], [text("Neutral")]),
+        button([button.solid(button.Primary), button.md()], [text("Primary")]),
         button([button.solid(button.Secondary), button.md()], [
-          text("Solid Secondary"),
+          text("Secondary"),
         ]),
-        button([button.solid(button.Success), button.md()], [
-          text("Solid Success"),
-        ]),
-        button([button.solid(button.Info), button.md()], [text("Solid Info")]),
-        button([button.solid(button.Warning), button.md()], [
-          text("Solid Warning"),
-        ]),
-        button([button.solid(button.Danger), button.md()], [
-          text("Solid Danger"),
-        ]),
+        button([button.solid(button.Success), button.md()], [text("Success")]),
+        button([button.solid(button.Info), button.md()], [text("Info")]),
+        button([button.solid(button.Warning), button.md()], [text("Warning")]),
+        button([button.solid(button.Danger), button.md()], [text("Danger")]),
       ],
       solid_code(),
     ),
@@ -44,13 +34,13 @@ import lustre/element/html.{div}
 
 pub fn buttons() -> Element(a) {
   div([class(\"flex flex-wrap gap-4 items-center justify-center w-full\")], [
-    button([button.solid(button.Neutral), button.md()], [text(\"Solid Neutral\")]),
-    button([button.solid(button.Primary), button.md()], [text(\"Solid Primary\")]),
-    button([button.solid(button.Secondary), button.md()], [text(\"Solid Secondary\")]),
-    button([button.solid(button.Success), button.md()], [text(\"Solid Success\")]),
-    button([button.solid(button.Info), button.md()], [text(\"Solid Info\")]),
-    button([button.solid(button.Warning), button.md()], [text(\"Solid Warning\")]),
-    button([button.solid(button.Danger), button.md()], [text(\"Solid Danger\")]),
+    button([button.solid(button.Neutral), button.md()], [text(\"Neutral\")]),
+    button([button.solid(button.Primary), button.md()], [text(\"Primary\")]),
+    button([button.solid(button.Secondary), button.md()], [text(\"Secondary\")]),
+    button([button.solid(button.Success), button.md()], [text(\"Success\")]),
+    button([button.solid(button.Info), button.md()], [text(\"Info\")]),
+    button([button.solid(button.Warning), button.md()], [text(\"Warning\")]),
+    button([button.solid(button.Danger), button.md()], [text(\"Danger\")]),
   ])
 }
 "
