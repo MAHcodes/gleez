@@ -6,7 +6,9 @@ import gleam/uri
 pub type Pages {
   Home
   Demo
+  Blog
   Intro
+
   Components
   Link
   Button
@@ -17,6 +19,8 @@ pub type Pages {
 pub const home = "/"
 
 pub const demo = "/demo"
+
+pub const blog = "/blog"
 
 pub const intro = "/docs/guide/introduction"
 
@@ -54,6 +58,7 @@ pub fn is_active(pages: Pages, path: String) -> Bool {
     Home -> path == home
     Demo -> path == demo
     Intro -> path == intro
+    Blog -> path == blog
     Button -> path == button
     Input -> path == input
     Link -> path == link

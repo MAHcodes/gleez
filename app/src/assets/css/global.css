@@ -42,7 +42,7 @@ body {
 }
 
 aside {
-  max-height: calc(100vh - 5rem);
+  max-height: calc(100vh - 8rem);
 }
 
 *::selection {
@@ -60,10 +60,10 @@ aside {
 
 /* Legacy browsers with `::-webkit-scrollbar-*` support */
 @supports selector(::-webkit-scrollbar) {
-  .scroller::-webkit-scrollbar-thumb {
+  *::-webkit-scrollbar-thumb {
     @apply bg-neutral;
   }
-  .scroller::-webkit-scrollbar-track {
+  *::-webkit-scrollbar-track {
     @apply bg-neutral;
   }
 }

@@ -1,10 +1,11 @@
 import components/header/actions.{actions}
 import components/header/logo.{logo}
 import components/nav.{nav}
+import components/ui/badge.{badge}
 import gleam/string
 import lustre/attribute.{class}
-import lustre/element.{type Element}
-import lustre/element/html
+import lustre/element.{type Element, text}
+import lustre/element/html.{div}
 import lustre/route.{type Pages}
 
 pub fn header(route: Pages) -> Element(a) {
@@ -18,6 +19,13 @@ pub fn header(route: Pages) -> Element(a) {
         |> string.join(" "),
       ),
     ],
-    [logo(), nav(route), actions()],
+    [
+      div([class("flex gap-2 items-center")], [
+        logo(),
+        badge([badge.flat(badge.Primary), badge.sm()], [text("Beta")]),
+        nav(route),
+      ]),
+      actions(),
+    ],
   )
 }

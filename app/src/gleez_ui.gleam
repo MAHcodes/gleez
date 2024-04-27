@@ -9,7 +9,6 @@ import lustre/element/html.{div}
 import lustre/route.{type Pages}
 import modem
 import pages/page
-import plinth/browser/window
 
 pub fn main() {
   let app = lustre.application(init, update, view)
@@ -17,13 +16,14 @@ pub fn main() {
 }
 
 fn init(_) -> #(Pages, Effect(Msg)) {
-  #(route.Link, batch([modem.init(on_url_change), on_load()]))
+  #(route.Button, batch([modem.init(on_url_change), on_load()]))
 }
 
 fn on_url_change(uri: Uri) -> Msg {
   case uri.path_segments(uri.path) {
     ["home"] -> OnRouteChange(route.Home)
     ["demo"] -> OnRouteChange(route.Demo)
+    ["blog"] -> OnRouteChange(route.Blog)
     ["docs", "guide", "introduction"] -> OnRouteChange(route.Intro)
     ["docs", "components", "button"] -> OnRouteChange(route.Button)
     ["docs", "components", "input"] -> OnRouteChange(route.Input)
@@ -45,8 +45,7 @@ fn do_attach_all() -> Nil
 
 fn attach_all() -> Effect(a) {
   effect.from(fn(_) {
-    window.request_animation_frame(do_attach_all)
-    Nil
+    do_attach_all()
   })
 }
 
@@ -71,6 +70,7 @@ fn view(route: Pages) -> Element(Msg) {
       case route {
         route.Home -> page.home()
         route.Demo -> page.demo()
+        route.Blog -> page.blog()
         _ -> with_aside(route)
       },
     ]),

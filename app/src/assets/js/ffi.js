@@ -39,10 +39,9 @@ function attach_less_is_more() {
 	if (btns.length === 0) return;
 
 	btns.forEach(function (btn) {
-		const source = btn.parentElement.querySelector(".source-code");
-		if (!source) return;
-
 		btn.addEventListener("click", function () {
+			const source = btn.parentElement.querySelector(".source-code");
+			if (!source) return;
 			const hidden = source.classList.contains("hidden");
 			if (hidden) {
 				source.classList.remove("hidden");
@@ -123,9 +122,13 @@ function attach_toggle() {
 	toggleBtn.addEventListener("click", toggleTheme);
 }
 
+function do_attach_all() {
+	attach_copy();
+	attach_less_is_more();
+	attach_toggle();
+	update_init_theme();
+}
+
 export function attach_all() {
-	window.requestAnimationFrame(attach_copy);
-	window.requestAnimationFrame(attach_less_is_more);
-	window.requestAnimationFrame(attach_toggle);
-	window.requestAnimationFrame(update_init_theme);
+	window.requestAnimationFrame(do_attach_all);
 }

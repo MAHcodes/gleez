@@ -1,48 +1,23 @@
 import components/preview.{preview}
 import components/ui/button.{button}
 import gleam/string
+import lustre/attribute.{class}
 import lustre/element.{type Element}
 import lustre/element/html.{div, text}
-import pages/docs/components/button/intro
+import pages/docs/sections/section
+import pages/docs/components/button/attributes.{attributes}
+import pages/docs/components/button/examples.{examples}
+import pages/docs/components/button/variants.{variants}
 
 pub fn docs() -> Element(a) {
-  div([], [
-    intro.docs(),
-    preview(
-      [
-        button([button.solid(button.Neutral), button.md()], [text("Neutral")]),
-        button([button.solid(button.Primary), button.md()], [text("Primary")]),
-        button([button.solid(button.Secondary), button.md()], [
-          text("Secondary"),
-        ]),
-        button([button.solid(button.Success), button.md()], [text("Success")]),
-        button([button.solid(button.Info), button.md()], [text("Info")]),
-        button([button.solid(button.Warning), button.md()], [text("Warning")]),
-        button([button.solid(button.Danger), button.md()], [text("Danger")]),
-      ],
-      solid_code(),
+  div([class("prose")], [
+    section.intro(
+      "Button",
+      "Buttons allow users to perform actions and choose with a single tap.",
     ),
+    section.installation("gleam run -m gleez add button"),
+    variants(),
+    attributes(),
+    examples(),
   ])
-}
-
-fn solid_code() -> String {
-  "
-import components/ui/button.{button}
-import lustre/attribute.{class}
-import lustre/element.{type Element, text}
-import lustre/element/html.{div}
-
-pub fn buttons() -> Element(a) {
-  div([class(\"flex flex-wrap gap-4 items-center justify-center w-full\")], [
-    button([button.solid(button.Neutral), button.md()], [text(\"Neutral\")]),
-    button([button.solid(button.Primary), button.md()], [text(\"Primary\")]),
-    button([button.solid(button.Secondary), button.md()], [text(\"Secondary\")]),
-    button([button.solid(button.Success), button.md()], [text(\"Success\")]),
-    button([button.solid(button.Info), button.md()], [text(\"Info\")]),
-    button([button.solid(button.Warning), button.md()], [text(\"Warning\")]),
-    button([button.solid(button.Danger), button.md()], [text(\"Danger\")]),
-  ])
-}
-"
-  |> string.trim
 }

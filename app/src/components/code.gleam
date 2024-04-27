@@ -16,7 +16,7 @@ pub fn code(c: String, lang: String) -> Element(a) {
   div(
     [
       class(
-        ["relative group source-code", hide_code(lang)]
+        ["relative source-code", hide_code(lang)]
         |> string.join(" "),
       ),
     ],
@@ -36,9 +36,9 @@ pub fn code(c: String, lang: String) -> Element(a) {
       ),
       button(
         [
-          class("copy absolute top-3 right-3 invisible group-hover:visible"),
+          class("copy absolute top-3 right-3"),
           button.icon(),
-          button.flat(button.Neutral),
+          button.light(button.Neutral),
         ],
         [icon.copy([class("w-5")])],
       ),
