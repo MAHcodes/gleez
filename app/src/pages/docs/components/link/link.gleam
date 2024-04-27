@@ -13,7 +13,7 @@ pub fn docs() -> Element(a) {
     div([class("prose")], [
       section.intro(
         "Link",
-        "Links allow users to click their way from page to page. This component is styled to resemble a hyperlink and semantically renders an src",
+        "Links allow users to click their way from page to page. This component is styled to resemble a hyperlink and semantically renders an <a>",
       ),
       section.installation("gleam run -m gleez add link"),
       section.variants([

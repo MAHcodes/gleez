@@ -1,4 +1,3 @@
-// attach copy functionality for copy to clipboard buttons
 function attach_copy() {
 	const codes = document.querySelectorAll("pre.hljs");
 
@@ -34,6 +33,30 @@ function attach_copy() {
 	});
 }
 
+function attach_less_is_more() {
+	const btns = document.querySelectorAll("button.less-is-more");
+
+	if (btns.length === 0) return;
+
+	btns.forEach(function (btn) {
+		const source = btn.parentElement.querySelector(".source-code");
+		if (!source) return;
+
+		btn.addEventListener("click", function () {
+			const hidden = source.classList.contains("hidden");
+			if (hidden) {
+				source.classList.remove("hidden");
+			} else {
+				source.classList.add("animate-fade-out");
+				setTimeout(function () {
+					source.classList.remove("animate-fade-out");
+					source.classList.add("hidden");
+				}, 300);
+			}
+		});
+	});
+}
+
 function getSystemDark() {
 	return (
 		window.matchMedia &&
@@ -54,7 +77,7 @@ function getDarkTheme() {
 	}
 }
 
-function updateInitTheme() {
+function update_init_theme() {
 	getDarkTheme() ? setThemeDark() : setThemeLight();
 }
 
@@ -102,6 +125,7 @@ function attach_toggle() {
 
 export function attach_all() {
 	window.requestAnimationFrame(attach_copy);
+	window.requestAnimationFrame(attach_less_is_more);
 	window.requestAnimationFrame(attach_toggle);
-	window.requestAnimationFrame(updateInitTheme);
+	window.requestAnimationFrame(update_init_theme);
 }
