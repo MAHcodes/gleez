@@ -8,12 +8,11 @@ pub type Pages {
   Demo
   Blog
   Intro
-
   Components
   Link
   Button
   Input
-  Badge
+  Chip
 }
 
 pub const home = "/"
@@ -32,7 +31,7 @@ pub const input = "/docs/components/input"
 
 pub const link = "/docs/components/link"
 
-pub const badge = "/docs/components/badge"
+pub const chip = "/docs/components/chip"
 
 pub type Page {
   Page(path: String, sub_pages: List(Page))
@@ -49,7 +48,7 @@ pub const pages: List(Page) = [
   ),
   Page(
     "Components",
-    [Page(button, []), Page(input, []), Page(link, []), Page(badge, [])],
+    [Page(button, []), Page(input, []), Page(link, []), Page(chip, [])],
   ),
 ]
 
@@ -62,7 +61,7 @@ pub fn is_active(pages: Pages, path: String) -> Bool {
     Button -> path == button
     Input -> path == input
     Link -> path == link
-    Badge -> path == badge
+    Chip -> path == chip
     _ -> False
   }
 }

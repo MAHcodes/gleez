@@ -61,18 +61,9 @@ module.exports = {
 						opacity: 1,
 					},
 				},
-				fadeOut: {
-					from: {
-						opacity: 1,
-					},
-					to: {
-						opacity: 0,
-					},
-				},
 			},
 			animation: {
 				"fade-in": "fadeIn 400ms ease-in-out",
-				"fade-out": "fadeOut 300ms ease-in-out",
 			},
 		},
 	},

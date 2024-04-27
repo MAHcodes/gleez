@@ -8,28 +8,35 @@ import pages/docs/sections/section
 pub fn examples() -> Element(a) {
   section.examples([
     section.example(
+      "Icons",
+      "",
+      [
+        button([button.solid(button.Neutral), button.icon()], [
+          icon.star_filled([class("w-5")]),
+        ]),
+        button([button.outline(button.Neutral), button.icon()], [
+          icon.star_filled([class("w-5")]),
+        ]),
+        button([button.light(button.Neutral), button.icon()], [
+          icon.star_filled([class("w-5")]),
+        ]),
+        button([button.flat(button.Neutral), button.icon()], [
+          icon.star_filled([class("w-5")]),
+        ]),
+        button([button.link(button.Neutral), button.icon()], [
+          icon.star_filled([class("w-5")]),
+        ]),
+        button([button.ghost(button.Neutral), button.icon()], [
+          icon.star_filled([class("w-5")]),
+        ]),
+      ],
+      icons_code(),
+    ),
+    section.example(
       "Disabled",
       "",
       [
         button([button.solid(button.Neutral), button.md(), disabled(True)], [
-          text("Disabled"),
-        ]),
-        button([button.outline(button.Primary), button.md(), disabled(True)], [
-          text("Disabled"),
-        ]),
-        button([button.light(button.Secondary), button.md(), disabled(True)], [
-          text("Disabled"),
-        ]),
-        button([button.flat(button.Success), button.md(), disabled(True)], [
-          text("Disabled"),
-        ]),
-        button([button.ghost(button.Info), button.md(), disabled(True)], [
-          text("Disabled"),
-        ]),
-        button([button.link(button.Warning), button.md(), disabled(True)], [
-          text("Disabled"),
-        ]),
-        button([button.solid(button.Danger), button.md(), disabled(True)], [
           text("Disabled"),
         ]),
       ],
@@ -39,11 +46,11 @@ pub fn examples() -> Element(a) {
       "With Icons",
       "",
       [
-        button([button.solid(button.Primary), button.md()], [
+        button([button.solid(button.Neutral), button.md()], [
           icon.star_filled([class("w-5")]),
           text("Icon Start"),
         ]),
-        button([button.solid(button.Primary), button.md()], [
+        button([button.solid(button.Neutral), button.md()], [
           text("Icon End"),
           icon.star_filled([class("w-5")]),
         ]),
@@ -55,16 +62,47 @@ pub fn examples() -> Element(a) {
       "",
       [
         button(
-          [button.solid(button.Primary), button.md(), attribute.disabled(True)],
-          [
-            icon.update([class("w-5 animate-spin")]),
-            text("Loading..."),
-          ],
+          [button.solid(button.Neutral), button.md(), attribute.disabled(True)],
+          [icon.update([class("w-5 animate-spin")]), text("Loading...")],
         ),
       ],
       loading_code(),
     ),
   ])
+}
+
+fn icons_code() -> String {
+  "
+import components/ui/button.{button}
+import lustre/element.{type Element, text}
+import lustre/element/html.{div}
+import lustre/attribute.{class}
+import lustre/ui/icon
+
+pub fn buttons() -> Element(a) {
+  div([class(\"flex flex-wrap gap-4 items-center justify-center w-full\")], [
+    button([button.solid(button.Neutral), button.icon()], [
+      icon.star_filled([class(\"w-5\")]),
+    ]),
+    button([button.outline(button.Neutral), button.icon()], [
+      icon.star_filled([class(\"w-5\")]),
+    ]),
+    button([button.light(button.Neutral), button.icon()], [
+      icon.star_filled([class(\"w-5\")]),
+    ]),
+    button([button.flat(button.Neutral), button.icon()], [
+      icon.star_filled([class(\"w-5\")]),
+    ]),
+    button([button.link(button.Neutral), button.icon()], [
+      icon.star_filled([class(\"w-5\")]),
+    ]),
+    button([button.ghost(button.Neutral), button.icon()], [
+      icon.star_filled([class(\"w-5\")]),
+    ]),
+  ])
+}
+"
+  |> string.trim
 }
 
 fn disabled_code() -> String {
@@ -77,24 +115,6 @@ import lustre/attribute.{class, disabled}
 pub fn buttons() -> Element(a) {
   div([class(\"flex flex-wrap gap-4 items-center justify-center w-full\")], [
     button([button.solid(button.Neutral), button.md(), disabled(True)], [
-      text(\"Disabled\"),
-    ]),
-    button([button.outline(button.Primary), button.md(), disabled(True)], [
-      text(\"Disabled\"),
-    ]),
-    button([button.light(button.Secondary), button.md(), disabled(True)], [
-      text(\"Disabled\"),
-    ]),
-    button([button.flat(button.Success), button.md(), disabled(True)], [
-      text(\"Disabled\"),
-    ]),
-    button([button.ghost(button.Info), button.md(), disabled(True)], [
-      text(\"Disabled\"),
-    ]),
-    button([button.link(button.Warning), button.md(), disabled(True)], [
-      text(\"Disabled\"),
-    ]),
-    button([button.solid(button.Danger), button.md(), disabled(True)], [
       text(\"Disabled\"),
     ]),
   ])
@@ -113,11 +133,11 @@ import lustre/ui/icon
 
 pub fn buttons() -> Element(a) {
   div([class(\"flex flex-wrap gap-4 items-center justify-center w-full\")], [
-    button([button.solid(button.Primary), button.md()], [
+    button([button.solid(button.Neutral), button.md()], [
       icon.star_filled([class(\"w-5\")]),
       text(\"Icon Start\"),
     ]),
-    button([button.solid(button.Primary), button.md()], [
+    button([button.solid(button.Neutral), button.md()], [
       text(\"Icon End\"),
       icon.star_filled([class(\"w-5\")]),
     ]),
@@ -138,7 +158,7 @@ import lustre/ui/icon
 pub fn buttons() -> Element(a) {
   div([class(\"flex flex-wrap gap-4 items-center justify-center w-full\")], [
     button(
-      [button.solid(button.Primary), button.md(), attribute.disabled(True)],
+      [button.solid(button.Neutral), button.md(), attribute.disabled(True)],
       [
         icon.update([class(\"w-5 animate-spin\")]),
         text(\"Loading...\"),

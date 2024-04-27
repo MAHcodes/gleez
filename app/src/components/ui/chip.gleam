@@ -13,7 +13,7 @@ pub type Colors {
   Danger
 }
 
-pub fn badge(attributes: List(Attribute(a)), children: List(Element(a))) {
+pub fn chip(attributes: List(Attribute(a)), children: List(Element(a))) {
   html.div(
     [
       class("flex gap-2 rounded-full items-center justify-center transition-all"),

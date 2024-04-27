@@ -28,7 +28,7 @@ fn on_url_change(uri: Uri) -> Msg {
     ["docs", "components", "button"] -> OnRouteChange(route.Button)
     ["docs", "components", "input"] -> OnRouteChange(route.Input)
     ["docs", "components", "link"] -> OnRouteChange(route.Link)
-    ["docs", "components", "badge"] -> OnRouteChange(route.Badge)
+    ["docs", "components", "chip"] -> OnRouteChange(route.Chip)
     _ -> OnRouteChange(route.Home)
   }
 }
@@ -86,7 +86,7 @@ fn with_aside(route: Pages) -> Element(Msg) {
         route.Input -> page.input()
         route.Link -> page.link()
         route.Intro -> page.intro()
-        route.Badge -> page.badge()
+        route.Chip -> page.chip()
         _ -> page.home()
       },
     ]),

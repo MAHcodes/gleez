@@ -1,6 +1,6 @@
 import pages/blog/blog
 import pages/demo/demo
-import pages/docs/components/badge/badge
+import pages/docs/components/chip/chip
 import pages/docs/components/button/button
 import pages/docs/components/input/input
 import pages/docs/components/link/link
@@ -26,4 +26,4 @@ pub const input = input.docs
 
 pub const link = link.docs
 
-pub const badge = badge.docs
+pub const chip = chip.docs

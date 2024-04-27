@@ -10,9 +10,9 @@ pub fn attributes() -> Element(a) {
       "Size",
       "",
       [
-        a([href("#"), a.link(a.Primary), a.sm()], [text("Small")]),
-        a([href("#"), a.link(a.Primary), a.md()], [text("Medium")]),
-        a([href("#"), a.link(a.Primary), a.lg()], [text("Large")]),
+        a([href("#"), a.link(a.Neutral), a.sm()], [text("Small")]),
+        a([href("#"), a.link(a.Neutral), a.md()], [text("Medium")]),
+        a([href("#"), a.link(a.Neutral), a.lg()], [text("Large")]),
       ],
       size_code(),
     ),
@@ -20,13 +20,13 @@ pub fn attributes() -> Element(a) {
       "Underline",
       "",
       [
-        a([href("#"), a.link(a.Primary)], [text("None")]),
-        a([href("#"), a.link(a.Primary), a.underline(a.Hover)], [text("Hover")]),
-        a([href("#"), a.link(a.Primary), a.underline(a.Active)], [
+        a([href("#"), a.link(a.Neutral)], [text("None")]),
+        a([href("#"), a.link(a.Neutral), a.underline(a.Hover)], [text("Hover")]),
+        a([href("#"), a.link(a.Neutral), a.underline(a.Active)], [
           text("Active"),
         ]),
-        a([href("#"), a.link(a.Primary), a.underline(a.Focus)], [text("Focus")]),
-        a([href("#"), a.link(a.Primary), a.underline(a.Always)], [
+        a([href("#"), a.link(a.Neutral), a.underline(a.Focus)], [text("Focus")]),
+        a([href("#"), a.link(a.Neutral), a.underline(a.Always)], [
           text("Always"),
         ]),
       ],
@@ -44,9 +44,9 @@ import lustre/attribute.{class, href}
 
 pub fn buttons() -> Element(a) {
   div([class(\"flex flex-wrap gap-4 items-center justify-center w-full\")], [
-    a([href(\"#\"), a.link(a.Primary), a.sm()], [text(\"Small\")]),
-    a([href(\"#\"), a.link(a.Primary), a.md()], [text(\"Medium\")]),
-    a([href(\"#\"), a.link(a.Primary), a.lg()], [text(\"Large\")]),
+    a([href(\"#\"), a.link(a.Neutral), a.sm()], [text(\"Small\")]),
+    a([href(\"#\"), a.link(a.Neutral), a.md()], [text(\"Medium\")]),
+    a([href(\"#\"), a.link(a.Neutral), a.lg()], [text(\"Large\")]),
   ])
 }
 "
@@ -62,11 +62,11 @@ import lustre/attribute.{class, href}
 
 pub fn buttons() -> Element(a) {
   div([class(\"flex flex-wrap gap-4 items-center justify-center w-full\")], [
-    a([href(\"#\"), a.link(a.Primary)], [text(\"None\")]),
-    a([href(\"#\"), a.link(a.Primary), a.underline(a.Hover)], [text(\"Hover\")]),
-    a([href(\"#\"), a.link(a.Primary), a.underline(a.Active)], [text(\"Active\")]),
-    a([href(\"#\"), a.link(a.Primary), a.underline(a.Focus)], [text(\"Focus\")]),
-    a([href(\"#\"), a.link(a.Primary), a.underline(a.Always)], [text(\"Always\")]),
+    a([href(\"#\"), a.link(a.Neutral)], [text(\"None\")]),
+    a([href(\"#\"), a.link(a.Neutral), a.underline(a.Hover)], [text(\"Hover\")]),
+    a([href(\"#\"), a.link(a.Neutral), a.underline(a.Active)], [text(\"Active\")]),
+    a([href(\"#\"), a.link(a.Neutral), a.underline(a.Focus)], [text(\"Focus\")]),
+    a([href(\"#\"), a.link(a.Neutral), a.underline(a.Always)], [text(\"Always\")]),
   ])
 }
 "

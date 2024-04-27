@@ -46,11 +46,7 @@ function attach_less_is_more() {
 			if (hidden) {
 				source.classList.remove("hidden");
 			} else {
-				source.classList.add("animate-fade-out");
-				setTimeout(function () {
-					source.classList.remove("animate-fade-out");
-					source.classList.add("hidden");
-				}, 300);
+				source.classList.add("hidden");
 			}
 		});
 	});

@@ -11,11 +11,11 @@ pub fn examples() -> Element(a) {
       "With Icons",
       "",
       [
-        a([href("#"), a.link(a.Primary), target("_blank")], [
+        a([href("#"), a.link(a.Neutral), target("_blank")], [
           icon.github_logo([class("w-4")]),
           text("Custom Icon"),
         ]),
-        a([href("#"), a.link(a.Primary), target("_blank")], [
+        a([href("#"), a.link(a.Neutral), target("_blank")], [
           text("External Link"),
           icon.external_link([class("w-4")]),
         ]),
@@ -35,11 +35,11 @@ import lustre/ui/icon
 
 pub fn buttons() -> Element(a) {
   div([class(\"flex flex-wrap gap-4 items-center justify-center w-full\")], [
-    a([href(\"#\"), a.link(a.Primary), target(\"_blank\")], [
+    a([href(\"#\"), a.link(a.Neutral), target(\"_blank\")], [
       icon.github_logo([class(\"w-4\")]),
       text(\"Custom Icon\"),
     ]),
-    a([href(\"#\"), a.link(a.Primary), target(\"_blank\")], [
+    a([href(\"#\"), a.link(a.Neutral), target(\"_blank\")], [
       text(\"External Link\"),
       icon.external_link([class(\"w-4\")]),
     ]),
