@@ -16,7 +16,7 @@ pub fn input(attributes: List(Attribute(a))) {
   html.input([
     class(
       [
-        "w-full", "disabled:opacity-50 disabled:cursor-not-allowed",
+        "disabled:opacity-50 disabled:cursor-not-allowed",
         "transition-all",
       ]
       |> string.join(" "),

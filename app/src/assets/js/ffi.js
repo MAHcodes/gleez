@@ -10,26 +10,29 @@ function attach_copy() {
 
 		if (!copy) return;
 
-		copy.addEventListener("click", async function () {
-			copy.classList.add("opacity-0");
-			try {
-				await navigator.clipboard.writeText(code.innerText);
-				success.classList.remove("invisible");
-				danger.classList.add("invisible");
-			} catch (error) {
-				console.error(error.message);
-				success.classList.add("invisible");
-				danger.classList.remove("invisible");
-			} finally {
-				setTimeout(function () {
-					success.classList.add("invisible");
+		if (!copy.hasEventListener) {
+			copy.addEventListener("click", async function () {
+				copy.classList.add("opacity-0");
+				try {
+					await navigator.clipboard.writeText(code.innerText);
+					success.classList.remove("invisible");
 					danger.classList.add("invisible");
-				}, 2000);
-				setTimeout(function () {
-					copy.classList.remove("opacity-0");
-				}, 2200);
-			}
-		});
+				} catch (error) {
+					console.error(error.message);
+					success.classList.add("invisible");
+					danger.classList.remove("invisible");
+				} finally {
+					setTimeout(function () {
+						success.classList.add("invisible");
+						danger.classList.add("invisible");
+					}, 2000);
+					setTimeout(function () {
+						copy.classList.remove("opacity-0");
+					}, 2200);
+				}
+			});
+			copy.hasEventListener = true;
+		}
 	});
 }
 
@@ -38,17 +41,26 @@ function attach_less_is_more() {
 
 	if (btns.length === 0) return;
 
-	btns.forEach(function (btn) {
-		btn.addEventListener("click", function () {
-			const source = btn.parentElement.querySelector(".source-code");
-			if (!source) return;
-			const hidden = source.classList.contains("hidden");
-			if (hidden) {
-				source.classList.remove("hidden");
-			} else {
+	function handleClick(btn) {
+		const source = btn.parentElement.querySelector(".source-code");
+		if (!source) return;
+		const hidden = source.classList.contains("hidden");
+		if (hidden) {
+			source.classList.remove("hidden");
+		} else {
+			source.classList.add("animate-fade-out");
+			setTimeout(() => {
 				source.classList.add("hidden");
-			}
-		});
+				source.classList.remove("animate-fade-out");
+			}, 300);
+		}
+	}
+
+	btns.forEach(function (btn) {
+		if (!btn.hasEventListener) {
+			btn.addEventListener("click", () => handleClick(btn));
+			btn.hasEventListener = true;
+		}
 	});
 }
 
@@ -114,8 +126,10 @@ function attach_toggle() {
 
 	if (!toggleBtn) return;
 
-	toggleBtn.removeEventListener("click", toggleTheme);
-	toggleBtn.addEventListener("click", toggleTheme);
+	if (!toggleBtn.hasEventListener) {
+		toggleBtn.addEventListener("click", toggleTheme);
+		toggleBtn.hasEventListener = true;
+	}
 }
 
 function do_attach_all() {
