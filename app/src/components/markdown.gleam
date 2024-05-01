@@ -1,8 +1,8 @@
 import gleam/result
+import kirala/markdown/html_renderer
 import lustre/attribute.{attribute, class}
 import lustre/element.{type Element}
 import lustre/element/html.{div}
-import kirala/markdown/html_renderer
 import simplifile
 
 pub fn from_path(path: String) -> Element(a) {
@@ -24,7 +24,10 @@ fn parse(md: String) -> String {
 }
 
 fn porse(content: String) -> Element(a) {
-  div([attribute("dangerous-unescaped-html", content), class("prose w-full")], [])
+  div(
+    [attribute("dangerous-unescaped-html", content), class("prose w-full")],
+    [],
+  )
 }
 
 fn read_file(path: String) -> String {

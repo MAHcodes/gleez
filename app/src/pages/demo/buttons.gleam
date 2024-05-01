@@ -41,7 +41,9 @@ pub fn buttons() -> Element(a) {
       button([button.outlined(button.Success), button.md()], [
         text("outlinedd Success"),
       ]),
-      button([button.outlined(button.Info), button.md()], [text("outlinedd Info")]),
+      button([button.outlined(button.Info), button.md()], [
+        text("outlinedd Info"),
+      ]),
       button([button.outlined(button.Warning), button.md()], [
         text("outlinedd Warning"),
       ]),

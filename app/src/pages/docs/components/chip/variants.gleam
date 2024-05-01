@@ -11,9 +11,7 @@ pub fn variants() -> Element(a) {
       [
         chip([chip.solid(chip.Neutral), chip.md()], [text("Neutral")]),
         chip([chip.solid(chip.Primary), chip.md()], [text("Primary")]),
-        chip([chip.solid(chip.Secondary), chip.md()], [
-          text("Secondary"),
-        ]),
+        chip([chip.solid(chip.Secondary), chip.md()], [text("Secondary")]),
         chip([chip.solid(chip.Success), chip.md()], [text("Success")]),
         chip([chip.solid(chip.Info), chip.md()], [text("Info")]),
         chip([chip.solid(chip.Warning), chip.md()], [text("Warning")]),
@@ -27,9 +25,7 @@ pub fn variants() -> Element(a) {
       [
         chip([chip.outline(chip.Neutral), chip.md()], [text("Neutral")]),
         chip([chip.outline(chip.Primary), chip.md()], [text("Primary")]),
-        chip([chip.outline(chip.Secondary), chip.md()], [
-          text("Secondary"),
-        ]),
+        chip([chip.outline(chip.Secondary), chip.md()], [text("Secondary")]),
         chip([chip.outline(chip.Success), chip.md()], [text("Success")]),
         chip([chip.outline(chip.Info), chip.md()], [text("Info")]),
         chip([chip.outline(chip.Warning), chip.md()], [text("Warning")]),
@@ -43,9 +39,7 @@ pub fn variants() -> Element(a) {
       [
         chip([chip.light(chip.Neutral), chip.md()], [text("Neutral")]),
         chip([chip.light(chip.Primary), chip.md()], [text("Primary")]),
-        chip([chip.light(chip.Secondary), chip.md()], [
-          text("Secondary"),
-        ]),
+        chip([chip.light(chip.Secondary), chip.md()], [text("Secondary")]),
         chip([chip.light(chip.Success), chip.md()], [text("Success")]),
         chip([chip.light(chip.Info), chip.md()], [text("Info")]),
         chip([chip.light(chip.Warning), chip.md()], [text("Warning")]),

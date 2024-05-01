@@ -1,5 +1,5 @@
-import gleam/string
 import components/ui/input.{input}
+import gleam/string
 import lustre/attribute.{class, placeholder}
 import lustre/element.{type Element, text}
 import lustre/element/html.{div, label, span}

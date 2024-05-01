@@ -1,6 +1,5 @@
 import components/markdown
 import lustre/element.{type Element}
-import pages/docs/components/input/input
 
 pub fn docs() -> Element(a) {
   "

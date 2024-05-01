@@ -1,5 +1,5 @@
-import components/ui/a.{a}
-import lustre/attribute.{class, classes, href, target}
+import components/ui/link.{a}
+import lustre/attribute.{class, href, target}
 import lustre/element.{type Element, text}
 import lustre/element/html.{div}
 import lustre/ui/icon
@@ -12,52 +12,66 @@ pub fn links() -> Element(a) {
       ),
     ],
     [
-      a([href("#"), a.link(a.Neutral)], [text("Link Primary")]),
-      a([href("#"), a.link(a.Primary)], [text("Link Primary")]),
-      a([href("#"), a.link(a.Secondary)], [text("Link Secondary")]),
-      a([href("#"), a.link(a.Success)], [text("Link Success")]),
-      a([href("#"), a.link(a.Info)], [text("Link Info")]),
-      a([href("#"), a.link(a.Warning)], [text("Link Warning")]),
-      a([href("#"), a.link(a.Danger)], [text("Link Danger")]),
-      a([href("#"), a.light(a.Neutral), a.md()], [text("Light Neutral")]),
-      a([href("#"), a.light(a.Primary), a.md()], [text("Light Primary")]),
-      a([href("#"), a.light(a.Secondary), a.md()], [text("Light Secondary")]),
-      a([href("#"), a.light(a.Success), a.md()], [text("Light Success")]),
-      a([href("#"), a.light(a.Info), a.md()], [text("Light Info")]),
-      a([href("#"), a.light(a.Warning), a.md()], [text("Light Warning")]),
-      a([href("#"), a.light(a.Danger), a.md()], [text("Light Danger")]),
-      a([href("#"), a.flat(a.Neutral), a.md()], [text("Flat Neutral")]),
-      a([href("#"), a.flat(a.Primary), a.md()], [text("Flat Primary")]),
-      a([href("#"), a.flat(a.Secondary), a.md()], [text("Flat Secondary")]),
-      a([href("#"), a.flat(a.Success), a.md()], [text("Flat Success")]),
-      a([href("#"), a.flat(a.Info), a.md()], [text("Flat Info")]),
-      a([href("#"), a.flat(a.Warning), a.md()], [text("Flat Warning")]),
-      a([href("#"), a.flat(a.Danger), a.md()], [text("Flat Danger")]),
-      a([href("#"), a.link(a.Primary)], [text("Underline None")]),
-      a([href("#"), a.link(a.Primary), a.underline(a.Hover)], [
+      a([href("#"), link.link(link.Neutral)], [text("Link Primary")]),
+      a([href("#"), link.link(link.Primary)], [text("Link Primary")]),
+      a([href("#"), link.link(link.Secondary)], [text("Link Secondary")]),
+      a([href("#"), link.link(link.Success)], [text("Link Success")]),
+      a([href("#"), link.link(link.Info)], [text("Link Info")]),
+      a([href("#"), link.link(link.Warning)], [text("Link Warning")]),
+      a([href("#"), link.link(link.Danger)], [text("Link Danger")]),
+      a([href("#"), link.light(link.Neutral), link.md()], [
+        text("Light Neutral"),
+      ]),
+      a([href("#"), link.light(link.Primary), link.md()], [
+        text("Light Primary"),
+      ]),
+      a([href("#"), link.light(link.Secondary), link.md()], [
+        text("Light Secondary"),
+      ]),
+      a([href("#"), link.light(link.Success), link.md()], [
+        text("Light Success"),
+      ]),
+      a([href("#"), link.light(link.Info), link.md()], [text("Light Info")]),
+      a([href("#"), link.light(link.Warning), link.md()], [
+        text("Light Warning"),
+      ]),
+      a([href("#"), link.light(link.Danger), link.md()], [text("Light Danger")]),
+      a([href("#"), link.flat(link.Neutral), link.md()], [text("Flat Neutral")]),
+      a([href("#"), link.flat(link.Primary), link.md()], [text("Flat Primary")]),
+      a([href("#"), link.flat(link.Secondary), link.md()], [
+        text("Flat Secondary"),
+      ]),
+      a([href("#"), link.flat(link.Success), link.md()], [text("Flat Success")]),
+      a([href("#"), link.flat(link.Info), link.md()], [text("Flat Info")]),
+      a([href("#"), link.flat(link.Warning), link.md()], [text("Flat Warning")]),
+      a([href("#"), link.flat(link.Danger), link.md()], [text("Flat Danger")]),
+      a([href("#"), link.link(link.Primary)], [text("Underline None")]),
+      a([href("#"), link.link(link.Primary), link.underline(link.Hover)], [
         text("Underline Hover"),
       ]),
-      a([href("#"), a.link(a.Primary), a.underline(a.Active)], [
+      a([href("#"), link.link(link.Primary), link.underline(link.Active)], [
         text("Underline Active"),
       ]),
-      a([href("#"), a.link(a.Primary), a.underline(a.Focus)], [
+      a([href("#"), link.link(link.Primary), link.underline(link.Focus)], [
         text("Underline Focus"),
       ]),
-      a([href("#"), a.link(a.Primary), a.underline(a.Always)], [
+      a([href("#"), link.link(link.Primary), link.underline(link.Always)], [
         text("Underline Always"),
       ]),
-      a([href("#"), a.link(a.Primary), a.disabled()], [text("Disabled")]),
-      a([href("#"), a.link(a.Primary), target("_blank")], [
+      a([href("#"), link.link(link.Primary), link.disabled()], [
+        text("Disabled"),
+      ]),
+      a([href("#"), link.link(link.Primary), target("_blank")], [
         text("External Link"),
         icon.external_link([class("w-4")]),
       ]),
-      a([href("#"), a.link(a.Primary), target("_blank")], [
+      a([href("#"), link.link(link.Primary), target("_blank")], [
         icon.github_logo([class("w-4")]),
         text("Custom Icon"),
       ]),
-      a([href("#"), a.flat(a.Primary), a.sm()], [text("Size Small")]),
-      a([href("#"), a.flat(a.Primary), a.md()], [text("Size Medium")]),
-      a([href("#"), a.flat(a.Primary), a.lg()], [text("Size Large")]),
+      a([href("#"), link.flat(link.Primary), link.sm()], [text("Size Small")]),
+      a([href("#"), link.flat(link.Primary), link.md()], [text("Size Medium")]),
+      a([href("#"), link.flat(link.Primary), link.lg()], [text("Size Large")]),
     ],
   )
 }

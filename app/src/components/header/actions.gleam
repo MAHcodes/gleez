@@ -1,6 +1,6 @@
-import components/ui/a.{a}
 import components/ui/button.{button}
 import components/ui/divider.{divider}
+import components/ui/link.{a}
 import components/ui/tooltip.{tooltip}
 import lustre/attribute.{class, href, id, target}
 import lustre/element.{type Element, text}
@@ -35,8 +35,8 @@ pub fn actions() -> Element(a) {
         [
           href("https://github.com/MAHcodes/gleez"),
           target("_blank"),
-          a.light(a.Neutral),
-          a.icon(),
+          link.light(link.Neutral),
+          link.icon(),
         ],
         [icon.github_logo([class("w-5")])],
       ),

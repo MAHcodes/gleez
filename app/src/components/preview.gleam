@@ -2,7 +2,7 @@ import components/code.{code}
 import components/ui/button.{button}
 import gleam/string
 import lustre/attribute.{class}
-import lustre/element.{type Element, text}
+import lustre/element.{type Element}
 import lustre/element/html.{div}
 import lustre/ui/icon
 

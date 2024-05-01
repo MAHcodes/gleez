@@ -2,8 +2,8 @@ import components/ui/button.{button}
 import gleam/string
 import lustre/attribute.{class}
 import lustre/element.{type Element, text}
-import pages/docs/sections/section
 import lustre/ui/icon
+import pages/docs/sections/section
 
 pub fn attributes() -> Element(a) {
   section.attributes([

@@ -1,4 +1,4 @@
-import components/ui/a.{a}
+import components/ui/link.{a}
 import gleam/string
 import lustre/attribute.{href}
 import lustre/element.{type Element, text}
@@ -14,9 +14,9 @@ pub fn attributes() -> Element(a) {
 - `lg()`: Large Size.
     ",
       [
-        a([href("#"), a.link(a.Neutral), a.sm()], [text("Small")]),
-        a([href("#"), a.link(a.Neutral), a.md()], [text("Medium")]),
-        a([href("#"), a.link(a.Neutral), a.lg()], [text("Large")]),
+        a([href("#"), link.link(link.Neutral), link.sm()], [text("Small")]),
+        a([href("#"), link.link(link.Neutral), link.md()], [text("Medium")]),
+        a([href("#"), link.link(link.Neutral), link.lg()], [text("Large")]),
       ],
       size_code(),
     ),
@@ -24,13 +24,17 @@ pub fn attributes() -> Element(a) {
       "Underline",
       "",
       [
-        a([href("#"), a.link(a.Neutral)], [text("None")]),
-        a([href("#"), a.link(a.Neutral), a.underline(a.Hover)], [text("Hover")]),
-        a([href("#"), a.link(a.Neutral), a.underline(a.Active)], [
+        a([href("#"), link.link(link.Neutral)], [text("None")]),
+        a([href("#"), link.link(link.Neutral), link.underline(link.Hover)], [
+          text("Hover"),
+        ]),
+        a([href("#"), link.link(link.Neutral), link.underline(link.Active)], [
           text("Active"),
         ]),
-        a([href("#"), a.link(a.Neutral), a.underline(a.Focus)], [text("Focus")]),
-        a([href("#"), a.link(a.Neutral), a.underline(a.Always)], [
+        a([href("#"), link.link(link.Neutral), link.underline(link.Focus)], [
+          text("Focus"),
+        ]),
+        a([href("#"), link.link(link.Neutral), link.underline(link.Always)], [
           text("Always"),
         ]),
       ],
@@ -41,16 +45,16 @@ pub fn attributes() -> Element(a) {
 
 fn size_code() -> String {
   "
-import components/ui/a.{a}
+import components/ui/link.{a}
 import lustre/element.{type Element, text}
 import lustre/element/html.{div}
 import lustre/attribute.{class, href}
 
 pub fn demo() -> Element(a) {
   div([class(\"flex flex-wrap gap-4 items-center justify-center w-full\")], [
-    a([href(\"#\"), a.link(a.Neutral), a.sm()], [text(\"Small\")]),
-    a([href(\"#\"), a.link(a.Neutral), a.md()], [text(\"Medium\")]),
-    a([href(\"#\"), a.link(a.Neutral), a.lg()], [text(\"Large\")]),
+    a([href(\"#\"), link.link(link.Neutral), link.sm()], [text(\"Small\")]),
+    a([href(\"#\"), link.link(link.Neutral), link.md()], [text(\"Medium\")]),
+    a([href(\"#\"), link.link(link.Neutral), link.lg()], [text(\"Large\")]),
   ])
 }
 "
@@ -59,18 +63,18 @@ pub fn demo() -> Element(a) {
 
 fn underline_code() -> String {
   "
-import components/ui/a.{a}
+import components/ui/link.{a}
 import lustre/element.{type Element, text}
 import lustre/element/html.{div}
 import lustre/attribute.{class, href}
 
 pub fn demo() -> Element(a) {
   div([class(\"flex flex-wrap gap-4 items-center justify-center w-full\")], [
-    a([href(\"#\"), a.link(a.Neutral)], [text(\"None\")]),
-    a([href(\"#\"), a.link(a.Neutral), a.underline(a.Hover)], [text(\"Hover\")]),
-    a([href(\"#\"), a.link(a.Neutral), a.underline(a.Active)], [text(\"Active\")]),
-    a([href(\"#\"), a.link(a.Neutral), a.underline(a.Focus)], [text(\"Focus\")]),
-    a([href(\"#\"), a.link(a.Neutral), a.underline(a.Always)], [text(\"Always\")]),
+    a([href(\"#\"), link.link(link.Neutral)], [text(\"None\")]),
+    a([href(\"#\"), link.link(link.Neutral), link.underline(link.Hover)], [text(\"Hover\")]),
+    a([href(\"#\"), link.link(link.Neutral), link.underline(link.Active)], [text(\"Active\")]),
+    a([href(\"#\"), link.link(link.Neutral), link.underline(link.Focus)], [text(\"Focus\")]),
+    a([href(\"#\"), link.link(link.Neutral), link.underline(link.Always)], [text(\"Always\")]),
   ])
 }
 "

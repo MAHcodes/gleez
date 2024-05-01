@@ -1,4 +1,4 @@
-import components/ui/a.{a}
+import components/ui/link.{a}
 import gleam/list
 import gleam/string
 import lustre/attribute.{type Attribute, class, href}
@@ -47,7 +47,7 @@ fn item(route: Pages, page: Page) -> Element(a) {
 
 fn active_variant(active: Bool) -> Attribute(a) {
   case active {
-    True -> a.link(a.Primary)
-    False -> a.link(a.Neutral)
+    True -> link.link(link.Primary)
+    False -> link.link(link.Neutral)
   }
 }

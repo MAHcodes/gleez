@@ -46,9 +46,7 @@ fn do_highlight_all() -> Nil
 fn do_attach_all() -> Nil
 
 fn attach_all() -> Effect(a) {
-  effect.from(fn(_) {
-    do_attach_all()
-  })
+  effect.from(fn(_) { do_attach_all() })
 }
 
 fn highlight_all() -> Effect(a) {
@@ -59,7 +57,7 @@ fn on_load() -> Effect(a) {
   effect.batch([highlight_all(), attach_all()])
 }
 
-fn update(route: Pages, msg: Msg) -> #(Pages, Effect(Msg)) {
+fn update(_: Pages, msg: Msg) -> #(Pages, Effect(Msg)) {
   case msg {
     OnRouteChange(r) -> #(r, on_load())
   }

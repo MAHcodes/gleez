@@ -1,6 +1,6 @@
 import components/ui/button.{button}
 import components/ui/chip.{chip}
-import lustre/attribute.{class, classes}
+import lustre/attribute.{class}
 import lustre/element.{type Element, text}
 import lustre/element/html.{div}
 import lustre/ui/icon

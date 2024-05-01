@@ -2,7 +2,7 @@ import components/ui/divider.{divider}
 import gleam/string
 import lustre/attribute.{class}
 import lustre/element.{type Element, text}
-import lustre/element/html.{div, h4, p}
+import lustre/element/html.{div, p}
 import pages/docs/sections/section
 
 pub fn variants() -> Element(a) {
@@ -86,6 +86,7 @@ pub fn demo() -> Element(a) {
 "
   |> string.trim
 }
+
 fn vertical_code() -> String {
   "
 import components/ui/divider.{divider}

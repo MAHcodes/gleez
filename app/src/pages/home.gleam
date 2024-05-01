@@ -1,7 +1,6 @@
-import lustre/attribute.{class, href}
 import lustre/element.{type Element, text}
-import lustre/element/html.{a, nav}
+import lustre/element/html.{h1}
 
 pub fn home() -> Element(a) {
-  html.h1([], [element.text("You're on home")])
+  h1([], [text("You're on home")])
 }

@@ -31,7 +31,11 @@ pub fn inputs() -> Element(a) {
         input.md(),
         placeholder("Outlined Success"),
       ]),
-      input([input.outlined(input.Info), input.md(), placeholder("Outline Info")]),
+      input([
+        input.outlined(input.Info),
+        input.md(),
+        placeholder("Outline Info"),
+      ]),
       input([
         input.outlined(input.Warning),
         input.md(),

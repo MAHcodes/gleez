@@ -65,7 +65,11 @@ pub fn variants() -> Element(a) {
           button([button.flat(button.Primary), button.md()], [text("Hover me")]),
         ),
         tooltip(
-          [tooltip.outlined(tooltip.Secondary), tooltip.md(), tooltip.top(False)],
+          [
+            tooltip.outlined(tooltip.Secondary),
+            tooltip.md(),
+            tooltip.top(False),
+          ],
           [text("Secondary")],
           button([button.flat(button.Secondary), button.md()], [
             text("Hover me"),
