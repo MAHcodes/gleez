@@ -13,6 +13,7 @@ pub type Pages {
   Button
   Input
   Chip
+  Divider
   Tooltip
 }
 
@@ -33,6 +34,8 @@ pub const input = "/docs/components/input"
 pub const link = "/docs/components/link"
 
 pub const chip = "/docs/components/chip"
+
+pub const divider = "/docs/components/divider"
 
 pub const tooltip = "/docs/components/tooltip"
 
@@ -56,19 +59,11 @@ pub const pages: List(Page) = [
       Page(input, []),
       Page(link, []),
       Page(chip, []),
+      Page(divider, []),
       Page(tooltip, []),
     ],
   ),
 ]
-
-fn compare_pages(p1: Page, p2: Page) {
-  string.compare(get_page_name(p1), get_page_name(p2))
-}
-
-pub fn sort_pages(pages: List(Page)) -> List(Page) {
-  pages
-  |> list.sort(compare_pages)
-}
 
 pub fn is_active(pages: Pages, path: String) -> Bool {
   case pages {
@@ -80,9 +75,19 @@ pub fn is_active(pages: Pages, path: String) -> Bool {
     Input -> path == input
     Link -> path == link
     Chip -> path == chip
+    Divider -> path == divider
     Tooltip -> path == tooltip
     _ -> False
   }
+}
+
+fn compare_pages(p1: Page, p2: Page) {
+  string.compare(get_page_name(p1), get_page_name(p2))
+}
+
+pub fn sort_pages(pages: List(Page)) -> List(Page) {
+  pages
+  |> list.sort(compare_pages)
 }
 
 pub fn get_page_name(page: Page) -> String {

@@ -17,7 +17,7 @@ pub fn divider(attributes: List(Attribute(a))) -> Element(a) {
   div(
     [
       role("separator"),
-      class("shrink-0 border-none self-stretch bg-opacity-30"),
+      class("shrink-0 border-none self-stretch bg-opacity-35 rounded-full"),
       ..attributes
     ],
     [],
@@ -27,14 +27,14 @@ pub fn divider(attributes: List(Attribute(a))) -> Element(a) {
 pub fn vertical(color: Colors) -> Attribute(a) {
   color
   |> paint
-  |> string.append(" h-full w-[1px]")
+  |> string.append(" h-full w-[2px]")
   |> class
 }
 
 pub fn horizontal(color: Colors) -> Attribute(a) {
   color
   |> paint
-  |> string.append(" w-full h-[1px]")
+  |> string.append(" w-full h-[2px]")
   |> class
 }
 
