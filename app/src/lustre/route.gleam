@@ -39,31 +39,44 @@ pub const divider = "/docs/components/divider"
 
 pub const tooltip = "/docs/components/tooltip"
 
+// TODO
+pub const alert = "/docs/components/alert"
+
+pub const textarea = "/docs/components/textarea"
+
+pub const kbd = "/docs/components/kbd"
+
+pub const code = "/docs/components/code"
+
+pub const avatar = "/docs/components/avatar"
+
+pub const badge = "/docs/components/badge"
+
 pub type Page {
   Page(path: String, sub_pages: List(Page))
 }
 
-pub const pages: List(Page) = [
-  Page(
-    "Guide",
-    [
+pub fn pages() -> List(Page) {
+  [
+    Page("Guide", [
       Page("/docs/guide/introduction", []),
       Page("/docs/guide/installation", []),
       Page("/docs/guide/cli", []),
-    ],
-  ),
-  Page(
-    "Components",
-    [
-      Page(button, []),
-      Page(input, []),
-      Page(link, []),
-      Page(chip, []),
-      Page(divider, []),
-      Page(tooltip, []),
-    ],
-  ),
-]
+    ]),
+    Page(
+      "Components",
+      [
+        Page(button, []),
+        Page(input, []),
+        Page(link, []),
+        Page(chip, []),
+        Page(divider, []),
+        Page(tooltip, []),
+      ]
+        |> sort_pages,
+    ),
+  ]
+}
 
 pub fn is_active(pages: Pages, path: String) -> Bool {
   case pages {
@@ -85,7 +98,7 @@ fn compare_pages(p1: Page, p2: Page) {
   string.compare(get_page_name(p1), get_page_name(p2))
 }
 
-pub fn sort_pages(pages: List(Page)) -> List(Page) {
+fn sort_pages(pages: List(Page)) -> List(Page) {
   pages
   |> list.sort(compare_pages)
 }

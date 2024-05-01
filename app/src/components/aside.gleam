@@ -17,7 +17,7 @@ pub fn aside(route: Pages) -> Element(a) {
         |> string.join(" "),
       ),
     ],
-    list.map(route.pages, list(route, _)),
+    list.map(route.pages(), list(route, _)),
   )
 }
 
@@ -26,7 +26,7 @@ fn list(route: Pages, page: Page) -> Element(a) {
     h2([class("text-bold text-lg")], [text(route.get_page_name(page))]),
     ul(
       [class("flex flex-col gap-2 pl-8 list-disc")],
-      list.map(route.sort_pages(page.sub_pages), item(route, _)),
+      list.map(page.sub_pages, item(route, _)),
     ),
   ])
 }

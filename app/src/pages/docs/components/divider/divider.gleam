@@ -7,7 +7,7 @@ import pages/docs/sections/section
 pub fn docs() -> Element(a) {
   div([class("prose")], [
     section.intro(
-      "divider",
+      "Divider",
       "A horizontal or vertical line used to visually separate content or sections within a layout.",
     ),
     section.installation("gleam run -m gleez add divider"),
