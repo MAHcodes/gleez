@@ -16,7 +16,7 @@ pub fn main() {
 }
 
 fn init(_) -> #(Pages, Effect(Msg)) {
-  #(route.Input, batch([modem.init(on_url_change), on_load()]))
+  #(route.Tooltip, batch([modem.init(on_url_change), on_load()]))
 }
 
 fn on_url_change(uri: Uri) -> Msg {
@@ -29,6 +29,7 @@ fn on_url_change(uri: Uri) -> Msg {
     ["docs", "components", "input"] -> OnRouteChange(route.Input)
     ["docs", "components", "link"] -> OnRouteChange(route.Link)
     ["docs", "components", "chip"] -> OnRouteChange(route.Chip)
+    ["docs", "components", "tooltip"] -> OnRouteChange(route.Tooltip)
     _ -> OnRouteChange(route.Home)
   }
 }
@@ -87,6 +88,7 @@ fn with_aside(route: Pages) -> Element(Msg) {
         route.Link -> page.link()
         route.Intro -> page.intro()
         route.Chip -> page.chip()
+        route.Tooltip -> page.tooltip()
         _ -> page.home()
       },
     ]),

@@ -1,26 +1,45 @@
 import components/ui/a.{a}
 import components/ui/button.{button}
+import components/ui/divider.{divider}
+import components/ui/tooltip.{tooltip}
 import lustre/attribute.{class, href, id, target}
-import lustre/element.{type Element}
+import lustre/element.{type Element, text}
 import lustre/element/html.{div}
 import lustre/ui/icon
-import components/ui/divider.{divider}
 
 pub fn actions() -> Element(a) {
   div([class("flex items-center h-5 gap-4")], [
-    button([id("theme-toggle"), button.light(button.Neutral), button.icon()], [
-      icon.sun([id("sun-icon"), class("w-5")]),
-      icon.moon([id("moon-icon"), class("w-5 hidden")]),
-    ]),
-    divider([divider.vertical(divider.Neutral)]),
-    a(
+    tooltip(
       [
-        href("https://github.com/MAHcodes/gleez"),
-        target("_blank"),
-        a.light(a.Neutral),
-        a.icon(),
+        tooltip.flat(tooltip.Neutral),
+        tooltip.open_delay(tooltip.Ms200),
+        tooltip.bottom(arrow: True),
+        tooltip.sm(),
       ],
-      [icon.github_logo([class("w-5")])],
+      [text("Toggle Dark Mode")],
+      button([id("theme-toggle"), button.light(button.Neutral), button.icon()], [
+        icon.sun([id("sun-icon"), class("w-5")]),
+        icon.moon([id("moon-icon"), class("w-5 hidden")]),
+      ]),
+    ),
+    divider([divider.vertical(divider.Neutral)]),
+    tooltip(
+      [
+        tooltip.flat(tooltip.Neutral),
+        tooltip.open_delay(tooltip.Ms200),
+        tooltip.sm(),
+        tooltip.bottom_end(arrow: True),
+      ],
+      [icon.star([class("w-3")]), text("Star us on GitHub")],
+      a(
+        [
+          href("https://github.com/MAHcodes/gleez"),
+          target("_blank"),
+          a.light(a.Neutral),
+          a.icon(),
+        ],
+        [icon.github_logo([class("w-5")])],
+      ),
     ),
   ])
 }

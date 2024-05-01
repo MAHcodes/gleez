@@ -8,7 +8,11 @@ pub fn attributes() -> Element(a) {
   section.attributes([
     section.attribute(
       "Size",
-      "",
+      "
+- `sm()`: Small Size.
+- `md()`: Medium Size.
+- `lg()`: Large Size.
+    ",
       [
         a([href("#"), a.link(a.Neutral), a.sm()], [text("Small")]),
         a([href("#"), a.link(a.Neutral), a.md()], [text("Medium")]),

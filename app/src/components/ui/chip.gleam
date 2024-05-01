@@ -1,7 +1,7 @@
 import gleam/string
 import lustre/attribute.{type Attribute, class}
 import lustre/element.{type Element}
-import lustre/element/html
+import lustre/element/html.{div}
 
 pub type Colors {
   Neutral
@@ -14,9 +14,11 @@ pub type Colors {
 }
 
 pub fn chip(attributes: List(Attribute(a)), children: List(Element(a))) {
-  html.div(
+  div(
     [
-      class("flex gap-2 rounded-full items-center justify-center transition-all"),
+      class(
+        "flex gap-2 rounded-full items-center justify-center transition-all",
+      ),
       ..attributes
     ],
     children,
@@ -38,15 +40,15 @@ pub fn solid(color: Colors) -> Attribute(a) {
 
 pub fn outline(color: Colors) -> Attribute(a) {
   case color {
-    Neutral -> "border-neutral text-neutral"
-    Primary -> "border-primary text-primary"
-    Secondary -> "border-secondary text-secondary"
-    Success -> "border-success text-success"
-    Info -> "border-info text-info"
-    Warning -> "border-warning text-warning"
-    Danger -> "border-danger text-danger"
+    Neutral -> "outline-neutral text-neutral"
+    Primary -> "outline-primary text-primary"
+    Secondary -> "outline-secondary text-secondary"
+    Success -> "outline-success text-success"
+    Info -> "outline-info text-info"
+    Warning -> "outline-warning text-warning"
+    Danger -> "outline-danger text-danger"
   }
-  |> string.append(" border-2")
+  |> string.append(" outline outline-1")
   |> class
 }
 

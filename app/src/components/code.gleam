@@ -16,7 +16,7 @@ pub fn code(c: String, lang: String) -> Element(a) {
   div(
     [
       class(
-        ["relative source-code", hide_code(lang)]
+        ["relative source-code not-prose font-mono", hide_code(lang)]
         |> string.join(" "),
       ),
     ],

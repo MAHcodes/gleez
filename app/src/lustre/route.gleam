@@ -13,6 +13,7 @@ pub type Pages {
   Button
   Input
   Chip
+  Tooltip
 }
 
 pub const home = "/"
@@ -33,6 +34,8 @@ pub const link = "/docs/components/link"
 
 pub const chip = "/docs/components/chip"
 
+pub const tooltip = "/docs/components/tooltip"
+
 pub type Page {
   Page(path: String, sub_pages: List(Page))
 }
@@ -48,7 +51,13 @@ pub const pages: List(Page) = [
   ),
   Page(
     "Components",
-    [Page(button, []), Page(input, []), Page(link, []), Page(chip, [])],
+    [
+      Page(button, []),
+      Page(input, []),
+      Page(link, []),
+      Page(chip, []),
+      Page(tooltip, []),
+    ],
   ),
 ]
 
@@ -71,6 +80,7 @@ pub fn is_active(pages: Pages, path: String) -> Bool {
     Input -> path == input
     Link -> path == link
     Chip -> path == chip
+    Tooltip -> path == tooltip
     _ -> False
   }
 }

@@ -7,7 +7,11 @@ pub fn attributes() -> Element(a) {
   section.attributes([
     section.attribute(
       "Size",
-      "",
+      "
+- `sm()`: Small Size.
+- `md()`: Medium Size.
+- `lg()`: Large Size.
+    ",
       [
         chip([chip.solid(chip.Neutral), chip.sm()], [text("Small")]),
         chip([chip.solid(chip.Neutral), chip.md()], [text("Medium")]),

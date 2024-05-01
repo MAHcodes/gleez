@@ -9,7 +9,11 @@ pub fn attributes() -> Element(a) {
   section.attributes([
     section.attribute(
       "Size",
-      "",
+      "
+- `sm()`: Small Size.
+- `md()`: Medium Size.
+- `lg()`: Large Size.
+     ",
       [
         button([button.solid(button.Neutral), button.icon()], [
           icon.star_filled([class("w-5")]),

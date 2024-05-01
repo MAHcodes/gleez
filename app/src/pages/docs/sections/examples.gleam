@@ -1,4 +1,6 @@
+import components/markdown
 import components/preview.{preview}
+import gleam/string
 import lustre/element.{type Element}
 import lustre/element/html.{div, h2, h3, p, text}
 
@@ -14,7 +16,11 @@ pub fn example(
 ) -> Element(a) {
   div([], [
     h3([], [text(title)]),
-    p([], [text(description)]),
+    p([], [
+      description
+      |> string.trim
+      |> markdown.from_text,
+    ]),
     preview(demo, code),
   ])
 }
