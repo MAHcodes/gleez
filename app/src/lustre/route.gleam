@@ -52,6 +52,15 @@ pub const pages: List(Page) = [
   ),
 ]
 
+fn compare_pages(p1: Page, p2: Page) {
+  string.compare(get_page_name(p1), get_page_name(p2))
+}
+
+pub fn sort_pages(pages: List(Page)) -> List(Page) {
+  pages
+  |> list.sort(compare_pages)
+}
+
 pub fn is_active(pages: Pages, path: String) -> Bool {
   case pages {
     Home -> path == home

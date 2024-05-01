@@ -42,7 +42,7 @@ import lustre/element.{type Element, text}
 import lustre/element/html.{div}
 import lustre/attribute.{class, href}
 
-pub fn buttons() -> Element(a) {
+pub fn demo() -> Element(a) {
   div([class(\"flex flex-wrap gap-4 items-center justify-center w-full\")], [
     a([href(\"#\"), a.link(a.Neutral), a.sm()], [text(\"Small\")]),
     a([href(\"#\"), a.link(a.Neutral), a.md()], [text(\"Medium\")]),
@@ -60,7 +60,7 @@ import lustre/element.{type Element, text}
 import lustre/element/html.{div}
 import lustre/attribute.{class, href}
 
-pub fn buttons() -> Element(a) {
+pub fn demo() -> Element(a) {
   div([class(\"flex flex-wrap gap-4 items-center justify-center w-full\")], [
     a([href(\"#\"), a.link(a.Neutral)], [text(\"None\")]),
     a([href(\"#\"), a.link(a.Neutral), a.underline(a.Hover)], [text(\"Hover\")]),

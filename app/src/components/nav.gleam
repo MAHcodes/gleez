@@ -13,7 +13,7 @@ fn active_variant(active: Bool) -> Attribute(a) {
 
 pub fn nav(route: Pages) -> Element(a) {
   html.nav([], [
-    ul([class("flex gap-8 pl-8")], [
+    ul([class("flex gap-8 pl-8 text-sm")], [
       item(route, route.demo, "Demo"),
       item(route, route.docs, "Docs"),
       item(route, route.blog, "Blog"),

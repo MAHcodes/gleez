@@ -16,7 +16,7 @@ pub fn main() {
 }
 
 fn init(_) -> #(Pages, Effect(Msg)) {
-  #(route.Button, batch([modem.init(on_url_change), on_load()]))
+  #(route.Input, batch([modem.init(on_url_change), on_load()]))
 }
 
 fn on_url_change(uri: Uri) -> Msg {

@@ -29,24 +29,24 @@ pub fn buttons() -> Element(a) {
         text("Solid Warning"),
       ]),
       button([button.solid(button.Danger), button.md()], [text("Solid Danger")]),
-      button([button.outline(button.Neutral), button.md()], [
-        text("Outline Neutral"),
+      button([button.outlined(button.Neutral), button.md()], [
+        text("outlinedd Neutral"),
       ]),
-      button([button.outline(button.Primary), button.md()], [
-        text("Outline Primary"),
+      button([button.outlined(button.Primary), button.md()], [
+        text("outlinedd Primary"),
       ]),
-      button([button.outline(button.Secondary), button.md()], [
-        text("Outline Secondary"),
+      button([button.outlined(button.Secondary), button.md()], [
+        text("outlinedd Secondary"),
       ]),
-      button([button.outline(button.Success), button.md()], [
-        text("Outline Success"),
+      button([button.outlined(button.Success), button.md()], [
+        text("outlinedd Success"),
       ]),
-      button([button.outline(button.Info), button.md()], [text("Outline Info")]),
-      button([button.outline(button.Warning), button.md()], [
-        text("Outline Warning"),
+      button([button.outlined(button.Info), button.md()], [text("outlinedd Info")]),
+      button([button.outlined(button.Warning), button.md()], [
+        text("outlinedd Warning"),
       ]),
-      button([button.outline(button.Danger), button.md()], [
-        text("Outline Danger"),
+      button([button.outlined(button.Danger), button.md()], [
+        text("outlinedd Danger"),
       ]),
       button([button.link(button.Neutral), button.md()], [text("Link Neutral")]),
       button([button.link(button.Primary), button.md()], [text("Link Primary")]),
@@ -103,7 +103,7 @@ pub fn buttons() -> Element(a) {
       button([button.solid(button.Primary), button.icon()], [
         icon.star_filled([class("w-5")]),
       ]),
-      button([button.outline(button.Primary), button.icon()], [
+      button([button.outlined(button.Primary), button.icon()], [
         icon.star_filled([class("w-5")]),
       ]),
       button([button.light(button.Primary), button.icon()], [

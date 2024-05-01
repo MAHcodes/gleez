@@ -26,7 +26,7 @@ import lustre/attribute.{class, placeholder}
 import lustre/element.{type Element}
 import lustre/element/html.{div}
 
-pub fn inputs() -> Element(a) {
+pub fn demo() -> Element(a) {
   div([class(\"flex flex-wrap gap-4 items-center justify-center w-full\")], [
     input([input.flat(input.Neutral), input.sm(), placeholder(\"Small\")]),
     input([input.flat(input.Neutral), input.md(), placeholder(\"Medium\")]),

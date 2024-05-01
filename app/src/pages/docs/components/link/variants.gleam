@@ -58,7 +58,7 @@ import lustre/element.{type Element, text}
 import lustre/element/html.{div}
 import lustre/attribute.{class, href}
 
-pub fn buttons() -> Element(a) {
+pub fn demo() -> Element(a) {
   div([class(\"flex flex-wrap gap-4 items-center justify-center w-full\")], [
     a([href(\"#\"), a.link(a.Neutral)], [text(\"Primary\")]),
     a([href(\"#\"), a.link(a.Primary)], [text(\"Primary\")]),
@@ -80,7 +80,7 @@ import lustre/element.{type Element, text}
 import lustre/element/html.{div}
 import lustre/attribute.{class, href}
 
-pub fn buttons() -> Element(a) {
+pub fn demo() -> Element(a) {
   div([class(\"flex flex-wrap gap-4 items-center justify-center w-full\")], [
     a([href(\"#\"), a.light(a.Neutral), a.md()], [text(\"Neutral\")]),
     a([href(\"#\"), a.light(a.Primary), a.md()], [text(\"Primary\")]),
@@ -102,7 +102,7 @@ import lustre/element.{type Element, text}
 import lustre/element/html.{div}
 import lustre/attribute.{class, href}
 
-pub fn buttons() -> Element(a) {
+pub fn demo() -> Element(a) {
   div([class(\"flex flex-wrap gap-4 items-center justify-center w-full\")], [
     a([href(\"#\"), a.flat(a.Neutral), a.md()], [text(\"Neutral\")]),
     a([href(\"#\"), a.flat(a.Primary), a.md()], [text(\"Primary\")]),

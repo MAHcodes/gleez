@@ -33,7 +33,7 @@ import lustre/element/html.{div}
 import lustre/attribute.{class}
 import lustre/ui/icon
 
-pub fn chips() -> Element(a) {
+pub fn demo() -> Element(a) {
   div([class(\"flex flex-wrap gap-4 items-center justify-center w-full\")], [
     chip([chip.solid(chip.Neutral), chip.md()], [
       icon.star_filled([class(\"w-4\")]),

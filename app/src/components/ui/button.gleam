@@ -65,7 +65,7 @@ pub fn solid(color: Colors) -> Attribute(a) {
   |> class
 }
 
-pub fn outline(color: Colors) -> Attribute(a) {
+pub fn outlined(color: Colors) -> Attribute(a) {
   case color {
     Neutral -> "border-neutral text-neutral hover:enabled:bg-neutral/20"
     Primary -> "border-primary text-primary hover:enabled:bg-primary/20"

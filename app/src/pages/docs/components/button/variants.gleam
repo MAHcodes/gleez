@@ -22,20 +22,20 @@ pub fn variants() -> Element(a) {
       solid_code(),
     ),
     section.variant(
-      "Outline",
+      "Outlined",
       "",
       [
-        button([button.outline(button.Neutral), button.md()], [text("Neutral")]),
-        button([button.outline(button.Primary), button.md()], [text("Primary")]),
-        button([button.outline(button.Secondary), button.md()], [
+        button([button.outlined(button.Neutral), button.md()], [text("Neutral")]),
+        button([button.outlined(button.Primary), button.md()], [text("Primary")]),
+        button([button.outlined(button.Secondary), button.md()], [
           text("Secondary"),
         ]),
-        button([button.outline(button.Success), button.md()], [text("Success")]),
-        button([button.outline(button.Info), button.md()], [text("Info")]),
-        button([button.outline(button.Warning), button.md()], [text("Warning")]),
-        button([button.outline(button.Danger), button.md()], [text("Danger")]),
+        button([button.outlined(button.Success), button.md()], [text("Success")]),
+        button([button.outlined(button.Info), button.md()], [text("Info")]),
+        button([button.outlined(button.Warning), button.md()], [text("Warning")]),
+        button([button.outlined(button.Danger), button.md()], [text("Danger")]),
       ],
-      outline_code(),
+      outlined_code(),
     ),
     section.variant(
       "Link",
@@ -107,7 +107,7 @@ import lustre/attribute.{class}
 import lustre/element.{type Element, text}
 import lustre/element/html.{div}
 
-pub fn buttons() -> Element(a) {
+pub fn demo() -> Element(a) {
   div([class(\"flex flex-wrap gap-4 items-center justify-center w-full\")], [
     button([button.solid(button.Neutral), button.md()], [text(\"Neutral\")]),
     button([button.solid(button.Primary), button.md()], [text(\"Primary\")]),
@@ -122,22 +122,22 @@ pub fn buttons() -> Element(a) {
   |> string.trim
 }
 
-fn outline_code() -> String {
+fn outlined_code() -> String {
   "
 import components/ui/button.{button}
 import lustre/attribute.{class}
 import lustre/element.{type Element, text}
 import lustre/element/html.{div}
 
-pub fn buttons() -> Element(a) {
+pub fn demo() -> Element(a) {
   div([class(\"flex flex-wrap gap-4 items-center justify-center w-full\")], [
-    button([button.outline(button.Neutral), button.md()], [text(\"Neutral\")]),
-    button([button.outline(button.Primary), button.md()], [text(\"Primary\")]),
-    button([button.outline(button.Secondary), button.md()], [text(\"Secondary\")]),
-    button([button.outline(button.Success), button.md()], [text(\"Success\")]),
-    button([button.outline(button.Info), button.md()], [text(\"Info\")]),
-    button([button.outline(button.Warning), button.md()], [text(\"Warning\")]),
-    button([button.outline(button.Danger), button.md()], [text(\"Danger\")]),
+    button([button.outlined(button.Neutral), button.md()], [text(\"Neutral\")]),
+    button([button.outlined(button.Primary), button.md()], [text(\"Primary\")]),
+    button([button.outlined(button.Secondary), button.md()], [text(\"Secondary\")]),
+    button([button.outlined(button.Success), button.md()], [text(\"Success\")]),
+    button([button.outlined(button.Info), button.md()], [text(\"Info\")]),
+    button([button.outlined(button.Warning), button.md()], [text(\"Warning\")]),
+    button([button.outlined(button.Danger), button.md()], [text(\"Danger\")]),
   ])
 }
 "
@@ -151,7 +151,7 @@ import lustre/attribute.{class}
 import lustre/element.{type Element, text}
 import lustre/element/html.{div}
 
-pub fn buttons() -> Element(a) {
+pub fn demo() -> Element(a) {
   div([class(\"flex flex-wrap gap-4 items-center justify-center w-full\")], [
     button([button.link(button.Neutral), button.md()], [text(\"Neutral\")]),
     button([button.link(button.Primary), button.md()], [text(\"Primary\")]),
@@ -173,7 +173,7 @@ import lustre/attribute.{class}
 import lustre/element.{type Element, text}
 import lustre/element/html.{div}
 
-pub fn buttons() -> Element(a) {
+pub fn demo() -> Element(a) {
   div([class(\"flex flex-wrap gap-4 items-center justify-center w-full\")], [
     button([button.light(button.Neutral), button.md()], [text(\"Neutral\")]),
     button([button.light(button.Primary), button.md()], [text(\"Primary\")]),
@@ -195,7 +195,7 @@ import lustre/attribute.{class}
 import lustre/element.{type Element, text}
 import lustre/element/html.{div}
 
-pub fn buttons() -> Element(a) {
+pub fn demo() -> Element(a) {
   div([class(\"flex flex-wrap gap-4 items-center justify-center w-full\")], [
     button([button.flat(button.Neutral), button.md()], [text(\"Neutral\")]),
     button([button.flat(button.Primary), button.md()], [text(\"Primary\")]),
@@ -217,7 +217,7 @@ import lustre/attribute.{class}
 import lustre/element.{type Element, text}
 import lustre/element/html.{div}
 
-pub fn buttons() -> Element(a) {
+pub fn demo() -> Element(a) {
   div([class(\"flex flex-wrap gap-4 items-center justify-center w-full\")], [
     button([button.ghost(button.Neutral), button.md()], [text(\"Neutral\")]),
     button([button.ghost(button.Primary), button.md()], [text(\"Primary\")]),

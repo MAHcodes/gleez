@@ -25,7 +25,7 @@ import lustre/element.{type Element, text}
 import lustre/element/html.{div}
 import lustre/attribute.{class}
 
-pub fn chips() -> Element(a) {
+pub fn demo() -> Element(a) {
   div([class(\"flex flex-wrap gap-4 items-center justify-center w-full\")], [
     chip([chip.solid(chip.Neutral), chip.sm()], [text(\"Small\")]),
     chip([chip.solid(chip.Neutral), chip.md()], [text(\"Medium\")]),

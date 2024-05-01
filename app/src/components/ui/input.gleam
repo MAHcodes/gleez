@@ -15,10 +15,7 @@ pub type Colors {
 pub fn input(attributes: List(Attribute(a))) {
   html.input([
     class(
-      [
-        "disabled:opacity-50 disabled:cursor-not-allowed",
-        "transition-all",
-      ]
+      ["disabled:opacity-50 disabled:cursor-not-allowed", "transition-all"]
       |> string.join(" "),
     ),
     ..attributes
@@ -45,7 +42,7 @@ pub fn flat(color: Colors) -> Attribute(a) {
   |> class
 }
 
-pub fn outline(color: Colors) -> Attribute(a) {
+pub fn outlined(color: Colors) -> Attribute(a) {
   case color {
     Neutral ->
       "border-neutral focus:enabled:border-neutral hover:enabled:border-neutral text-neutral"
@@ -93,21 +90,19 @@ pub fn light(color: Colors) -> Attribute(a) {
   |> class
 }
 
-pub fn material(color: Colors) -> Attribute(a) {
+pub fn underlined(color: Colors) -> Attribute(a) {
   case color {
-    Neutral -> "bg-neutral border-neutral placeholder-neutral text-neutral"
-    Primary -> "bg-primary border-primary placeholder-primary text-primary"
-    Secondary ->
-      "bg-secondary border-secondary placeholder-secondary text-secondary"
-    Success -> "bg-success border-success placeholder-success text-success"
-    Info -> "bg-info border-info placeholder-info text-info"
-    Warning -> "bg-warning border-warning placeholder-warning text-warning"
-    Danger -> "bg-danger border-danger placeholder-danger text-danger"
+    Neutral -> "border-neutral placeholder-neutral text-neutral"
+    Primary -> "border-primary placeholder-primary text-primary"
+    Secondary -> "border-secondary placeholder-secondary text-secondary"
+    Success -> "border-success placeholder-success text-success"
+    Info -> "border-info placeholder-info text-info"
+    Warning -> "border-warning placeholder-warning text-warning"
+    Danger -> "border-danger placeholder-danger text-danger"
   }
   |> string.append(
     [
-      " bg-opacity-20 border-opacity-20 border-b-2 outline-none rounded-b-none",
-      "hover:enabled:bg-opacity-30 focus:enabled:bg-opacity-30",
+      " bg-transparent border-opacity-20 border-b-2 outline-none rounded-b-none",
       "focus:enabled:border-opacity-100",
     ]
     |> string.join(" "),

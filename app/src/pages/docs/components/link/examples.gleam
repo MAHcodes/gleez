@@ -33,7 +33,7 @@ import lustre/element/html.{div}
 import lustre/attribute.{class, href, target}
 import lustre/ui/icon
 
-pub fn buttons() -> Element(a) {
+pub fn demo() -> Element(a) {
   div([class(\"flex flex-wrap gap-4 items-center justify-center w-full\")], [
     a([href(\"#\"), a.link(a.Neutral), target(\"_blank\")], [
       icon.github_logo([class(\"w-4\")]),

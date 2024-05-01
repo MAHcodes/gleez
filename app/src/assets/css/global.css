@@ -60,10 +60,10 @@ aside {
 
 /* Legacy browsers with `::-webkit-scrollbar-*` support */
 @supports selector(::-webkit-scrollbar) {
-  *::-webkit-scrollbar-thumb {
-    @apply bg-neutral;
+  ::-webkit-scrollbar-thumb {
+    @apply bg-neutral rounded-full;
   }
-  *::-webkit-scrollbar-track {
-    @apply bg-neutral;
+  ::-webkit-scrollbar-track {
+    @apply bg-neutral rounded-full;
   }
 }

@@ -14,7 +14,7 @@ pub fn examples() -> Element(a) {
         button([button.solid(button.Neutral), button.icon()], [
           icon.star_filled([class("w-5")]),
         ]),
-        button([button.outline(button.Neutral), button.icon()], [
+        button([button.outlined(button.Neutral), button.icon()], [
           icon.star_filled([class("w-5")]),
         ]),
         button([button.light(button.Neutral), button.icon()], [
@@ -74,9 +74,9 @@ pub fn examples() -> Element(a) {
 fn icons_code() -> String {
   "
 import components/ui/button.{button}
-import lustre/element.{type Element, text}
-import lustre/element/html.{div}
 import lustre/attribute.{class}
+import lustre/element.{type Element}
+import lustre/element/html.{div}
 import lustre/ui/icon
 
 pub fn buttons() -> Element(a) {
@@ -84,7 +84,7 @@ pub fn buttons() -> Element(a) {
     button([button.solid(button.Neutral), button.icon()], [
       icon.star_filled([class(\"w-5\")]),
     ]),
-    button([button.outline(button.Neutral), button.icon()], [
+    button([button.outlined(button.Neutral), button.icon()], [
       icon.star_filled([class(\"w-5\")]),
     ]),
     button([button.light(button.Neutral), button.icon()], [
@@ -108,9 +108,9 @@ pub fn buttons() -> Element(a) {
 fn disabled_code() -> String {
   "
 import components/ui/button.{button}
+import lustre/attribute.{class, disabled}
 import lustre/element.{type Element, text}
 import lustre/element/html.{div}
-import lustre/attribute.{class, disabled}
 
 pub fn buttons() -> Element(a) {
   div([class(\"flex flex-wrap gap-4 items-center justify-center w-full\")], [
@@ -126,9 +126,9 @@ pub fn buttons() -> Element(a) {
 fn with_icons_code() -> String {
   "
 import components/ui/button.{button}
+import lustre/attribute.{class}
 import lustre/element.{type Element, text}
 import lustre/element/html.{div}
-import lustre/attribute.{class}
 import lustre/ui/icon
 
 pub fn buttons() -> Element(a) {
@@ -150,9 +150,9 @@ pub fn buttons() -> Element(a) {
 fn loading_code() -> String {
   "
 import components/ui/button.{button}
+import lustre/attribute.{class, disabled}
 import lustre/element.{type Element, text}
 import lustre/element/html.{div}
-import lustre/attribute.{class, disabled}
 import lustre/ui/icon
 
 pub fn buttons() -> Element(a) {

@@ -3,6 +3,7 @@ import lustre/element.{type Element}
 import lustre/element/html.{div}
 import pages/docs/components/input/variants.{variants}
 import pages/docs/components/input/attributes.{attributes}
+import pages/docs/components/input/examples.{examples}
 import pages/docs/sections/section
 
 pub fn docs() -> Element(a) {
@@ -14,5 +15,6 @@ pub fn docs() -> Element(a) {
     section.installation("gleam run -m gleez add input"),
     variants(),
     attributes(),
+    examples(),
   ])
 }

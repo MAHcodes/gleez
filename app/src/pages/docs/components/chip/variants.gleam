@@ -77,7 +77,7 @@ import lustre/attribute.{class}
 import lustre/element.{type Element, text}
 import lustre/element/html.{div}
 
-pub fn chips() -> Element(a) {
+pub fn demo() -> Element(a) {
   div([class(\"flex flex-wrap gap-4 items-center justify-center w-full\")], [
     chip([chip.solid(chip.Neutral), chip.md()], [text(\"Neutral\")]),
     chip([chip.solid(chip.Primary), chip.md()], [text(\"Primary\")]),
@@ -99,7 +99,7 @@ import lustre/attribute.{class}
 import lustre/element.{type Element, text}
 import lustre/element/html.{div}
 
-pub fn chips() -> Element(a) {
+pub fn demo() -> Element(a) {
   div([class(\"flex flex-wrap gap-4 items-center justify-center w-full\")], [
     chip([chip.outline(chip.Neutral), chip.md()], [text(\"Neutral\")]),
     chip([chip.outline(chip.Primary), chip.md()], [text(\"Primary\")]),
@@ -121,7 +121,7 @@ import lustre/attribute.{class}
 import lustre/element.{type Element, text}
 import lustre/element/html.{div}
 
-pub fn chips() -> Element(a) {
+pub fn demo() -> Element(a) {
   div([class(\"flex flex-wrap gap-4 items-center justify-center w-full\")], [
     chip([chip.light(chip.Neutral), chip.md()], [text(\"Neutral\")]),
     chip([chip.light(chip.Primary), chip.md()], [text(\"Primary\")]),
@@ -143,7 +143,7 @@ import lustre/attribute.{class}
 import lustre/element.{type Element, text}
 import lustre/element/html.{div}
 
-pub fn chips() -> Element(a) {
+pub fn demo() -> Element(a) {
   div([class(\"flex flex-wrap gap-4 items-center justify-center w-full\")], [
     chip([chip.flat(chip.Neutral), chip.md()], [text(\"Neutral\")]),
     chip([chip.flat(chip.Primary), chip.md()], [text(\"Primary\")]),
