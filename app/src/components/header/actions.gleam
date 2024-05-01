@@ -4,13 +4,15 @@ import lustre/attribute.{class, href, id, target}
 import lustre/element.{type Element}
 import lustre/element/html.{div}
 import lustre/ui/icon
+import components/ui/divider.{divider}
 
 pub fn actions() -> Element(a) {
-  div([class("flex items-center gap-4")], [
+  div([class("flex items-center h-5 gap-4")], [
     button([id("theme-toggle"), button.light(button.Neutral), button.icon()], [
       icon.sun([id("sun-icon"), class("w-5")]),
       icon.moon([id("moon-icon"), class("w-5 hidden")]),
     ]),
+    divider([divider.vertical(divider.Neutral)]),
     a(
       [
         href("https://github.com/MAHcodes/gleez"),

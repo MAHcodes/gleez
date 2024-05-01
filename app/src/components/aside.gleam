@@ -1,8 +1,6 @@
 import components/ui/a.{a}
 import gleam/list
-import gleam/result
 import gleam/string
-import gleam/uri
 import lustre/attribute.{type Attribute, class, href}
 import lustre/element.{type Element, text}
 import lustre/element/html.{div, h2, h3, li, ul}
