@@ -38,12 +38,12 @@ pub fn attributes() -> Element(a) {
     section.attribute(
       "Dot",
       "
-- `badge.circle()`: Used when the badge content is empty to display a dot.
+- `badge.dot()`: Used when the badge content is empty to display a dot.
     ",
       [
         badge(
           [
-            badge.circle(),
+            badge.dot(),
             badge.solid(badge.Primary),
             badge.sm(),
             badge.top_right(),
@@ -55,7 +55,7 @@ pub fn attributes() -> Element(a) {
         ),
         badge(
           [
-            badge.circle(),
+            badge.dot(),
             badge.outlined(badge.Primary),
             badge.sm(),
             badge.top_right(),
@@ -157,7 +157,7 @@ pub fn demo() -> Element(a) {
   div([class(\"flex flex-wrap gap-4 items-center justify-center w-full pt-8\")], [
     badge(
       [
-        badge.circle(),
+        badge.dot(),
         badge.solid(badge.Primary),
         badge.sm(),
         badge.top_right(),
@@ -169,7 +169,7 @@ pub fn demo() -> Element(a) {
     ),
     badge(
       [
-        badge.circle(),
+        badge.dot(),
         badge.outlined(badge.Primary),
         badge.sm(),
         badge.top_right(),

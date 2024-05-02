@@ -27,7 +27,7 @@ pub fn examples() -> Element(a) {
         ),
         badge(
           [
-            badge.circle(),
+            badge.dot(),
             badge.solid(badge.Primary),
             badge.sm(),
             badge.top_right(),
@@ -37,7 +37,7 @@ pub fn examples() -> Element(a) {
         ),
         badge(
           [
-            badge.circle(),
+            badge.dot(),
             badge.solid(badge.Primary),
             badge.sm(),
             badge.bottom_right(),
@@ -80,7 +80,7 @@ pub fn demo() -> Element(a) {
     ),
     badge(
       [
-        badge.circle(),
+        badge.dot(),
         badge.solid(badge.Primary),
         badge.sm(),
         badge.top_right(),
@@ -90,7 +90,7 @@ pub fn demo() -> Element(a) {
     ),
     badge(
       [
-        badge.circle(),
+        badge.dot(),
         badge.solid(badge.Primary),
         badge.sm(),
         badge.bottom_right(),

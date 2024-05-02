@@ -90,6 +90,6 @@ pub fn lg() -> Attribute(a) {
   class("px-2 text-base")
 }
 
-pub fn circle() -> Attribute(a) {
+pub fn dot() -> Attribute(a) {
   class("aspect-square")
 }
