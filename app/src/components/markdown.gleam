@@ -9,13 +9,13 @@ pub fn from_path(path: String) -> Element(a) {
   path
   |> read_file
   |> parse
-  |> porse
+  |> prose
 }
 
 pub fn from_text(text: String) -> Element(a) {
   text
   |> parse
-  |> porse
+  |> prose
 }
 
 fn parse(md: String) -> String {
@@ -23,7 +23,7 @@ fn parse(md: String) -> String {
   |> html_renderer.convert
 }
 
-fn porse(content: String) -> Element(a) {
+fn prose(content: String) -> Element(a) {
   div(
     [attribute("dangerous-unescaped-html", content), class("prose w-full")],
     [],

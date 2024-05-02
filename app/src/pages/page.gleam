@@ -9,6 +9,7 @@ import pages/docs/components/input/input
 import pages/docs/components/link/link
 import pages/docs/components/tooltip/tooltip
 import pages/docs/guide/intro/intro
+import pages/docs/guide/colors/colors
 import pages/docs/guide/theme/theme
 import pages/home
 
@@ -19,6 +20,8 @@ pub const demo = demo.demo
 pub const blog = blog.blog
 
 pub const intro = intro.docs
+
+pub const colors = colors.docs
 
 pub const theme = theme.docs
 

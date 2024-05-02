@@ -38,7 +38,7 @@ pub fn attributes() -> Element(a) {
     section.attribute(
       "Dot",
       "
-- `badge.dot()`: Used when the badge content is empty to display a dot.
+- `dot()`: Used when the badge content is empty to display a dot.
     ",
       [
         badge(
