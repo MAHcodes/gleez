@@ -94,7 +94,7 @@ Where `Time` is one of the following:
 `arrow` specifies whether the tooltip should have an arrow or not.
     ",
       [
-        div([class("grid grid-cols-3 gap-4 w-full")], [
+        div([class("grid grid-cols-3 gap-4 w-full [&_button]:w-full")], [
           tooltip(
             [
               tooltip.solid(tooltip.Neutral),
@@ -102,16 +102,14 @@ Where `Time` is one of the following:
               tooltip.top_start(True),
             ],
             [text("Top Start")],
-            button([button.flat(button.Neutral), button.md(), class("w-full")], [
+            button([button.flat(button.Neutral), button.md()], [
               text("Top Start"),
             ]),
           ),
           tooltip(
             [tooltip.solid(tooltip.Neutral), tooltip.md(), tooltip.top(True)],
             [text("Top")],
-            button([button.flat(button.Neutral), button.md(), class("w-full")], [
-              text("Top"),
-            ]),
+            button([button.flat(button.Neutral), button.md()], [text("Top")]),
           ),
           tooltip(
             [
@@ -120,9 +118,7 @@ Where `Time` is one of the following:
               tooltip.top_end(True),
             ],
             [text("Top End")],
-            button([button.flat(button.Neutral), button.md(), class("w-full")], [
-              text("Top End"),
-            ]),
+            button([button.flat(button.Neutral), button.md()], [text("Top End")]),
           ),
           tooltip(
             [
@@ -131,7 +127,7 @@ Where `Time` is one of the following:
               tooltip.left_start(True),
             ],
             [text("Left Start")],
-            button([button.flat(button.Neutral), button.md(), class("w-full")], [
+            button([button.flat(button.Neutral), button.md()], [
               text("Left Start"),
             ]),
           ),
@@ -143,24 +139,20 @@ Where `Time` is one of the following:
               tooltip.right_start(True),
             ],
             [text("Right Start")],
-            button([button.flat(button.Neutral), button.md(), class("w-full")], [
+            button([button.flat(button.Neutral), button.md()], [
               text("Right Start"),
             ]),
           ),
           tooltip(
             [tooltip.solid(tooltip.Neutral), tooltip.md(), tooltip.left(True)],
             [text("Left")],
-            button([button.flat(button.Neutral), button.md(), class("w-full")], [
-              text("Left"),
-            ]),
+            button([button.flat(button.Neutral), button.md()], [text("Left")]),
           ),
           div([], []),
           tooltip(
             [tooltip.solid(tooltip.Neutral), tooltip.md(), tooltip.right(True)],
             [text("Right")],
-            button([button.flat(button.Neutral), button.md(), class("w-full")], [
-              text("Right"),
-            ]),
+            button([button.flat(button.Neutral), button.md()], [text("Right")]),
           ),
           tooltip(
             [
@@ -169,7 +161,7 @@ Where `Time` is one of the following:
               tooltip.left_end(True),
             ],
             [text("Left End")],
-            button([button.flat(button.Neutral), button.md(), class("w-full")], [
+            button([button.flat(button.Neutral), button.md()], [
               text("Left End"),
             ]),
           ),
@@ -181,7 +173,7 @@ Where `Time` is one of the following:
               tooltip.right_end(True),
             ],
             [text("Right End")],
-            button([button.flat(button.Neutral), button.md(), class("w-full")], [
+            button([button.flat(button.Neutral), button.md()], [
               text("Right End"),
             ]),
           ),
@@ -192,16 +184,14 @@ Where `Time` is one of the following:
               tooltip.bottom_start(True),
             ],
             [text("Bottom Start")],
-            button([button.flat(button.Neutral), button.md(), class("w-full")], [
+            button([button.flat(button.Neutral), button.md()], [
               text("Bottom Start"),
             ]),
           ),
           tooltip(
             [tooltip.solid(tooltip.Neutral), tooltip.md(), tooltip.bottom(True)],
             [text("Bottom")],
-            button([button.flat(button.Neutral), button.md(), class("w-full")], [
-              text("Bottom"),
-            ]),
+            button([button.flat(button.Neutral), button.md()], [text("Bottom")]),
           ),
           tooltip(
             [
@@ -210,7 +200,7 @@ Where `Time` is one of the following:
               tooltip.bottom_end(True),
             ],
             [text("Bottom End")],
-            button([button.flat(button.Neutral), button.md(), class("w-full")], [
+            button([button.flat(button.Neutral), button.md()], [
               text("Bottom End"),
             ]),
           ),
@@ -256,104 +246,77 @@ Where `Time` is one of the following:
 }
 
 fn placement_code() -> String {
-  "import components/ui/button.{button}
+  "
+import components/ui/button.{button}
 import components/ui/tooltip.{tooltip}
 import lustre/attribute.{class}
 import lustre/element.{type Element, text}
 import lustre/element/html.{div}
 
 pub fn demo() -> Element(a) {
-  div([class(\"grid grid-cols-3 gap-4 w-full\")], [
+  div([class(\"grid grid-cols-3 gap-4 w-full [&_button]:w-full\")], [
     tooltip(
       [tooltip.solid(tooltip.Neutral), tooltip.md(), tooltip.top_start(True)],
       [text(\"Top Start\")],
-      button([button.flat(button.Neutral), button.md(), class(\"w-full\")], [
-        text(\"Top Start\"),
-      ]),
+      button([button.flat(button.Neutral), button.md()], [text(\"Top Start\")]),
     ),
     tooltip(
       [tooltip.solid(tooltip.Neutral), tooltip.md(), tooltip.top(True)],
       [text(\"Top\")],
-      button([button.flat(button.Neutral), button.md(), class(\"w-full\")], [
-        text(\"Top\"),
-      ]),
+      button([button.flat(button.Neutral), button.md()], [text(\"Top\")]),
     ),
     tooltip(
       [tooltip.solid(tooltip.Neutral), tooltip.md(), tooltip.top_end(True)],
       [text(\"Top End\")],
-      button([button.flat(button.Neutral), button.md(), class(\"w-full\")], [
-        text(\"Top End\"),
-      ]),
+      button([button.flat(button.Neutral), button.md()], [text(\"Top End\")]),
     ),
     tooltip(
       [tooltip.solid(tooltip.Neutral), tooltip.md(), tooltip.left_start(True)],
       [text(\"Left Start\")],
-      button([button.flat(button.Neutral), button.md(), class(\"w-full\")], [
-        text(\"Left Start\"),
-      ]),
+      button([button.flat(button.Neutral), button.md()], [text(\"Left Start\")]),
     ),
     div([], []),
     tooltip(
       [tooltip.solid(tooltip.Neutral), tooltip.md(), tooltip.right_start(True)],
       [text(\"Right Start\")],
-      button([button.flat(button.Neutral), button.md(), class(\"w-full\")], [
-        text(\"Right Start\"),
-      ]),
+      button([button.flat(button.Neutral), button.md()], [text(\"Right Start\")]),
     ),
     tooltip(
       [tooltip.solid(tooltip.Neutral), tooltip.md(), tooltip.left(True)],
       [text(\"Left\")],
-      button([button.flat(button.Neutral), button.md(), class(\"w-full\")], [
-        text(\"Left\"),
-      ]),
+      button([button.flat(button.Neutral), button.md()], [text(\"Left\")]),
     ),
     div([], []),
     tooltip(
       [tooltip.solid(tooltip.Neutral), tooltip.md(), tooltip.right(True)],
       [text(\"Right\")],
-      button([button.flat(button.Neutral), button.md(), class(\"w-full\")], [
-        text(\"Right\"),
-      ]),
+      button([button.flat(button.Neutral), button.md()], [text(\"Right\")]),
     ),
     tooltip(
       [tooltip.solid(tooltip.Neutral), tooltip.md(), tooltip.left_end(True)],
       [text(\"Left End\")],
-      button([button.flat(button.Neutral), button.md(), class(\"w-full\")], [
-        text(\"Left End\"),
-      ]),
+      button([button.flat(button.Neutral), button.md()], [text(\"Left End\")]),
     ),
     div([], []),
     tooltip(
       [tooltip.solid(tooltip.Neutral), tooltip.md(), tooltip.right_end(True)],
       [text(\"Right End\")],
-      button([button.flat(button.Neutral), button.md(), class(\"w-full\")], [
-        text(\"Right End\"),
-      ]),
+      button([button.flat(button.Neutral), button.md()], [text(\"Right End\")]),
     ),
     tooltip(
-      [
-        tooltip.solid(tooltip.Neutral),
-        tooltip.md(),
-        tooltip.bottom_start(True),
-      ],
+      [tooltip.solid(tooltip.Neutral), tooltip.md(), tooltip.bottom_start(True)],
       [text(\"Bottom Start\")],
-      button([button.flat(button.Neutral), button.md(), class(\"w-full\")], [
-        text(\"Bottom Start\"),
-      ]),
+      button([button.flat(button.Neutral), button.md()], [text(\"Bottom Start\")]),
     ),
     tooltip(
       [tooltip.solid(tooltip.Neutral), tooltip.md(), tooltip.bottom(True)],
       [text(\"Bottom\")],
-      button([button.flat(button.Neutral), button.md(), class(\"w-full\")], [
-        text(\"Bottom\"),
-      ]),
+      button([button.flat(button.Neutral), button.md()], [text(\"Bottom\")]),
     ),
     tooltip(
       [tooltip.solid(tooltip.Neutral), tooltip.md(), tooltip.bottom_end(True)],
       [text(\"Bottom End\")],
-      button([button.flat(button.Neutral), button.md(), class(\"w-full\")], [
-        text(\"Bottom End\"),
-      ]),
+      button([button.flat(button.Neutral), button.md()], [text(\"Bottom End\")]),
     ),
   ])
 }
