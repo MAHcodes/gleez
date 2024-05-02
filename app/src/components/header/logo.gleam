@@ -1,7 +1,7 @@
 import lustre/attribute.{alt, class, href, src}
 import lustre/element.{type Element}
 import lustre/element/html.{a, img}
-import lustre/route
+import route/route
 
 pub fn logo() -> Element(a) {
   a([href(route.home)], [

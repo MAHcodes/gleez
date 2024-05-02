@@ -6,7 +6,7 @@ import lustre/attribute.{class}
 import lustre/effect.{type Effect, batch}
 import lustre/element.{type Element}
 import lustre/element/html.{div}
-import lustre/route.{type Pages}
+import route/route.{type Pages}
 import modem
 import pages/page
 

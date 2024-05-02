@@ -6,7 +6,7 @@ import gleam/string
 import lustre/attribute.{class}
 import lustre/element.{type Element, text}
 import lustre/element/html.{div}
-import lustre/route.{type Pages}
+import route/route.{type Pages}
 
 pub fn header(route: Pages) -> Element(a) {
   html.header(

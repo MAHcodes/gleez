@@ -1,4 +1,4 @@
-import components/code.{code}
+import components/snippet.{snippet}
 import components/ui/button.{button}
 import gleam/string
 import lustre/attribute.{class}
@@ -20,7 +20,7 @@ pub fn preview(children: List(Element(a)), content: String) -> Element(a) {
       ],
       children,
     ),
-    code(content, "gleam"),
+    snippet(content, "gleam"),
     button(
       [
         class("less-is-more absolute top-5 right-3"),

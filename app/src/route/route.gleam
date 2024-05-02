@@ -39,7 +39,7 @@ pub const divider = "/docs/components/divider"
 
 pub const tooltip = "/docs/components/tooltip"
 
-// TODO
+// TODO:
 pub const alert = "/docs/components/alert"
 
 pub const textarea = "/docs/components/textarea"
@@ -51,6 +51,8 @@ pub const code = "/docs/components/code"
 pub const avatar = "/docs/components/avatar"
 
 pub const badge = "/docs/components/badge"
+
+pub const skeleton = "/docs/components/skeleton"
 
 pub type Page {
   Page(path: String, sub_pages: List(Page))
