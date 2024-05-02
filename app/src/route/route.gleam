@@ -16,6 +16,7 @@ pub type Pages {
   Divider
   Tooltip
   Avatar
+  Badge
 }
 
 pub const home = "/"
@@ -42,6 +43,8 @@ pub const tooltip = "/docs/components/tooltip"
 
 pub const avatar = "/docs/components/avatar"
 
+pub const badge = "/docs/components/badge"
+
 // TODO:
 pub const alert = "/docs/components/alert"
 
@@ -50,8 +53,6 @@ pub const textarea = "/docs/components/textarea"
 pub const kbd = "/docs/components/kbd"
 
 pub const code = "/docs/components/code"
-
-pub const badge = "/docs/components/badge"
 
 pub const skeleton = "/docs/components/skeleton"
 
@@ -76,6 +77,7 @@ pub fn pages() -> List(Page) {
         Page(divider, []),
         Page(tooltip, []),
         Page(avatar, []),
+        Page(badge, []),
       ]
         |> sort_pages,
     ),
@@ -95,6 +97,7 @@ pub fn is_active(pages: Pages, path: String) -> Bool {
     Divider -> path == divider
     Tooltip -> path == tooltip
     Avatar -> path == avatar
+    Badge -> path == badge
     _ -> False
   }
 }

@@ -6,9 +6,9 @@ import lustre/attribute.{class}
 import lustre/effect.{type Effect, batch}
 import lustre/element.{type Element}
 import lustre/element/html.{div}
-import route/route.{type Pages}
 import modem
 import pages/page
+import route/route.{type Pages}
 
 pub fn main() {
   let app = lustre.application(init, update, view)
@@ -16,7 +16,7 @@ pub fn main() {
 }
 
 fn init(_) -> #(Pages, Effect(Msg)) {
-  #(route.Avatar, batch([modem.init(on_url_change), on_load()]))
+  #(route.Badge, batch([modem.init(on_url_change), on_load()]))
 }
 
 fn on_url_change(uri: Uri) -> Msg {
@@ -32,6 +32,7 @@ fn on_url_change(uri: Uri) -> Msg {
     ["docs", "components", "divider"] -> OnRouteChange(route.Divider)
     ["docs", "components", "tooltip"] -> OnRouteChange(route.Tooltip)
     ["docs", "components", "avatar"] -> OnRouteChange(route.Avatar)
+    ["docs", "components", "badge"] -> OnRouteChange(route.Badge)
     _ -> OnRouteChange(route.Home)
   }
 }
@@ -91,6 +92,7 @@ fn with_aside(route: Pages) -> Element(Msg) {
         route.Divider -> page.divider()
         route.Tooltip -> page.tooltip()
         route.Avatar -> page.avatar()
+        route.Badge -> page.badge()
         _ -> page.home()
       },
     ]),

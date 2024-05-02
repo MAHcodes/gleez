@@ -26,7 +26,7 @@ pub fn tooltip(
           "scale-0 group-hover:scale-100", "opacity-0 group-hover:opacity-100",
           "absolute transition-all z-20 min-w-max max-w-xs pointer-events-none",
           "flex gap-2 items-center justify-center",
-          "befor:z-10 before:border-[6px] before:border-transparent before:absolute",
+          "before:z-10 before:border-[6px] before:border-transparent before:absolute",
         ]
           |> string.join(" ")
           |> class,

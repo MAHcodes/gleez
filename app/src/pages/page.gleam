@@ -1,12 +1,13 @@
 import pages/blog/blog
 import pages/demo/demo
+import pages/docs/components/avatar/avatar
+import pages/docs/components/badge/badge
 import pages/docs/components/button/button
 import pages/docs/components/chip/chip
 import pages/docs/components/divider/divider
 import pages/docs/components/input/input
 import pages/docs/components/link/link
 import pages/docs/components/tooltip/tooltip
-import pages/docs/components/avatar/avatar
 import pages/docs/guide/intro/intro
 import pages/docs/guide/theme/theme
 import pages/home
@@ -36,3 +37,5 @@ pub const divider = divider.docs
 pub const tooltip = tooltip.docs
 
 pub const avatar = avatar.docs
+
+pub const badge = badge.docs

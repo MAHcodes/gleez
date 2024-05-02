@@ -21,7 +21,7 @@ pub fn examples() -> Element(a) {
     section.example(
       "Group",
       "
-- `avatar.group(List(Element(a))`",
+- `avatar.group(List(Element(a))`: Group a list of avatar elements.",
       [
         avatar.group([
           avatar([
