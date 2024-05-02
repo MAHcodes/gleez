@@ -16,7 +16,7 @@ pub fn actions() -> Element(a) {
         tooltip.bottom(arrow: True),
         tooltip.sm(),
       ],
-      [text("Toggle Dark Mode")],
+      [text("Toggle theme")],
       button([id("theme-toggle"), button.light(button.Neutral), button.icon()], [
         icon.sun([id("sun-icon"), class("w-5")]),
         icon.moon([id("moon-icon"), class("w-5 hidden")]),

@@ -36,6 +36,14 @@ pub fn snippet(c: String, lang: String) -> Element(a) {
       ),
       button(
         [
+          class("copy absolute top-3 right-3"),
+          button.icon(),
+          button.light(button.Neutral),
+        ],
+        [icon.copy([class("w-5")])],
+      ),
+      button(
+        [
           class("copy-success absolute top-3 right-3 invisible"),
           button.icon(),
           button.flat(button.Success),
