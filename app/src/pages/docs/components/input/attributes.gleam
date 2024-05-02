@@ -9,9 +9,9 @@ pub fn attributes() -> Element(a) {
     section.attribute(
       "Size",
       "
-- `sm()`: Small Size.
-- `md()`: Medium Size.
-- `lg()`: Large Size.
+- `sm()`: Small Size
+- `md()`: Medium Size
+- `lg()`: Large Size
     ",
       [
         input([input.flat(input.Neutral), input.sm(), placeholder("Small")]),

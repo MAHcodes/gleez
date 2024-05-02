@@ -10,9 +10,9 @@ pub fn attributes() -> Element(a) {
     section.attribute(
       "Size",
       "
-- `sm()`: Small Size.
-- `md()`: Medium Size.
-- `lg()`: Large Size.
+- `sm()`: Small Size
+- `md()`: Medium Size
+- `lg()`: Large Size
      ",
       [
         button([button.solid(button.Neutral), button.icon()], [

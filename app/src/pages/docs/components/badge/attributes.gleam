@@ -12,9 +12,9 @@ pub fn attributes() -> Element(a) {
     section.attribute(
       "Size",
       "
-- `sm()`: Small Size.
-- `md()`: Medium Size.
-- `lg()`: Large Size.
+- `sm()`: Small Size
+- `md()`: Medium Size
+- `lg()`: Large Size
     ",
       [
         badge(
@@ -38,7 +38,7 @@ pub fn attributes() -> Element(a) {
     section.attribute(
       "Dot",
       "
-- `dot()`: Used when the badge content is empty to display a dot.
+- `dot()`: Used when the badge content is empty to display a dot
     ",
       [
         badge(
@@ -71,10 +71,10 @@ pub fn attributes() -> Element(a) {
     section.attribute(
       "Placement",
       "
-- `top_left()`: Top left placement.
-- `top_right()`: Top right placement.
-- `bottom_left()`: Bottom left placement.
-- `bottom_right()`: Bottom right placement.
+- `top_left()`: Top left placement
+- `top_right()`: Top right placement
+- `bottom_left()`: Bottom left placement
+- `bottom_right()`: Bottom right placement
     ",
       [
         div([class("grid grid-cols-2 gap-4 [&_button]:w-full")], [

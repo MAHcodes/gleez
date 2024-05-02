@@ -9,9 +9,9 @@ pub fn attributes() -> Element(a) {
     section.attribute(
       "Size",
       "
-- `sm()`: Small Size.
-- `md()`: Medium Size.
-- `lg()`: Large Size.
+- `sm()`: Small Size
+- `md()`: Medium Size
+- `lg()`: Large Size
     ",
       [
         a([href("#"), link.link(link.Neutral), link.sm()], [text("Small")]),
@@ -22,7 +22,10 @@ pub fn attributes() -> Element(a) {
     ),
     section.attribute(
       "Underline",
-      "",
+      "
+- `underline(Underline)`
+Where `Underline` is one of the following: `Hover`|`Active`|`Focus`|`Always`
+    ",
       [
         a([href("#"), link.link(link.Neutral)], [text("None")]),
         a([href("#"), link.link(link.Neutral), link.underline(link.Hover)], [

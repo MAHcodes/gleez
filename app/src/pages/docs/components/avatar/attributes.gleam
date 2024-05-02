@@ -9,9 +9,9 @@ pub fn attributes() -> Element(a) {
     section.attribute(
       "Size",
       "
-- `sm()`: Small Size.
-- `md()`: Medium Size.
-- `lg()`: Large Size.
+- `sm()`: Small Size
+- `md()`: Medium Size
+- `lg()`: Large Size
      ",
       [
         avatar([
@@ -38,10 +38,10 @@ pub fn attributes() -> Element(a) {
     section.attribute(
       "Radius",
       "
-- `radius_sm()`: Small Border Radius.
-- `radius_md()`: Medium  Border Radius.
-- `radius_lg()`: Large Border Radius.
-- `radius_full()`: Large Border Radius.
+- `radius_sm()`: Small Border Radius
+- `radius_md()`: Medium  Border Radius
+- `radius_lg()`: Large Border Radius
+- `radius_full()`: Large Border Radius
      ",
       [
         avatar([

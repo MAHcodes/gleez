@@ -30,7 +30,7 @@ pub fn actions() -> Element(a) {
         tooltip.sm(),
         tooltip.bottom_end(arrow: True),
       ],
-      [icon.star([class("w-3")]), text("Star us on GitHub")],
+      [icon.star_filled([class("w-3")]), text("Star us on GitHub")],
       a(
         [
           href("https://github.com/MAHcodes/gleez"),

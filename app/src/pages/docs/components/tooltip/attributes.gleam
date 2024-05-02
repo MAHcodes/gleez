@@ -11,9 +11,9 @@ pub fn attributes() -> Element(a) {
     section.attribute(
       "Size",
       "
-- `sm()`: Small Size.
-- `md()`: Medium Size.
-- `lg()`: Large Size.
+- `sm()`: Small Size
+- `md()`: Medium Size
+- `lg()`: Large Size
     ",
       [
         tooltip(
@@ -37,9 +37,9 @@ pub fn attributes() -> Element(a) {
     section.attribute(
       "Delay",
       "
-- `delay(Time)`: Sets tooltip open and close delay.
-- `open_delay(Time)`: Sets tooltip open delay.
-- `close_delay(Time)`: Sets tooltip close delay.
+- `delay(Time)`: Sets tooltip open and close delay
+- `open_delay(Time)`: Sets tooltip open delay
+- `close_delay(Time)`: Sets tooltip close delay
 Where `Time` is one of the following:
 `Ms0`|`Ms75`|`Ms100`|`Ms150`|`Ms200`|`Ms300`|`Ms500`|`Ms1000`",
       [
@@ -79,19 +79,19 @@ Where `Time` is one of the following:
     section.attribute(
       "Placement",
       "
-- `top_start(arrow: Bool)`: Top start placement.
-- `top(arrow: Bool)`: Top placement.
-- `top_end(arrow: Bool)`: Top end placement.
-- `left_start(arrow: Bool)`: Left start placement.
-- `left(arrow: Bool)`: Left placement.
-- `left_end(arrow: Bool)`: Left end placement.
-- `right_start(arrow: Bool)`: Right start placement.
-- `right(arrow: Bool)`: Right placement.
-- `right_end(arrow: Bool)`: Right end placement.
-- `bottom_start(arrow: Bool)`: Bottom start placement.
-- `bottom(arrow: Bool)`: Bottom placement.
-- `bottom_end(arrow: Bool)`: Bottom end placement.
-`arrow` specifies whether the tooltip should have an arrow or not.
+- `top_start(arrow: Bool)`: Top start placement
+- `top(arrow: Bool)`: Top placement
+- `top_end(arrow: Bool)`: Top end placement
+- `left_start(arrow: Bool)`: Left start placement
+- `left(arrow: Bool)`: Left placement
+- `left_end(arrow: Bool)`: Left end placement
+- `right_start(arrow: Bool)`: Right start placement
+- `right(arrow: Bool)`: Right placement
+- `right_end(arrow: Bool)`: Right end placement
+- `bottom_start(arrow: Bool)`: Bottom start placement
+- `bottom(arrow: Bool)`: Bottom placement
+- `bottom_end(arrow: Bool)`: Bottom end placement
+`arrow` specifies whether the tooltip should have an arrow or not
     ",
       [
         div([class("grid grid-cols-3 gap-4 w-full [&_button]:w-full")], [
