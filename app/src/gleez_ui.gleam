@@ -1,5 +1,6 @@
 import components/aside.{aside}
-import components/header/header
+import components/footer/footer.{footer}
+import components/header/header.{header}
 import gleam/uri.{type Uri}
 import lustre
 import lustre/attribute.{class}
@@ -68,7 +69,7 @@ fn update(_: Pages, msg: Msg) -> #(Pages, Effect(Msg)) {
 
 fn view(route: Pages) -> Element(Msg) {
   html.main([], [
-    header.header(route),
+    header(route),
     div([class("container")], [
       case route {
         // route.Home -> page.home()
@@ -77,6 +78,7 @@ fn view(route: Pages) -> Element(Msg) {
         _ -> with_aside(route)
       },
     ]),
+    footer(),
   ])
 }
 

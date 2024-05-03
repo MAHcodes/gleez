@@ -55,8 +55,6 @@ pub const alert = "/docs/components/alert"
 
 pub const textarea = "/docs/components/textarea"
 
-pub const kbd = "/docs/components/kbd"
-
 pub const code = "/docs/components/code"
 
 pub const skeleton = "/docs/components/skeleton"
