@@ -1,25 +1,12 @@
-# gleez
+<h3 align="center">
+  <img src="https://raw.githubusercontent.com/MAHcodes/gleez/master/app/public/imgs/Gleez.svg" width="700" alt="Gleez Logo"/>
+  <br/><br/>
+  Elegant, Modern, and Customizable TailwindCSS components for ✨ <a href="https://github.com/gleam-lang/gleam">Lustre</a> ✨
+</h3>
 
-[![Package Version](https://img.shields.io/hexpm/v/gleez)](https://hex.pm/packages/gleez)
-[![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3)](https://hexdocs.pm/gleez/)
-
-```sh
-gleam add gleez
-```
-```gleam
-import gleez
-
-pub fn main() {
-  // TODO: An example of the project in use
-}
-```
-
-Further documentation can be found at <https://hexdocs.pm/gleez>.
-
-## Development
-
-```sh
-gleam run   # Run the project
-gleam test  # Run the tests
-gleam shell # Run an Erlang shell
-```
+<p align="center">
+  <a href="https://github.com/MAHcodes/gleez/blob/master/app/LICENSE"><img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=MIT&logoColor=d9e0ee&colorA=363a4f&colorB=b7bdf8"/></a>
+	<a href="https://github.com/MAHcodes/gleez/stargazers"><img src="https://img.shields.io/github/stars/MAHcodes/gleez?colorA=363a4f&colorB=b7bdf8&style=for-the-badge"></a>
+	<a href="https://github.com/MAHcodes/gleez/issues"><img src="https://img.shields.io/github/issues/MAHcodes/gleez?colorA=363a4f&colorB=f5a97f&style=for-the-badge"></a>
+	<a href="https://github.com/MAHcodes/gleez/contributors"><img src="https://img.shields.io/github/contributors/MAHcodes/gleez?colorA=363a4f&colorB=a6da95&style=for-the-badge"></a>
+</p>
