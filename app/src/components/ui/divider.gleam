@@ -27,14 +27,14 @@ pub fn divider(attributes: List(Attribute(a))) -> Element(a) {
 pub fn vertical(color: Colors) -> Attribute(a) {
   color
   |> paint
-  |> string.append(" h-full w-[2px]")
+  |> string.append(" h-full w-[1px]")
   |> class
 }
 
 pub fn horizontal(color: Colors) -> Attribute(a) {
   color
   |> paint
-  |> string.append(" w-full h-[2px]")
+  |> string.append(" w-full h-[1px]")
   |> class
 }
 
