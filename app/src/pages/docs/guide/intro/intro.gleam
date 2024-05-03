@@ -87,6 +87,12 @@ fn acknowledgments() -> Element(a) {
         text(" (reference)"),
       ]),
       li([], [
+        a([href("https://github.com/gleam-lang/language-tour"), ..link_atts], [
+          text("gleam-tour"),
+        ]),
+        text(" (code highlights)"),
+      ]),
+      li([], [
         a([href("https://github.com/shadcn-ui/ui"), ..link_atts], [
           text("shadcn"),
         ]),

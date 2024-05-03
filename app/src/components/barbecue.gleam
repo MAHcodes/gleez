@@ -21,7 +21,7 @@ fn segment_path(page: Pages, at: Int) -> String {
 
 pub fn barbecue(page: Pages) -> Element(a) {
   breadcrumbs(
-    [class("pb-8")],
+    [class("mb-8"), breadcrumbs.md()],
     icon.chevron_right([class("w-4")]),
     page
       |> page_segments
