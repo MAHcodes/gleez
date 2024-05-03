@@ -6,54 +6,54 @@
   :root,
   .light {
     --background: 240 5% 90%;
-    --foreground: 219 11% 16%;
+    --foreground: 234 16% 35%;
 
     --neutral: 240 10% 40%;
-    --neutral-foreground: 0 0% 100%;
+    --neutral-foreground: 220 23% 95%;
 
     --primary: 331 82% 64%;
-    --primary-foreground: 135 10% 90%;
+    --primary-foreground: 234 16% 35%;
 
     --secondary: 30 81% 63%;
-    --secondary-foreground: 135 10% 20%;
+    --secondary-foreground: 234 16% 35%;
 
-    --success: 95 66% 74%;
-    --success-foreground: 135 10% 20%;
+    --success: 109 58% 40%;
+    --success-foreground: 220 23% 95%;
 
-    --info: 207 100% 71%;
-    --info-foreground: 135 10% 20%;
+    --info: 220 91% 54%;
+    --info-foreground: 220 23% 95%;
 
-    --warning: 39 100% 77%;
-    --warning-foreground: 135 10% 20%;
+    --warning: 35 77% 49%;
+    --warning-foreground: 220 23% 95%;
 
-    --danger: 355 100% 74%;
-    --danger-foreground: 135 10% 20%;
+    --danger: 347 87% 44%;
+    --danger-foreground: 220 23% 95%;
   }
 
   .dark {
     --background: 0 0 7%;
-    --foreground: 219 14% 81%;
+    --foreground: 226 64% 88%;
 
     --neutral: 240 10% 60%;
-    --neutral-foreground: 0 0% 10%;
+    --neutral-foreground: 240 21% 15%;
 
     --primary: 331 82% 64%;
-    --primary-foreground: 135 10% 90%;
+    --primary-foreground: 240 21% 15%;
 
     --secondary: 30 81% 63%;
-    --secondary-foreground: 135 10% 20%;
+    --secondary-foreground: 240 21% 15%;
 
-    --success: 95 38% 62%;
-    --success-foreground: 135 10% 20%;
+    --success: 115 54% 76%;
+    --success-foreground: 240 21% 15%;
 
-    --info: 207 82% 66%;
-    --info-foreground: 135 10% 20%;
+    --info: 217 92% 76%;
+    --info-foreground: 240 21% 15%;
 
-    --warning: 39 67% 69%;
-    --warning-foreground: 135 10% 20%;
+    --warning: 41 86% 83%;
+    --warning-foreground: 240 21% 15%;
 
-    --danger: 355 65% 65%;
-    --danger-foreground: 135 10% 20%;
+    --danger: 343 81% 75%;
+    --danger-foreground: 240 21% 15%;
   }
 
   body {
