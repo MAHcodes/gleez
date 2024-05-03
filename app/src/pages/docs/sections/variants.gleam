@@ -7,7 +7,7 @@ import kirala/markdown/html_renderer
 import lustre/attribute.{attribute, class, href}
 import lustre/element.{type Element}
 import lustre/element/html.{div, h2, h3, p, span, text}
-import route/route
+import model/route
 
 pub fn variants(children: List(Element(a))) -> Element(a) {
   div([], [

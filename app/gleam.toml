@@ -18,13 +18,13 @@ typescript_declarations=true
 
 [dependencies]
 gleam_stdlib = ">= 0.34.0 and < 2.0.0"
-lustre = ">= 4.1.8 and < 5.0.0"
 lustre_ui = ">= 0.6.0 and < 1.0.0"
 modem = ">= 1.0.0 and < 2.0.0"
 plinth = ">= 0.2.0 and < 1.0.0"
 gleam_javascript = ">= 0.8.0 and < 1.0.0"
 kirala_markdown = ">= 1.0.2 and < 2.0.0"
 lustre_http = ">= 0.5.2 and < 1.0.0"
+lustre = ">= 4.2.0 and < 5.0.0"
 
 [dev-dependencies]
 gleeunit = ">= 1.0.0 and < 2.0.0"

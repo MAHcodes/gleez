@@ -5,15 +5,13 @@ import components/ui/link.{a}
 import gleam/int
 import gleam/option.{type Option, None, Some}
 import lustre/attribute.{alt, class, href, src, target}
-import lustre/element.{type Element, text}
-import lustre/element/html.{
-  blockquote, details, div, h1, h2, img, p, span, summary,
-}
+import lustre/element.{type Element, fragment, text}
+import lustre/element/html.{blockquote, details, div, h1, h2, img, p, summary}
 import lustre/ui/icon
 import model/repo.{type Repo}
 
 fn faq() -> Element(a) {
-  div([], [
+  fragment([
     h2([], [text("FAQ")]),
     divider([class("mb-6"), divider.horizontal(divider.Neutral)]),
     details([], [
@@ -27,7 +25,7 @@ fn faq() -> Element(a) {
 }
 
 fn shadcn() -> Element(a) {
-  div([], [
+  fragment([
     p([], [
       text("Similar to "),
       a(
@@ -64,7 +62,7 @@ fn fun_fact(repo: Option(Repo)) -> Element(a) {
           text(" stars on GitHub by one."),
         ]),
       ])
-    None -> span([], [])
+    None -> fragment([])
   }
 }
 

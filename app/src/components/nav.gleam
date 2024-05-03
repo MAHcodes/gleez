@@ -16,7 +16,7 @@ pub fn nav(route: Pages) -> Element(a) {
     ul([class("flex gap-8 pl-8 text-sm")], [
       item(route, route.components),
       item(route, route.docs),
-      item(route, route.blog),
+      // item(route, route.blog),
     ]),
   ])
 }
