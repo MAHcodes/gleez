@@ -9,8 +9,8 @@ import pages/docs/components/input/input
 import pages/docs/components/link/link
 import pages/docs/components/tooltip/tooltip
 import pages/docs/guide/intro/intro
+import pages/docs/guide/installation/installation
 import pages/docs/guide/colors/colors
-import pages/docs/guide/theme/theme
 import pages/home
 
 pub const home = home.home
@@ -21,9 +21,9 @@ pub const blog = blog.blog
 
 pub const intro = intro.docs
 
-pub const colors = colors.docs
+pub const installation = installation.docs
 
-pub const theme = theme.docs
+pub const colors = colors.docs
 
 // components
 

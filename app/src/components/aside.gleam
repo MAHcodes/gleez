@@ -4,7 +4,7 @@ import gleam/string
 import lustre/attribute.{type Attribute, class, href}
 import lustre/element.{type Element, text}
 import lustre/element/html.{div, h2, h3, li, ul}
-import route/route.{type Page, type Pages, is_active}
+import model/route.{type Page, type Pages, is_active}
 
 pub fn aside(route: Pages) -> Element(a) {
   html.aside(

@@ -1,23 +1,29 @@
 import components/aside.{aside}
-import components/footer/footer.{footer}
 import components/header/header.{header}
+import gleam/dynamic
+import gleam/option.{type Option, None, Some}
 import gleam/uri.{type Uri}
 import lustre
 import lustre/attribute.{class}
 import lustre/effect.{type Effect, batch}
 import lustre/element.{type Element}
 import lustre/element/html.{div}
+import lustre_http.{type HttpError}
 import modem
 import pages/page
-import route/route.{type Pages}
+import model/route.{type Pages}
+import model/repo.{type Repo, Repo}
 
 pub fn main() {
   let app = lustre.application(init, update, view)
   let assert Ok(_) = lustre.start(app, "#app", Nil)
 }
 
-fn init(_) -> #(Pages, Effect(Msg)) {
-  #(route.Intro, batch([modem.init(on_url_change), on_load()]))
+fn init(_) -> #(Model, Effect(Msg)) {
+  #(
+    Model(page: route.Intro, repo: None),
+    batch([fetch_stargazers_count(), modem.init(on_url_change), on_load()]),
+  )
 }
 
 fn on_url_change(uri: Uri) -> Msg {
@@ -25,6 +31,7 @@ fn on_url_change(uri: Uri) -> Msg {
     ["demo"] -> OnRouteChange(route.Demo)
     ["blog"] -> OnRouteChange(route.Blog)
     ["docs", "guide", "introduction"] -> OnRouteChange(route.Intro)
+    ["docs", "guide", "installation"] -> OnRouteChange(route.Installation)
     ["docs", "guide", "colors"] -> OnRouteChange(route.Colors)
     ["docs", "components"] -> OnRouteChange(route.Components)
     ["docs", "components", "button"] -> OnRouteChange(route.Button)
@@ -41,6 +48,7 @@ fn on_url_change(uri: Uri) -> Msg {
 
 pub opaque type Msg {
   OnRouteChange(Pages)
+  ApiUpdatedRepo(Result(Repo, HttpError))
 }
 
 @external(javascript, "./assets/js/highlight/gleam.ffi.mjs", "highlight_all")
@@ -61,34 +69,52 @@ fn on_load() -> Effect(a) {
   effect.batch([highlight_all(), attach_all()])
 }
 
-fn update(_: Pages, msg: Msg) -> #(Pages, Effect(Msg)) {
+type Model {
+  Model(page: Pages, repo: Option(Repo))
+}
+
+fn fetch_stargazers_count() -> Effect(Msg) {
+  let url = "https://api.github.com/repos/MAHcodes/gleez"
+
+  let decoder =
+    dynamic.decode1(Repo, dynamic.field("stargazers_count", dynamic.int))
+
+  lustre_http.get(url, lustre_http.expect_json(decoder, ApiUpdatedRepo))
+}
+
+fn update(model: Model, msg: Msg) -> #(Model, Effect(Msg)) {
   case msg {
-    OnRouteChange(r) -> #(r, on_load())
+    OnRouteChange(r) -> #(Model(..model, page: r), on_load())
+    ApiUpdatedRepo(Error(_)) -> #(model, effect.none())
+    ApiUpdatedRepo(Ok(repo)) -> #(
+      Model(..model, repo: Some(repo)),
+      effect.none(),
+    )
   }
 }
 
-fn view(route: Pages) -> Element(Msg) {
+fn view(model: Model) -> Element(Msg) {
   html.main([], [
-    header(route),
+    header(model.page),
     div([class("container")], [
-      case route {
+      case model.page {
         // route.Home -> page.home()
         route.Demo -> page.demo()
         route.Blog -> page.blog()
-        _ -> with_aside(route)
+        _ -> with_aside(model)
       },
     ]),
-    footer(),
   ])
 }
 
-fn with_aside(route: Pages) -> Element(Msg) {
+fn with_aside(model: Model) -> Element(Msg) {
   div([class("flex gap-10")], [
-    aside(route),
+    aside(model.page),
     div([class("py-8 flex-1")], [
-      case route {
-        route.Home -> page.intro()
-        route.Intro -> page.intro()
+      case model.page {
+        route.Home -> page.intro(model.repo)
+        route.Intro -> page.intro(model.repo)
+        route.Installation -> page.installation()
         route.Colors -> page.colors()
         route.Components -> page.avatar()
         route.Button -> page.button()

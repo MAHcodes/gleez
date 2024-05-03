@@ -8,6 +8,7 @@ pub type Pages {
   Demo
   Blog
   Intro
+  Installation
   Colors
   Components
   Link
@@ -27,6 +28,8 @@ pub const demo = "/demo"
 pub const blog = "/blog"
 
 pub const intro = "/docs/guide/introduction"
+
+pub const installation = "/docs/guide/installation"
 
 pub const colors = "/docs/guide/colors"
 
@@ -67,8 +70,8 @@ pub fn pages() -> List(Page) {
   [
     Page("Guide", [
       Page(intro, []),
+      Page(installation, []),
       Page(colors, []),
-      Page("/docs/guide/cli", []),
     ]),
     Page(
       components,
@@ -102,6 +105,7 @@ pub fn is_active(pages: Pages, path: String) -> Bool {
     Tooltip -> path == tooltip
     Avatar -> path == avatar
     Components -> path == avatar
+    Installation -> path == installation
     Badge -> path == badge
   }
 }

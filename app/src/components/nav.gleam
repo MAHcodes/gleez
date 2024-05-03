@@ -2,7 +2,7 @@ import components/ui/link.{a}
 import lustre/attribute.{type Attribute, class, href}
 import lustre/element.{type Element, text}
 import lustre/element/html.{li, ul}
-import route/route.{type Pages, is_active}
+import model/route.{type Pages, is_active}
 
 fn active_variant(active: Bool) -> Attribute(a) {
   case active {
