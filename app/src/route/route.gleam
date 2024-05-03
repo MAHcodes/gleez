@@ -30,7 +30,9 @@ pub const intro = "/docs/guide/introduction"
 
 pub const colors = "/docs/guide/colors"
 
-pub const docs = intro
+pub const docs = "/docs"
+
+pub const components = "/docs/components"
 
 pub const button = "/docs/components/button"
 
@@ -66,8 +68,8 @@ pub type Page {
 pub fn pages() -> List(Page) {
   [
     Page("Guide", [
-      Page(colors, []),
       Page(intro, []),
+      Page(colors, []),
       Page("/docs/guide/cli", []),
     ]),
     Page(
@@ -89,7 +91,7 @@ pub fn pages() -> List(Page) {
 
 pub fn is_active(pages: Pages, path: String) -> Bool {
   case pages {
-    Home -> path == home
+    Home -> path == intro
     Demo -> path == demo
     Colors -> path == colors
     Intro -> path == intro
@@ -101,13 +103,14 @@ pub fn is_active(pages: Pages, path: String) -> Bool {
     Divider -> path == divider
     Tooltip -> path == tooltip
     Avatar -> path == avatar
+    Components -> path == avatar
     Badge -> path == badge
-    _ -> False
   }
 }
 
+// used to sort the pages
 fn compare_pages(p1: Page, p2: Page) {
-  string.compare(get_page_name(p1), get_page_name(p2))
+  string.compare(page_name(p1), page_name(p2))
 }
 
 fn sort_pages(pages: List(Page)) -> List(Page) {
@@ -115,8 +118,13 @@ fn sort_pages(pages: List(Page)) -> List(Page) {
   |> list.sort(compare_pages)
 }
 
-pub fn get_page_name(page: Page) -> String {
+pub fn page_name(page: Page) -> String {
   page.path
+  |> path_name
+}
+
+pub fn path_name(path: String) -> String {
+  path
   |> uri.path_segments()
   |> list.last
   |> result.unwrap("")

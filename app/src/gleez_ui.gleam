@@ -16,16 +16,16 @@ pub fn main() {
 }
 
 fn init(_) -> #(Pages, Effect(Msg)) {
-  #(route.Badge, batch([modem.init(on_url_change), on_load()]))
+  #(route.Intro, batch([modem.init(on_url_change), on_load()]))
 }
 
 fn on_url_change(uri: Uri) -> Msg {
   case uri.path_segments(uri.path) {
-    ["home"] -> OnRouteChange(route.Home)
     ["demo"] -> OnRouteChange(route.Demo)
     ["blog"] -> OnRouteChange(route.Blog)
     ["docs", "guide", "introduction"] -> OnRouteChange(route.Intro)
     ["docs", "guide", "colors"] -> OnRouteChange(route.Colors)
+    ["docs", "components"] -> OnRouteChange(route.Components)
     ["docs", "components", "button"] -> OnRouteChange(route.Button)
     ["docs", "components", "input"] -> OnRouteChange(route.Input)
     ["docs", "components", "link"] -> OnRouteChange(route.Link)
@@ -71,7 +71,7 @@ fn view(route: Pages) -> Element(Msg) {
     header.header(route),
     div([class("container")], [
       case route {
-        route.Home -> page.home()
+        // route.Home -> page.home()
         route.Demo -> page.demo()
         route.Blog -> page.blog()
         _ -> with_aside(route)
@@ -85,11 +85,13 @@ fn with_aside(route: Pages) -> Element(Msg) {
     aside(route),
     div([class("py-8 flex-1")], [
       case route {
+        route.Home -> page.intro()
+        route.Intro -> page.intro()
+        route.Colors -> page.colors()
+        route.Components -> page.avatar()
         route.Button -> page.button()
         route.Input -> page.input()
         route.Link -> page.link()
-        route.Intro -> page.intro()
-        route.Colors -> page.colors()
         route.Chip -> page.chip()
         route.Divider -> page.divider()
         route.Tooltip -> page.tooltip()

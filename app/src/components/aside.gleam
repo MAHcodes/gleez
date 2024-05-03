@@ -23,7 +23,7 @@ pub fn aside(route: Pages) -> Element(a) {
 
 fn list(route: Pages, page: Page) -> Element(a) {
   div([class("flex flex-col gap-4")], [
-    h2([class("text-bold text-lg")], [text(route.get_page_name(page))]),
+    h2([class("text-bold text-lg")], [text(route.page_name(page))]),
     ul(
       [class("flex flex-col gap-2 pl-8 list-disc")],
       list.map(page.sub_pages, item(route, _)),
@@ -38,7 +38,7 @@ fn item(route: Pages, page: Page) -> Element(a) {
       li([], [
         h3([], [
           a([active_variant(is_active(route, page.path)), href(page.path)], [
-            text(route.get_page_name(page)),
+            text(route.page_name(page)),
           ]),
         ]),
       ])

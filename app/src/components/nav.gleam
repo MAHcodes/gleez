@@ -14,14 +14,14 @@ fn active_variant(active: Bool) -> Attribute(a) {
 pub fn nav(route: Pages) -> Element(a) {
   html.nav([], [
     ul([class("flex gap-8 pl-8 text-sm")], [
-      item(route, route.demo, "Demo"),
-      item(route, route.docs, "Docs"),
-      item(route, route.blog, "Blog"),
+      item(route, route.components),
+      item(route, route.docs),
+      item(route, route.blog),
     ]),
   ])
 }
 
-fn item(route: Pages, path: String, name: String) -> Element(a) {
+fn item(route: Pages, path: String) -> Element(a) {
   li([], [
     a(
       [
@@ -29,7 +29,7 @@ fn item(route: Pages, path: String, name: String) -> Element(a) {
         link.underline(link.Hover),
         active_variant(is_active(route, path)),
       ],
-      [text(name)],
+      [text(route.path_name(path))],
     ),
   ])
 }
