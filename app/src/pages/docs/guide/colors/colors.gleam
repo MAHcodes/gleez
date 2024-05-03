@@ -4,7 +4,7 @@ import components/snippet.{snippet}
 import components/ui/link.{a}
 import lustre/attribute.{class, href, target}
 import lustre/element.{type Element, text}
-import lustre/element/html.{code, h1, li, ol, p, span}
+import lustre/element/html.{br, code, h1, p}
 import lustre/ui/icon
 
 pub fn docs() -> Element(a) {
@@ -26,16 +26,21 @@ pub fn docs() -> Element(a) {
         [text("TailwindCSS Custom Colors"), icon.external_link([class("w-4")])],
       ),
     ]),
-    p([], [
-      text(
-        "Gleez requires 7 custom TailwindCSS colors, each component variant requires a color type, which is defined within the component itself:",
-      ),
-    ]),
-    p([], [
-      text(
-        "",
-      ),
-    ]),
+    markdown.from_text(
+      "Gleez requires 7 custom TailwindCSS colors:
+- `Neutral` 
+- `Primary` 
+- `Secondary` 
+- `Success` 
+- `Info` 
+- `Warning` 
+- `Danger`
+",
+    ),
+    markdown.from_text(
+      "Each component variant requires a `Color` type, which is defined within the component itself:",
+    ),
+    br([]),
     snippet(
       "pub type Colors {
   Neutral
@@ -50,9 +55,10 @@ pub fn docs() -> Element(a) {
     ),
     p([], [
       text(
-        "You can extend the colors for each component and import them from the component. To manually configure the colors, use the following code",
+        "You can extend the colors for each component and import them from the component.",
       ),
     ]),
+    p([], [text("To manually configure the colors:")]),
     snippet(
       "// tailwind.config.js
 module.exports = {
@@ -91,11 +97,16 @@ module.exports = {
 }",
       "json",
     ),
-    p([], [text("Define the CSS variables: ")]),
+    br([]),
+    markdown.from_text(
+      "Define CSS variables for `light` and `dark` mode:",
+    ),
+    br([]),
     snippet(
       "/* global.css */
 @layer base {
-  :root {
+  :root,
+  .light {
     --neutral: 240 10% 40%;
     --neutral-foreground: 220 23% 95%;
 
@@ -103,7 +114,7 @@ module.exports = {
     --primary-foreground: 220 23% 95%;
 
     --secondary: 30 81% 63%;
-    --secondary-foreground: 234 16% 35%;
+    --secondary-foreground: 220 23% 95%;
 
     --success: 109 58% 40%;
     --success-foreground: 220 23% 95%;
@@ -116,6 +127,29 @@ module.exports = {
 
     --danger: 347 87% 44%;
     --danger-foreground: 220 23% 95%;
+  }
+
+  .dark {
+    --neutral: 240 10% 60%;
+    --neutral-foreground: 240 21% 15%;
+
+    --primary: 331 82% 64%;
+    --primary-foreground: 240 21% 15%;
+
+    --secondary: 30 81% 63%;
+    --secondary-foreground: 240 21% 15%;
+
+    --success: 115 54% 76%;
+    --success-foreground: 240 21% 15%;
+
+    --info: 217 92% 76%;
+    --info-foreground: 240 21% 15%;
+
+    --warning: 41 86% 83%;
+    --warning-foreground: 240 21% 15%;
+
+    --danger: 343 81% 75%;
+    --danger-foreground: 240 21% 15%;
   }
 }",
       "css",
