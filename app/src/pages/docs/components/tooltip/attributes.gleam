@@ -1,6 +1,5 @@
 import components/ui/button.{button}
 import components/ui/tooltip.{tooltip}
-import gleam/string
 import lustre/attribute.{class}
 import lustre/element.{type Element, text}
 import lustre/element/html.{div}
@@ -321,7 +320,6 @@ pub fn demo() -> Element(a) {
   ])
 }
 "
-  |> string.trim
 }
 
 fn arrow_code() -> String {
@@ -356,7 +354,6 @@ pub fn demo() -> Element(a) {
   ])
 }
 "
-  |> string.trim
 }
 
 fn size_code() -> String {
@@ -387,5 +384,4 @@ pub fn demo() -> Element(a) {
   ])
 }
 "
-  |> string.trim
 }

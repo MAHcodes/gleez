@@ -2,9 +2,11 @@ import kirala/markdown/html_renderer
 import lustre/attribute.{attribute, class}
 import lustre/element.{type Element}
 import components/prose.{prose}
+import gleam/string
 
 pub fn from_text(text: String) -> Element(a) {
   text
+  |> string.trim
   |> parse
   |> dangerous_unescaped_html
 }

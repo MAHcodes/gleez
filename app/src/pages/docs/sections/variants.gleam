@@ -50,7 +50,6 @@ pub fn variant(
     ]),
     p([], [
       description
-      |> string.trim
       |> markdown.from_text,
     ]),
     preview(demo, code),

@@ -1,5 +1,4 @@
 import components/ui/button.{button}
-import gleam/string
 import lustre/attribute.{class}
 import lustre/element.{type Element, text}
 import lustre/ui/icon
@@ -46,5 +45,4 @@ pub fn buttons() -> Element(a) {
   ])
 }
 "
-  |> string.trim
 }

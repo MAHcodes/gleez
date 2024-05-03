@@ -1,5 +1,4 @@
 import components/ui/input.{input}
-import gleam/string
 import lustre/attribute.{placeholder}
 import lustre/element.{type Element}
 import pages/docs/sections/section
@@ -38,5 +37,4 @@ pub fn demo() -> Element(a) {
   ])
 }
 "
-  |> string.trim
 }

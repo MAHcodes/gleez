@@ -1,5 +1,4 @@
 import components/ui/avatar.{avatar}
-import gleam/string
 import lustre/attribute.{src}
 import lustre/element.{type Element}
 import pages/docs/sections/section
@@ -112,5 +111,4 @@ pub fn demo() -> Element(a) {
   ])
 }
 "
-  |> string.trim
 }

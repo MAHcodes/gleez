@@ -1,6 +1,5 @@
 import components/ui/badge.{badge}
 import components/ui/button.{button}
-import gleam/string
 import lustre/element.{type Element, text}
 import pages/docs/sections/section
 
@@ -141,7 +140,6 @@ pub fn demo() -> Element(a) {
   ])
 }
 "
-  |> string.trim
 }
 
 fn outlined_code() -> String {
@@ -192,5 +190,4 @@ pub fn demo() -> Element(a) {
   ])
 }
 "
-  |> string.trim
 }

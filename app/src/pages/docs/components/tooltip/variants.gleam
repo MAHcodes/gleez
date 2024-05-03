@@ -1,6 +1,5 @@
 import components/ui/button.{button}
 import components/ui/tooltip.{tooltip}
-import gleam/string
 import lustre/element.{type Element, text}
 import pages/docs/sections/section
 
@@ -193,7 +192,6 @@ pub fn demo() -> Element(a) {
   ])
 }
 "
-  |> string.trim
 }
 
 fn outlined_code() -> String {
@@ -244,7 +242,6 @@ pub fn demo() -> Element(a) {
   ])
 }
 "
-  |> string.trim
 }
 
 fn flat_code() -> String {
@@ -295,5 +292,4 @@ pub fn demo() -> Element(a) {
   ])
 }
 "
-  |> string.trim
 }

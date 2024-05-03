@@ -1,5 +1,4 @@
 import components/ui/chip.{chip}
-import gleam/string
 import lustre/element.{type Element, text}
 import pages/docs/sections/section
 
@@ -37,5 +36,4 @@ pub fn demo() -> Element(a) {
   ])
 }
 "
-  |> string.trim
 }

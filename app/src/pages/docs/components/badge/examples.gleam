@@ -1,7 +1,6 @@
 import components/ui/avatar.{avatar}
 import components/ui/badge.{badge}
 import components/ui/button.{button}
-import gleam/string
 import lustre/attribute.{class, src}
 import lustre/element.{type Element, text}
 import lustre/ui/icon
@@ -106,5 +105,4 @@ pub fn demo() -> Element(a) {
   ])
 }
 "
-  |> string.trim
 }

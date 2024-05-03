@@ -1,5 +1,4 @@
 import components/ui/button.{button}
-import gleam/string
 import lustre/attribute.{class, disabled}
 import lustre/element.{type Element, text}
 import lustre/ui/icon
@@ -102,7 +101,6 @@ pub fn buttons() -> Element(a) {
   ])
 }
 "
-  |> string.trim
 }
 
 fn disabled_code() -> String {
@@ -120,7 +118,6 @@ pub fn buttons() -> Element(a) {
   ])
 }
 "
-  |> string.trim
 }
 
 fn with_icons_code() -> String {
@@ -144,7 +141,6 @@ pub fn buttons() -> Element(a) {
   ])
 }
 "
-  |> string.trim
 }
 
 fn loading_code() -> String {
@@ -167,5 +163,4 @@ pub fn buttons() -> Element(a) {
   ])
 }
 "
-  |> string.trim
 }

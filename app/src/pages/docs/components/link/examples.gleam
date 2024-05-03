@@ -1,5 +1,4 @@
 import components/ui/link.{a}
-import gleam/string
 import lustre/attribute.{class, href, target}
 import lustre/element.{type Element, text}
 import lustre/ui/icon
@@ -46,5 +45,4 @@ pub fn demo() -> Element(a) {
   ])
 }
 "
-  |> string.trim
 }

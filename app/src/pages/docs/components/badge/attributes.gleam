@@ -1,6 +1,5 @@
 import components/ui/badge.{badge}
 import components/ui/button.{button}
-import gleam/string
 import lustre/attribute.{class}
 import lustre/element.{type Element, text}
 import lustre/element/html.{div}
@@ -141,7 +140,6 @@ pub fn demo() -> Element(a) {
   ])
 }
 "
-  |> string.trim
 }
 
 fn dot_code() -> String {
@@ -182,7 +180,6 @@ pub fn demo() -> Element(a) {
   ])
 }
   "
-  |> string.trim
 }
 
 fn placement_code() -> String {
@@ -218,5 +215,4 @@ pub fn demo() -> Element(a) {
   ])
 }
 "
-  |> string.trim
 }

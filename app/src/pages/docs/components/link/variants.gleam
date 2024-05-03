@@ -1,5 +1,4 @@
 import components/ui/link.{a}
-import gleam/string
 import lustre/attribute.{href}
 import lustre/element.{type Element, text}
 import pages/docs/sections/section
@@ -72,7 +71,6 @@ pub fn demo() -> Element(a) {
   ])
 }
 "
-  |> string.trim
 }
 
 fn light_code() -> String {
@@ -94,7 +92,6 @@ pub fn demo() -> Element(a) {
   ])
 }
 "
-  |> string.trim
 }
 
 fn flat_code() -> String {
@@ -116,5 +113,4 @@ pub fn demo() -> Element(a) {
   ])
 }
 "
-  |> string.trim
 }

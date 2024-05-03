@@ -1,5 +1,4 @@
 import components/ui/divider.{divider}
-import gleam/string
 import lustre/attribute.{class}
 import lustre/element.{type Element, text}
 import lustre/element/html.{div, p}
@@ -84,7 +83,6 @@ pub fn demo() -> Element(a) {
   ])
 }
 "
-  |> string.trim
 }
 
 fn vertical_code() -> String {
@@ -115,5 +113,4 @@ pub fn demo() -> Element(a) {
   ])
 }
 "
-  |> string.trim
 }
