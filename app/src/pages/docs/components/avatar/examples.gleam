@@ -8,7 +8,7 @@ pub fn examples() -> Element(a) {
   section.examples([
     section.example(
       "Fallback",
-      "`avatar` will fallback to a default user avatar if the `src` attribute is not provided.",
+      "`avatar` will fallback to a default user avatar if the `src` attribute is not provided",
       [
         avatar([
           avatar.outlined(avatar.Neutral),
@@ -21,7 +21,7 @@ pub fn examples() -> Element(a) {
     section.example(
       "Group",
       "
-- `avatar.group(List(Element(a))`: Group a list of avatar elements.",
+- `group(List(Element(a))`: Group a list of avatar elements",
       [
         avatar.group([
           avatar([
