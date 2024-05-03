@@ -6,7 +6,9 @@ import gleam/int
 import gleam/option.{type Option, None, Some}
 import lustre/attribute.{alt, class, href, src, target}
 import lustre/element.{type Element, fragment, text}
-import lustre/element/html.{blockquote, details, div, h1, h2, img, p, summary}
+import lustre/element/html.{
+  blockquote, details, div, h1, h2, img, li, p, summary, ul,
+}
 import lustre/ui/icon
 import model/repo.{type Repo}
 
@@ -66,6 +68,46 @@ fn fun_fact(repo: Option(Repo)) -> Element(a) {
   }
 }
 
+fn acknowledgments() -> Element(a) {
+  let link_atts = [
+    class("not-prose"),
+    link.link(link.Neutral),
+    link.underline(link.Hover),
+    target("_blank"),
+  ]
+
+  fragment([
+    h2([], [text("Acknowledgments")]),
+    divider([class("mb-6"), divider.horizontal(divider.Neutral)]),
+    ul([], [
+      li([], [
+        a([href("https://github.com/lustre-labs/ui"), ..link_atts], [
+          text("lustre-ui"),
+        ]),
+        text(" (reference)"),
+      ]),
+      li([], [
+        a([href("https://github.com/shadcn-ui/ui"), ..link_atts], [
+          text("shadcn"),
+        ]),
+        text(" (concept)"),
+      ]),
+      li([], [
+        a([href("https://github.com/nextui-org/nextui"), ..link_atts], [
+          text("NextUI"),
+        ]),
+        text(" (inspiration)"),
+      ]),
+      li([], [
+        a([href("https://github.com/catppuccin/catppuccin"), ..link_atts], [
+          text("Catppuccin"),
+        ]),
+        text(" (colors)"),
+      ]),
+    ]),
+  ])
+}
+
 pub fn docs(repo: Option(Repo)) -> Element(a) {
   prose([], [
     img([
@@ -91,5 +133,6 @@ pub fn docs(repo: Option(Repo)) -> Element(a) {
     shadcn(),
     fun_fact(repo),
     faq(),
+    acknowledgments(),
   ])
 }

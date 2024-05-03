@@ -59,7 +59,7 @@ pub fn variants() -> Element(a) {
 
 fn outlined_code() -> String {
   "
-  import components/ui/avatar.{avatar}
+import components/ui/avatar.{avatar}
 import lustre/attribute.{class, src}
 import lustre/element.{type Element}
 import lustre/element/html.{div}

@@ -111,7 +111,7 @@ fn view(model: Model) -> Element(Msg) {
 fn with_aside(model: Model) -> Element(Msg) {
   div([class("flex gap-10")], [
     aside(model.page),
-    div([class("py-8 flex-1")], [
+    div([class("py-4 flex-1")], [
       barbecue(model.page),
       case model.page {
         route.Home -> page.intro(model.repo)

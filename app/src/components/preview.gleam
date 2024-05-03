@@ -30,7 +30,7 @@ pub fn preview(children: List(Element(a)), content: String) -> Element(a) {
         ],
         children,
       ),
-      snippet(content, "gleam"),
+      snippet(string.trim(content), "gleam"),
       button(
         [
           class("less-is-more absolute top-5 right-3"),
