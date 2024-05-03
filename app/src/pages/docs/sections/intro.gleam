@@ -1,5 +1,4 @@
 import components/markdown
-import components/ui/divider.{divider}
 import components/ui/link.{a}
 import gleam/string
 import lustre/attribute.{class, href, target}
@@ -29,11 +28,10 @@ pub fn intro(title: String, description: String) -> Element(a) {
         link.md(),
       ],
       [
-        icon.github_logo([class("w-4")]),
+        icon.github_logo([class("w-4 mr-1")]),
         text("Source"),
         icon.external_link([class("w-4")]),
       ],
     ),
-    divider([class("mt-8"), divider.horizontal(divider.Neutral)]),
   ])
 }

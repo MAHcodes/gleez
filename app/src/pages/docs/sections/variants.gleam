@@ -1,5 +1,6 @@
 import components/markdown
 import components/preview.{preview}
+import components/ui/divider.{divider}
 import components/ui/link.{a}
 import gleam/string
 import kirala/markdown/html_renderer
@@ -9,7 +10,11 @@ import lustre/element/html.{div, h2, h3, p, span, text}
 import route/route
 
 pub fn variants(children: List(Element(a))) -> Element(a) {
-  div([], [h2([], [text("Variants")]), ..children])
+  div([], [
+    h2([], [text("Variants")]),
+    divider([divider.horizontal(divider.Neutral)]),
+    ..children
+  ])
 }
 
 pub fn variant(

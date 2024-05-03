@@ -28,7 +28,7 @@ gleam_stdlib = { version = ">= 0.34.0 and < 2.0.0" }
 gleescript = { version = ">= 1.0.1 and < 2.0.0" }
 gleeunit = { version = ">= 1.0.0 and < 2.0.0" }
 kirala_markdown = { version = ">= 1.0.2 and < 2.0.0" }
-lustre = { version = ">= 4.1.8 and < 5.0.0" }
+lustre = { version = ">= 4.1.8 and < 5.0.0"}
 lustre_ui = { version = ">= 0.6.0 and < 1.0.0" }
 modem = { version = ">= 1.0.0 and < 2.0.0" }
 plinth = { version = ">= 0.2.0 and < 1.0.0" }

@@ -1,10 +1,15 @@
 import components/markdown
 import components/preview.{preview}
+import components/ui/divider.{divider}
 import lustre/element.{type Element}
 import lustre/element/html.{div, h2, h3, p, text}
 
 pub fn attributes(attributes: List(Element(a))) -> Element(a) {
-  div([], [h2([], [text("Attributes")]), ..attributes])
+  div([], [
+    h2([], [text("Attributes")]),
+    divider([divider.horizontal(divider.Neutral)]),
+    ..attributes
+  ])
 }
 
 pub fn attribute(

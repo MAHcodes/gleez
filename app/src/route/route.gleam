@@ -32,7 +32,7 @@ pub const colors = "/docs/guide/colors"
 
 pub const docs = "/docs"
 
-pub const components = "/docs/components"
+pub const components = "/docs/components/"
 
 pub const button = "/docs/components/button"
 
@@ -73,7 +73,7 @@ pub fn pages() -> List(Page) {
       Page("/docs/guide/cli", []),
     ]),
     Page(
-      "Components",
+      components,
       [
         Page(button, []),
         Page(input, []),

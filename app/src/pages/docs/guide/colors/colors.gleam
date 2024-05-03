@@ -1,4 +1,5 @@
 import components/markdown
+import components/ui/divider.{divider}
 import components/prose.{prose}
 import components/snippet.{snippet}
 import components/ui/link.{a}
@@ -10,6 +11,7 @@ import lustre/ui/icon
 pub fn docs() -> Element(a) {
   prose([], [
     h1([], [text("Colors")]),
+    divider([divider.horizontal(divider.Neutral)]),
     p([], [
       text("Gleez"),
       code([], [text("Colors")]),

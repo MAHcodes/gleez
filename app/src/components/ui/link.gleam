@@ -18,7 +18,7 @@ pub fn a(attributes: List(Attribute(a)), children: List(Element(a))) {
     [
       class(
         [
-          "inline-flex gap-2 items-center justify-center underline-offset-4 transition-all",
+          "inline-flex gap-1 items-center justify-center underline-offset-4 transition-all",
           "hover:opacity-80 active:opacity-50 hover:cursor-pointer",
         ]
         |> string.join(" "),
