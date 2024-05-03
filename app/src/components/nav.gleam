@@ -17,6 +17,7 @@ pub fn nav(route: Pages) -> Element(a) {
       item(route, route.components),
       item(route, route.docs),
       // item(route, route.blog),
+      item(route, route.demo),
     ]),
   ])
 }

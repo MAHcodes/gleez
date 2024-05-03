@@ -17,7 +17,7 @@ pub fn tooltip(
   attributes: List(Attribute(a)),
   children: List(Element(a)),
   element: Element(a),
-) {
+) -> Element(a) {
   div([class("group relative")], [
     element,
     div(

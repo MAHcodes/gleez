@@ -68,11 +68,7 @@ pub type Page {
 
 pub fn pages() -> List(Page) {
   [
-    Page("Guide", [
-      Page(intro, []),
-      Page(installation, []),
-      Page(colors, []),
-    ]),
+    Page("Guide", [Page(intro, []), Page(installation, []), Page(colors, [])]),
     Page(
       components,
       [
@@ -90,24 +86,28 @@ pub fn pages() -> List(Page) {
   ]
 }
 
-pub fn is_active(pages: Pages, path: String) -> Bool {
-  case pages {
-    Home -> path == intro
-    Demo -> path == demo
-    Colors -> path == colors
-    Intro -> path == intro
-    Blog -> path == blog
-    Button -> path == button
-    Input -> path == input
-    Link -> path == link
-    Chip -> path == chip
-    Divider -> path == divider
-    Tooltip -> path == tooltip
-    Avatar -> path == avatar
-    Components -> path == avatar
-    Installation -> path == installation
-    Badge -> path == badge
+pub fn to_path(page: Pages) -> String {
+  case page {
+    Home -> intro
+    Demo -> demo
+    Colors -> colors
+    Intro -> intro
+    Blog -> blog
+    Button -> button
+    Input -> input
+    Link -> link
+    Chip -> chip
+    Divider -> divider
+    Tooltip -> tooltip
+    Avatar -> avatar
+    Components -> avatar
+    Installation -> installation
+    Badge -> badge
   }
+}
+
+pub fn is_active(page: Pages, path: String) -> Bool {
+  to_path(page) == path
 }
 
 // used to sort the pages

@@ -17,7 +17,7 @@ pub fn badge(
   attributes: List(Attribute(a)),
   children: List(Element(a)),
   element: Element(a),
-) {
+) -> Element(a) {
   div([class("relative")], [
     element,
     div(

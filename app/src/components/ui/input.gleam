@@ -1,5 +1,6 @@
 import gleam/string
 import lustre/attribute.{type Attribute, class}
+import lustre/element.{type Element}
 import lustre/element/html
 
 pub type Colors {
@@ -12,7 +13,7 @@ pub type Colors {
   Danger
 }
 
-pub fn input(attributes: List(Attribute(a))) {
+pub fn input(attributes: List(Attribute(a))) -> Element(a) {
   html.input([
     class(
       ["disabled:opacity-50 disabled:cursor-not-allowed", "transition-all"]

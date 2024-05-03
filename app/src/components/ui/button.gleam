@@ -13,7 +13,10 @@ pub type Colors {
   Danger
 }
 
-pub fn button(attributes: List(Attribute(a)), children: List(Element(a))) {
+pub fn button(
+  attributes: List(Attribute(a)),
+  children: List(Element(a)),
+) -> Element(a) {
   html.button(
     [
       class(

@@ -13,6 +13,7 @@ import modem
 import pages/page
 import model/route.{type Pages}
 import model/repo.{type Repo, Repo}
+import components/barbecue.{barbecue}
 
 pub fn main() {
   let app = lustre.application(init, update, view)
@@ -111,6 +112,7 @@ fn with_aside(model: Model) -> Element(Msg) {
   div([class("flex gap-10")], [
     aside(model.page),
     div([class("py-8 flex-1")], [
+      barbecue(model.page),
       case model.page {
         route.Home -> page.intro(model.repo)
         route.Intro -> page.intro(model.repo)

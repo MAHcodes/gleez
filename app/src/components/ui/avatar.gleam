@@ -24,7 +24,14 @@ pub fn avatar(attributes: List(Attribute(a))) -> Element(a) {
 }
 
 pub fn group(avatars: List(Element(a))) -> Element(a) {
-  div([class("flex [&>*]:-ms-2 [&>*]:transition-transform [&>*:hover]:-translate-x-2")], avatars)
+  div(
+    [
+      class(
+        "flex [&>*]:-ms-2 [&>*]:transition-transform [&>*:hover]:-translate-x-2",
+      ),
+    ],
+    avatars,
+  )
 }
 
 pub fn outlined(color: Colors) -> Attribute(a) {
@@ -41,15 +48,15 @@ pub fn outlined(color: Colors) -> Attribute(a) {
   |> class
 }
 
-pub fn sm() {
+pub fn sm() -> Attribute(a) {
   class("w-8 h-8")
 }
 
-pub fn md() {
+pub fn md() -> Attribute(a) {
   class("w-10 h-10")
 }
 
-pub fn lg() {
+pub fn lg() -> Attribute(a) {
   class("w-14 h-14")
 }
 

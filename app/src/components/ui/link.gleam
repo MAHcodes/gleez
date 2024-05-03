@@ -13,7 +13,7 @@ pub type Colors {
   Danger
 }
 
-pub fn a(attributes: List(Attribute(a)), children: List(Element(a))) {
+pub fn a(attributes: List(Attribute(a)), children: List(Element(a))) -> Element(a) {
   html.a(
     [
       class(
