@@ -28,6 +28,7 @@ pre.hljs {
 .hljs-number {
   color: var(--code-token-number);
 }
+.hljs-selector-pseudo,
 .hljs-type {
   color: var(--code-token-type);
 }

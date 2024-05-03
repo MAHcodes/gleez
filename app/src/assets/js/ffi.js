@@ -44,13 +44,15 @@ function attach_less_is_more() {
 	function handleClick(btn) {
 		const source = btn.parentElement.querySelector(".source-code");
 		if (!source) return;
-		const hidden = source.classList.contains("hidden");
+		const hidden = source.classList.contains("hide");
 		if (hidden) {
-			source.classList.remove("hidden");
+			source.classList.add("animate-fade-in");
+			source.classList.remove("hide");
 		} else {
+			source.classList.remove("animate-fade-in");
 			source.classList.add("animate-fade-out");
 			setTimeout(() => {
-				source.classList.add("hidden");
+				source.classList.add("hide");
 				source.classList.remove("animate-fade-out");
 			}, 300);
 		}
@@ -132,11 +134,16 @@ function attach_toggle() {
 	}
 }
 
+function scroll_to_top() {
+	window.scrollTo(0, 0);
+}
+
 function do_attach_all() {
 	attach_copy();
 	attach_less_is_more();
 	attach_toggle();
 	update_init_theme();
+	scroll_to_top();
 }
 
 export function attach_all() {

@@ -18,7 +18,7 @@ pub fn avatar(attributes: List(Attribute(a))) -> Element(a) {
     src(
       "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/120px-User-avatar.svg.png",
     ),
-    class("object-cover bg-background select-none"),
+    class("object-cover select-none"),
     ..attributes
   ])
 }

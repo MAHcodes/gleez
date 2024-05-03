@@ -32,4 +32,3 @@ lustre = { version = ">= 4.1.8 and < 5.0.0" }
 lustre_ui = { version = ">= 0.6.0 and < 1.0.0" }
 modem = { version = ">= 1.0.0 and < 2.0.0" }
 plinth = { version = ">= 0.2.0 and < 1.0.0" }
-simplifile = { version = ">= 1.7.0 and < 2.0.0" }

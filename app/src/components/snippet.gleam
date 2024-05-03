@@ -5,18 +5,11 @@ import lustre/element.{type Element}
 import lustre/element/html.{div, pre, text}
 import lustre/ui/icon
 
-fn hide_snippet(lang: String) -> String {
-  case lang {
-    "gleam" -> "hidden animate-fade-in origin-top"
-    _ -> ""
-  }
-}
-
 pub fn snippet(c: String, lang: String) -> Element(a) {
   div(
     [
       class(
-        ["relative source-code not-prose font-mono", hide_snippet(lang)]
+        ["relative source-code hide not-prose font-mono"]
         |> string.join(" "),
       ),
     ],

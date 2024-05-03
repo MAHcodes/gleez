@@ -17,7 +17,6 @@ module.exports = {
 			colors: {
 				background: "hsl(var(--background) / <alpha-value>)",
 				foreground: "hsl(var(--foreground) / <alpha-value>)",
-				code: "var(--code-background)",
 				neutral: {
 					DEFAULT: "hsl(var(--neutral) / <alpha-value>)",
 					foreground: "hsl(var(--neutral-foreground) / <alpha-value>)",
@@ -72,7 +71,7 @@ module.exports = {
 			},
 			animation: {
 				"fade-in": "fadeIn 400ms ease-in-out",
-				"fade-out": "fadeOut 300ms ease-in-out",
+				"fade-out": "fadeOut 300ms ease-in-out forwards",
 			},
 		},
 	},

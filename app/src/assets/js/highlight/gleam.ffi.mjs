@@ -7,6 +7,8 @@
 
 import hljs from "./highlight.min.js";
 import shell from "./shell.min.js";
+import json from "./json.min.js";
+import css from "./css.min.js";
 import * as regexes from "./regexes.js";
 
 /**
@@ -290,6 +292,8 @@ hljs.registerLanguage("gleam", function (hljs) {
 });
 
 hljs.registerLanguage("shell", shell)
+hljs.registerLanguage("json", json)
+hljs.registerLanguage("css", css)
 
 export function highlight_all() {
   window.requestAnimationFrame(hljs.highlightAll)

@@ -24,7 +24,7 @@ pub fn badge(
       [
         [
           "absolute rounded-full z-10 select-none font-bold",
-          "flex items-center justify-center border-2 bg-background",
+          "flex items-center justify-center border-2",
         ]
           |> string.join(" ")
           |> class,
@@ -51,13 +51,13 @@ pub fn solid(color: Colors) -> Attribute(a) {
 
 pub fn outlined(color: Colors) -> Attribute(a) {
   case color {
-    Neutral -> "border-neutral text-neutral"
-    Primary -> "border-primary text-primary"
-    Secondary -> "border-secondary text-secondary"
-    Success -> "border-success text-success"
-    Info -> "border-info text-info"
-    Warning -> "border-warning text-warning"
-    Danger -> "border-danger text-danger"
+    Neutral -> "border-neutral text-neutral bg-neutral-foreground"
+    Primary -> "border-primary text-primary bg-primary-foreground"
+    Secondary -> "border-secondary text-secondary bg-secondary-foreground"
+    Success -> "border-success text-success bg-success-foreground"
+    Info -> "border-info text-info bg-info-foreground"
+    Warning -> "border-warning text-warning bg-warning-foreground"
+    Danger -> "border-danger text-danger bg-danger-foreground"
   }
   |> class
 }

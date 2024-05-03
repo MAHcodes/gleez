@@ -24,7 +24,7 @@
 
 html,
 body {
-  @apply font-main;
+  @apply font-main scroll-smooth;
 }
 
 .preview {
@@ -41,6 +41,10 @@ body {
   @apply max-w-none;
 }
 
+.prose p {
+  @apply max-w-prose;
+}
+
 .prose :where(code):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
   @apply bg-foreground/10 rounded-sm py-1 px-2 mx-1;
 }
@@ -55,7 +59,7 @@ aside {
 }
 
 *::selection {
-  @apply bg-primary text-primary-foreground;
+  @apply bg-primary/20 text-primary;
 }
 
 /* Modern browsers with `scrollbar-*` support */
