@@ -10,6 +10,7 @@ gleam_stdlib = ">= 0.34.0 and < 2.0.0"
 gleam_httpc = ">= 2.2.0 and < 3.0.0"
 gleam_http = ">= 3.6.0 and < 4.0.0"
 simplifile = ">= 1.7.0 and < 2.0.0"
+argv = ">= 1.0.2 and < 2.0.0"
 
 [dev-dependencies]
 gleeunit = ">= 1.0.0 and < 2.0.0"

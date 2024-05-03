@@ -40,8 +40,8 @@ pub fn variant(
       ),
       a(
         [
-          link.link(link.Primary),
-          link.underline(link.Hover),
+          link.link(link.Neutral),
+          link.underline(link.Always),
           href(route.colors),
           class("not-prose"),
         ],
