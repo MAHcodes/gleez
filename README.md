@@ -1,7 +1,7 @@
 <h3 align="center">
   <img src="https://raw.githubusercontent.com/MAHcodes/gleez/master/app/public/imgs/Gleez.svg" width="700" alt="Gleez Logo"/>
   <br/><br/>
-  Elegant, Modern, and Customizable TailwindCSS components for ✨ <a href="https://github.com/gleam-lang/gleam">Lustre</a> ✨
+  Elegant, Modern, and Customizable TailwindCSS components for ✨ <a href="https://github.com/lustre-labs/lustre">Lustre</a> ✨
 </h3>
 
 <p align="center">
