@@ -13,7 +13,10 @@ pub type Colors {
   Danger
 }
 
-pub fn chip(attributes: List(Attribute(a)), children: List(Element(a))) -> Element(a) {
+pub fn chip(
+  attributes: List(Attribute(a)),
+  children: List(Element(a)),
+) -> Element(a) {
   div(
     [
       class(
@@ -38,7 +41,7 @@ pub fn solid(color: Colors) -> Attribute(a) {
   |> class
 }
 
-pub fn outline(color: Colors) -> Attribute(a) {
+pub fn outlined(color: Colors) -> Attribute(a) {
   case color {
     Neutral -> "outline-neutral text-neutral"
     Primary -> "outline-primary text-primary"

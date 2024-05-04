@@ -20,6 +20,7 @@ pub type Pages {
   Avatar
   Badge
   Breadcrumbs
+  Switch
 }
 
 pub const home = "/"
@@ -56,14 +57,7 @@ pub const badge = "/docs/components/badge"
 
 pub const breadcrumbs = "/docs/components/breadcrumbs"
 
-// TODO:
-pub const alert = "/docs/components/alert"
-
-pub const textarea = "/docs/components/textarea"
-
-pub const code = "/docs/components/code"
-
-pub const skeleton = "/docs/components/skeleton"
+pub const switch = "/docs/components/switch"
 
 pub type Page {
   Page(path: String, sub_pages: List(Page))
@@ -84,6 +78,7 @@ pub fn pages() -> List(Page) {
         Page(avatar, []),
         Page(badge, []),
         Page(breadcrumbs, []),
+        Page(switch, []),
       ]
         |> sort_pages,
     ),
@@ -108,6 +103,7 @@ pub fn to_path(page: Pages) -> String {
     Installation -> installation
     Badge -> badge
     Breadcrumbs -> breadcrumbs
+    Switch -> switch
   }
 }
 

@@ -48,7 +48,7 @@ pub fn variants() -> Element(a) {
       solid_code(),
     ),
     section.variant(
-      "Outline",
+      "Outlined",
       "",
       [
         badge(

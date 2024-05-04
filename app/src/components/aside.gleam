@@ -36,7 +36,7 @@ fn item(route: Pages, page: Page) -> Element(a) {
         h3([], [
           a(
             [
-              class("pl-6 border-l-2 py-2"),
+              class("pl-6 border-l py-1.5"),
               active_variant(is_active(route, page.path)),
               active_border(is_active(route, page.path)),
               href(page.path),

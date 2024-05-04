@@ -19,18 +19,18 @@ pub fn variants() -> Element(a) {
       solid_code(),
     ),
     section.variant(
-      "Outline",
+      "Outlined",
       "",
       [
-        chip([chip.outline(chip.Neutral), chip.md()], [text("Neutral")]),
-        chip([chip.outline(chip.Primary), chip.md()], [text("Primary")]),
-        chip([chip.outline(chip.Secondary), chip.md()], [text("Secondary")]),
-        chip([chip.outline(chip.Success), chip.md()], [text("Success")]),
-        chip([chip.outline(chip.Info), chip.md()], [text("Info")]),
-        chip([chip.outline(chip.Warning), chip.md()], [text("Warning")]),
-        chip([chip.outline(chip.Danger), chip.md()], [text("Danger")]),
+        chip([chip.outlined(chip.Neutral), chip.md()], [text("Neutral")]),
+        chip([chip.outlined(chip.Primary), chip.md()], [text("Primary")]),
+        chip([chip.outlined(chip.Secondary), chip.md()], [text("Secondary")]),
+        chip([chip.outlined(chip.Success), chip.md()], [text("Success")]),
+        chip([chip.outlined(chip.Info), chip.md()], [text("Info")]),
+        chip([chip.outlined(chip.Warning), chip.md()], [text("Warning")]),
+        chip([chip.outlined(chip.Danger), chip.md()], [text("Danger")]),
       ],
-      outline_code(),
+      outlined_code(),
     ),
     section.variant(
       "Light",
@@ -84,7 +84,7 @@ pub fn demo() -> Element(a) {
 "
 }
 
-fn outline_code() -> String {
+fn outlined_code() -> String {
   "
 import components/ui/chip.{chip}
 import lustre/attribute.{class}
@@ -93,13 +93,13 @@ import lustre/element/html.{div}
 
 pub fn demo() -> Element(a) {
   div([class(\"flex flex-wrap gap-4 items-center justify-center w-full\")], [
-    chip([chip.outline(chip.Neutral), chip.md()], [text(\"Neutral\")]),
-    chip([chip.outline(chip.Primary), chip.md()], [text(\"Primary\")]),
-    chip([chip.outline(chip.Secondary), chip.md()], [text(\"Secondary\")]),
-    chip([chip.outline(chip.Success), chip.md()], [text(\"Success\")]),
-    chip([chip.outline(chip.Info), chip.md()], [text(\"Info\")]),
-    chip([chip.outline(chip.Warning), chip.md()], [text(\"Warning\")]),
-    chip([chip.outline(chip.Danger), chip.md()], [text(\"Danger\")]),
+    chip([chip.outlined(chip.Neutral), chip.md()], [text(\"Neutral\")]),
+    chip([chip.outlined(chip.Primary), chip.md()], [text(\"Primary\")]),
+    chip([chip.outlined(chip.Secondary), chip.md()], [text(\"Secondary\")]),
+    chip([chip.outlined(chip.Success), chip.md()], [text(\"Success\")]),
+    chip([chip.outlined(chip.Info), chip.md()], [text(\"Info\")]),
+    chip([chip.outlined(chip.Warning), chip.md()], [text(\"Warning\")]),
+    chip([chip.outlined(chip.Danger), chip.md()], [text(\"Danger\")]),
   ])
 }
 "

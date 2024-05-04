@@ -1,4 +1,5 @@
 import components/aside.{aside}
+import components/barbecue.{barbecue}
 import components/header/header.{header}
 import gleam/dynamic
 import gleam/option.{type Option, None, Some}
@@ -9,11 +10,10 @@ import lustre/effect.{type Effect, batch}
 import lustre/element.{type Element}
 import lustre/element/html.{div}
 import lustre_http.{type HttpError}
+import model/repo.{type Repo, Repo}
+import model/route.{type Pages}
 import modem
 import pages/page
-import model/route.{type Pages}
-import model/repo.{type Repo, Repo}
-import components/barbecue.{barbecue}
 
 pub fn main() {
   let app = lustre.application(init, update, view)
@@ -22,7 +22,7 @@ pub fn main() {
 
 fn init(_) -> #(Model, Effect(Msg)) {
   #(
-    Model(page: route.Intro, repo: None),
+    Model(page: route.Home, repo: None),
     batch([fetch_stargazers_count(), modem.init(on_url_change), on_load()]),
   )
 }
@@ -44,6 +44,7 @@ fn on_url_change(uri: Uri) -> Msg {
     ["docs", "components", "avatar"] -> OnRouteChange(route.Avatar)
     ["docs", "components", "badge"] -> OnRouteChange(route.Badge)
     ["docs", "components", "breadcrumbs"] -> OnRouteChange(route.Breadcrumbs)
+    ["docs", "components", "switch"] -> OnRouteChange(route.Switch)
     _ -> OnRouteChange(route.Home)
   }
 }
@@ -129,6 +130,7 @@ fn with_aside(model: Model) -> Element(Msg) {
         route.Avatar -> page.avatar()
         route.Badge -> page.badge()
         route.Breadcrumbs -> page.breadcrumbs()
+        route.Switch -> page.switch()
         _ -> page.home()
       },
     ]),

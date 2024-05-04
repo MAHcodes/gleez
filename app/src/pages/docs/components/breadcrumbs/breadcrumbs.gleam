@@ -1,8 +1,8 @@
 import components/prose.{prose}
 import lustre/element.{type Element}
 import pages/docs/components/breadcrumbs/attributes.{attributes}
-import pages/docs/components/breadcrumbs/variants.{variants}
 import pages/docs/components/breadcrumbs/examples.{examples}
+import pages/docs/components/breadcrumbs/variants.{variants}
 import pages/docs/sections/section
 
 pub fn docs() -> Element(a) {

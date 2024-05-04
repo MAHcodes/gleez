@@ -13,7 +13,7 @@ pub fn header(route: Pages) -> Element(a) {
     [
       class(
         [
-          "sticky top-0 container py-4 bg-background z-30",
+          "sticky top-0 container py-4 bg-background/50 backdrop-blur-md z-30",
           "flex gap-4 items-center justify-between",
         ]
         |> string.join(" "),

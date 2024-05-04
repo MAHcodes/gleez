@@ -1,10 +1,7 @@
-import components/ui/avatar.{avatar}
 import components/ui/breadcrumbs.{breadcrumbs}
-import components/ui/button.{button}
 import components/ui/link.{a}
-import components/ui/tooltip.{tooltip}
-import lustre/attribute.{class, disabled, src}
-import lustre/element.{type Element, fragment, text}
+import lustre/attribute.{class}
+import lustre/element.{type Element, text}
 import lustre/ui/icon
 import pages/docs/sections/section
 
