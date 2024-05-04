@@ -22,7 +22,7 @@ pub fn main() {
 
 fn init(_) -> #(Model, Effect(Msg)) {
   #(
-    Model(page: route.Intro, repo: None),
+    Model(page: route.Demo, repo: None),
     batch([fetch_stargazers_count(), modem.init(on_url_change), on_load()]),
   )
 }
@@ -43,6 +43,7 @@ fn on_url_change(uri: Uri) -> Msg {
     ["docs", "components", "tooltip"] -> OnRouteChange(route.Tooltip)
     ["docs", "components", "avatar"] -> OnRouteChange(route.Avatar)
     ["docs", "components", "badge"] -> OnRouteChange(route.Badge)
+    ["docs", "components", "breadcrumbs"] -> OnRouteChange(route.Breadcrumbs)
     _ -> OnRouteChange(route.Home)
   }
 }
@@ -127,6 +128,7 @@ fn with_aside(model: Model) -> Element(Msg) {
         route.Tooltip -> page.tooltip()
         route.Avatar -> page.avatar()
         route.Badge -> page.badge()
+        route.Breadcrumbs -> page.breadcrumbs()
         _ -> page.home()
       },
     ]),

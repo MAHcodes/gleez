@@ -7,7 +7,7 @@ import gleam/result
 import gleam/string
 import simplifile
 
-// github tag for the cli version
+// github tag for the ui components
 const tag = "v0.1.0"
 
 // distination path for the installed components

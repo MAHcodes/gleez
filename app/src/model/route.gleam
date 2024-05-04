@@ -19,6 +19,7 @@ pub type Pages {
   Tooltip
   Avatar
   Badge
+  Breadcrumbs
 }
 
 pub const home = "/"
@@ -53,6 +54,8 @@ pub const avatar = "/docs/components/avatar"
 
 pub const badge = "/docs/components/badge"
 
+pub const breadcrumbs = "/docs/components/breadcrumbs"
+
 // TODO:
 pub const alert = "/docs/components/alert"
 
@@ -80,6 +83,7 @@ pub fn pages() -> List(Page) {
         Page(tooltip, []),
         Page(avatar, []),
         Page(badge, []),
+        Page(breadcrumbs, []),
       ]
         |> sort_pages,
     ),
@@ -103,6 +107,7 @@ pub fn to_path(page: Pages) -> String {
     Components -> avatar
     Installation -> installation
     Badge -> badge
+    Breadcrumbs -> breadcrumbs
   }
 }
 

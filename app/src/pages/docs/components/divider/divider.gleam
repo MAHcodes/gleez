@@ -1,11 +1,10 @@
-import lustre/attribute.{class}
+import components/prose.{prose}
 import lustre/element.{type Element}
-import lustre/element/html.{div}
 import pages/docs/components/divider/variants.{variants}
 import pages/docs/sections/section
 
 pub fn docs() -> Element(a) {
-  div([class("prose")], [
+  prose([], [
     section.intro(
       "Divider",
       "A horizontal or vertical line used to visually separate content or sections within a layout.",

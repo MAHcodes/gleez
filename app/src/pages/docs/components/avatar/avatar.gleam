@@ -1,13 +1,12 @@
-import lustre/attribute.{class}
+import components/prose.{prose}
 import lustre/element.{type Element}
-import lustre/element/html.{div}
 import pages/docs/components/avatar/attributes.{attributes}
 import pages/docs/components/avatar/variants.{variants}
 import pages/docs/components/avatar/examples.{examples}
 import pages/docs/sections/section
 
 pub fn docs() -> Element(a) {
-  div([class("prose")], [
+  prose([], [
     section.intro(
       "Avatar",
       "An image element with a fallback for representing the user.",

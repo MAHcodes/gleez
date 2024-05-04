@@ -8,6 +8,7 @@ import pages/docs/components/divider/divider
 import pages/docs/components/input/input
 import pages/docs/components/link/link
 import pages/docs/components/tooltip/tooltip
+import pages/docs/components/breadcrumbs/breadcrumbs
 import pages/docs/guide/intro/intro
 import pages/docs/guide/installation/installation
 import pages/docs/guide/colors/colors
@@ -42,3 +43,5 @@ pub const tooltip = tooltip.docs
 pub const avatar = avatar.docs
 
 pub const badge = badge.docs
+
+pub const breadcrumbs = breadcrumbs.docs

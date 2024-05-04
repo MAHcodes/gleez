@@ -1,5 +1,5 @@
 import gleam/string
-import lustre/attribute.{type Attribute, attribute, class, role}
+import lustre/attribute.{type Attribute, class}
 import lustre/element.{type Element}
 import lustre/element/html
 
@@ -26,28 +26,6 @@ pub fn button(
         ]
         |> string.join(" "),
       ),
-      ..attributes
-    ],
-    children,
-  )
-}
-
-pub fn of(
-  element: fn(List(Attribute(msg)), List(Element(msg))) -> Element(msg),
-  attributes: List(Attribute(msg)),
-  children: List(Element(msg)),
-) -> Element(msg) {
-  element(
-    [
-      class(
-        [
-          "flex gap-2 items-center justify-center transition-all",
-          "active:enabled:scale-[98%] disabled:opacity-50 disabled:cursor-not-allowed",
-        ]
-        |> string.join(" "),
-      ),
-      role("button"),
-      attribute("tabindex", "0"),
       ..attributes
     ],
     children,
