@@ -4,6 +4,7 @@ version = "0.1.0"
 description = "gleez cli, an experimental source installer"
 licences = ["MIT"]
 repository = { type = "github", user = "MAHcodes", repo = "gleez" }
+links = [{ title = "Website", href = "https://gleez.netlify.app/" }]
 
 [dependencies]
 gleam_stdlib = ">= 0.34.0 and < 2.0.0"

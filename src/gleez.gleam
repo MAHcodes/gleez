@@ -17,7 +17,7 @@ fn component_url(component: String) -> String {
   [
     "https://raw.githubusercontent.com/MAHcodes/gleez/",
     tag,
-    "/src/",
+    "/app/src/components/ui/",
     component,
     ".gleam",
   ]
