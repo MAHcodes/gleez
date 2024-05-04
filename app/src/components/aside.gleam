@@ -22,12 +22,9 @@ pub fn aside(route: Pages) -> Element(a) {
 }
 
 fn list(route: Pages, page: Page) -> Element(a) {
-  div([class("flex flex-col gap-4")], [
+  div([class("flex flex-col gap-2")], [
     h2([class("text-bold text-lg")], [text(route.page_name(page))]),
-    ul(
-      [class("flex flex-col gap-2 pl-8 list-disc")],
-      list.map(page.sub_pages, item(route, _)),
-    ),
+    ul([class("flex flex-col pl-1")], list.map(page.sub_pages, item(route, _))),
   ])
 }
 
@@ -37,9 +34,15 @@ fn item(route: Pages, page: Page) -> Element(a) {
     False ->
       li([], [
         h3([], [
-          a([active_variant(is_active(route, page.path)), href(page.path)], [
-            text(route.page_name(page)),
-          ]),
+          a(
+            [
+              class("pl-6 border-l-2 py-2"),
+              active_variant(is_active(route, page.path)),
+              active_border(is_active(route, page.path)),
+              href(page.path),
+            ],
+            [text(route.page_name(page))],
+          ),
         ]),
       ])
   }
@@ -50,4 +53,12 @@ fn active_variant(active: Bool) -> Attribute(a) {
     True -> link.link(link.Primary)
     False -> link.link(link.Neutral)
   }
+}
+
+fn active_border(active: Bool) -> Attribute(a) {
+  case active {
+    True -> "border-current"
+    False -> "border-neutral/20"
+  }
+  |> class
 }

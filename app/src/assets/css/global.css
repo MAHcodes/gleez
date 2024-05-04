@@ -55,7 +55,7 @@ body {
 }
 
 aside {
-  max-height: calc(100vh - 8rem);
+  max-height: calc(100vh - 4.5rem);
 }
 
 *::selection {
