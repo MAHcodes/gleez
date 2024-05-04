@@ -11,7 +11,7 @@
 	<a href="https://github.com/MAHcodes/gleez/contributors"><img src="https://img.shields.io/github/contributors/MAHcodes/gleez?colorA=363a4f&colorB=a6da95&style=for-the-badge"></a>
 </p>
 
-## Introduction
+## :sparkles: Introduction
 
 Similar to [shadcn](https://ui.shadcn.com/docs)
 
@@ -19,7 +19,7 @@ Similar to [shadcn](https://ui.shadcn.com/docs)
 
 This website showcases a real-world application built with Lustre and Gleez. you can check the source code on GitHub, as it's open source under the MIT License.
 
-## Installation
+## :rocket: Installation
 
 As mentioned earlier, this is **NOT** a component library. Instead, it's a collection of reusable components that you can integrate into your apps.
 
@@ -31,7 +31,7 @@ To install the gleez cli:
 gleam add gleez
 ```
 
-## Colors
+## :rainbow: Colors
 
 Gleez `Colors` are basically [TailwindCSS Custom Colors](https://tailwindcss.com/docs/customizing-colors#using-custom-colors)
 
@@ -155,14 +155,14 @@ Define CSS variables for light and dark theme:
 }
 ```
 
-## FAQ
+## :question: FAQ
 
 <details>
     <summary>What is the origin of the name "Gleez"?</summary>
-    <strong>Gleez</strong> is a mashup of<strong> Gleam </strong> and<strong> Deez </strong>, which raises the question,<strong> "What is Deez?"</strong>
+    <strong>Gleez</strong> is a mashup of<strong> Gleam </strong> and<strong> Deez</strong>, which raises the question,<strong> "What is Deez?"</strong>
 </details>
 
-## Acknowledgments
+## :pray: Acknowledgments
 
 - [lustre-ui](https://github.com/lustre-labs/ui) (reference)
 - [gleam-tour](https://github.com/gleam-lang/language-tour) (code highlights)
