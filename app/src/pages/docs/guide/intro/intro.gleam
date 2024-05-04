@@ -7,7 +7,7 @@ import gleam/option.{type Option, None, Some}
 import lustre/attribute.{alt, class, href, src, target}
 import lustre/element.{type Element, fragment, text}
 import lustre/element/html.{
-  blockquote, details, div, h1, h2, img, li, p, summary, ul,
+  blockquote, details, div, h2, img, li, p, summary, ul,
 }
 import lustre/ui/icon
 import model/repo.{type Repo}
@@ -134,7 +134,7 @@ pub fn docs(repo: Option(Repo)) -> Element(a) {
       ),
       text(" ✨"),
     ]),
-    h1([], [text("Introduction")]),
+    h2([], [text("Introduction")]),
     divider([class("mb-6"), divider.horizontal(divider.Neutral)]),
     shadcn(),
     fun_fact(repo),

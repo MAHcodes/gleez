@@ -1,7 +1,7 @@
 import components/markdown
-import components/ui/divider.{divider}
 import components/prose.{prose}
 import components/snippet.{snippet}
+import components/ui/divider.{divider}
 import components/ui/link.{a}
 import lustre/attribute.{class, href, target}
 import lustre/element.{type Element, text}
@@ -100,9 +100,7 @@ module.exports = {
       "json",
     ),
     br([]),
-    markdown.from_text(
-      "Define CSS variables for `light` and `dark` mode:",
-    ),
+    markdown.from_text("Define CSS variables for `light` and `dark` theme:"),
     br([]),
     snippet(
       "/* global.css */
