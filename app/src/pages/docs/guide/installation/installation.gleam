@@ -18,6 +18,6 @@ You can either copy and paste the components directly, or install them using `gl
 "
       |> markdown.from_text,
     p([], [text("To install the gleez cli:")]),
-    snippet("gleam add gleez", "shell"),
+    snippet("gleam add gleez --dev", "shell"),
   ])
 }

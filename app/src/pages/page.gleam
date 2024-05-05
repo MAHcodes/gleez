@@ -4,11 +4,11 @@ import pages/docs/components/avatar/avatar
 import pages/docs/components/badge/badge
 import pages/docs/components/breadcrumbs/breadcrumbs
 import pages/docs/components/button/button
-import pages/docs/components/switch/switch
 import pages/docs/components/chip/chip
 import pages/docs/components/divider/divider
 import pages/docs/components/input/input
 import pages/docs/components/link/link
+import pages/docs/components/switch/switch
 import pages/docs/components/tooltip/tooltip
 import pages/docs/guide/colors/colors
 import pages/docs/guide/installation/installation

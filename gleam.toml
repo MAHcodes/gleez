@@ -1,5 +1,5 @@
 name = "gleez"
-version = "0.1.0"
+version = "0.1.1"
 
 description = "gleez cli, an experimental source installer"
 licences = ["MIT"]
