@@ -65,7 +65,7 @@ pub fn docs() -> Element(a) {
       "// tailwind.config.js
 module.exports = {
   theme: {
-		extend: {
+    extend: {
       colors: {
         neutral: {
           DEFAULT: \"hsl(var(--neutral) / <alpha-value>)\",
