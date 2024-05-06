@@ -4,7 +4,7 @@ import components/ui/divider.{divider}
 import components/ui/link.{a}
 import gleam/int
 import gleam/option.{type Option, None, Some}
-import lustre/attribute.{alt, class, href, src, target}
+import lustre/attribute.{alt, class, height, href, rel, src, target, width}
 import lustre/element.{type Element, fragment, text}
 import lustre/element/html.{
   blockquote, details, div, h2, img, li, p, summary, ul,
@@ -120,6 +120,9 @@ pub fn docs(repo: Option(Repo)) -> Element(a) {
       class("w-full h-auto max-w-screen-sm mx-auto mb-12 select-none"),
       src("/imgs/Gleez.svg"),
       alt("Gleez UI Logo"),
+      rel("preload"),
+      width(640),
+      height(201),
     ]),
     p([class("text-center font-bold text-lg mb-12")], [
       text("Elegant, Modern, and Customizable TailwindCSS components for ✨ "),
