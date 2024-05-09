@@ -2,6 +2,9 @@
 module.exports = {
 	darkMode: "class",
 	content: ["./src/**/*.{html,gleam,js,ts,css}"],
+	future: {
+		hoverOnlyWhenSupported: true,
+	},
 	theme: {
 		container: {
 			center: true,

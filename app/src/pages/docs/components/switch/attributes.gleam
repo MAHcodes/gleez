@@ -32,7 +32,7 @@ pub fn demo() -> Element(a) {
   div([class(\"flex flex-wrap gap-4 items-center justify-center w-full\")], [
     switch([switch.solid(switch.Neutral), switch.sm()], [text(\"Small\")]),
     switch([switch.solid(switch.Neutral), switch.md()], [text(\"Medium\")]),
-    switch([switch.solid(switch.Primary), switch.lg()], [text(\"Large\")]),
+    switch([switch.solid(switch.Neutral), switch.lg()], [text(\"Large\")]),
   ])
 }
 "
