@@ -7,6 +7,7 @@ import pages/docs/components/button/button
 import pages/docs/components/chip/chip
 import pages/docs/components/divider/divider
 import pages/docs/components/input/input
+import pages/docs/components/kbd/kbd
 import pages/docs/components/link/link
 import pages/docs/components/switch/switch
 import pages/docs/components/tooltip/tooltip
@@ -48,3 +49,5 @@ pub const badge = badge.docs
 pub const breadcrumbs = breadcrumbs.docs
 
 pub const switch = switch.docs
+
+pub const kbd = kbd.docs

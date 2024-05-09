@@ -21,6 +21,7 @@ pub type Pages {
   Badge
   Breadcrumbs
   Switch
+  Kbd
 }
 
 pub const home = "/"
@@ -59,6 +60,8 @@ pub const breadcrumbs = "/docs/components/breadcrumbs"
 
 pub const switch = "/docs/components/switch"
 
+pub const kbd = "/docs/components/kbd"
+
 pub type Page {
   Page(path: String, sub_pages: List(Page))
 }
@@ -79,6 +82,7 @@ pub fn pages() -> List(Page) {
         Page(badge, []),
         Page(breadcrumbs, []),
         Page(switch, []),
+        Page(kbd, []),
       ]
         |> sort_pages,
     ),
@@ -104,6 +108,7 @@ pub fn to_path(page: Pages) -> String {
     Badge -> badge
     Breadcrumbs -> breadcrumbs
     Switch -> switch
+    Kbd -> kbd
   }
 }
 
