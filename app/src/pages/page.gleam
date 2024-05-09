@@ -4,6 +4,7 @@ import pages/docs/components/avatar/avatar
 import pages/docs/components/badge/badge
 import pages/docs/components/breadcrumbs/breadcrumbs
 import pages/docs/components/button/button
+import pages/docs/components/checkbox/checkbox
 import pages/docs/components/chip/chip
 import pages/docs/components/divider/divider
 import pages/docs/components/input/input
@@ -51,3 +52,5 @@ pub const breadcrumbs = breadcrumbs.docs
 pub const switch = switch.docs
 
 pub const kbd = kbd.docs
+
+pub const checkbox = checkbox.docs

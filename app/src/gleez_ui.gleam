@@ -46,6 +46,7 @@ fn on_url_change(uri: Uri) -> Msg {
     ["docs", "components", "breadcrumbs"] -> OnRouteChange(route.Breadcrumbs)
     ["docs", "components", "switch"] -> OnRouteChange(route.Switch)
     ["docs", "components", "kbd"] -> OnRouteChange(route.Kbd)
+    ["docs", "components", "checkbox"] -> OnRouteChange(route.Checkbox)
     _ -> OnRouteChange(route.Home)
   }
 }
@@ -133,6 +134,7 @@ fn with_aside(model: Model) -> Element(Msg) {
         route.Breadcrumbs -> page.breadcrumbs()
         route.Switch -> page.switch()
         route.Kbd -> page.kbd()
+        route.Checkbox -> page.checkbox()
         _ -> page.home()
       },
     ]),
