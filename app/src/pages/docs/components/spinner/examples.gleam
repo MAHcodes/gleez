@@ -11,7 +11,7 @@ pub fn examples() -> Element(a) {
       "",
       [
         div([class("flex flex-col gap-4 items-center")], [
-          spinner([spinner.solid(spinner.Neutral), spinner.md()]),
+          spinner([spinner.flat(spinner.Neutral), spinner.md()]),
           span([], [text("Loading...")]),
         ]),
       ],
@@ -30,7 +30,7 @@ import lustre/element/html.{div, span}
 pub fn demo() -> Element(a) {
   div([class(\"flex flex-wrap gap-4 items-center justify-center w-full\")], [
     div([class(\"flex flex-col gap-4 items-center\")], [
-      spinner([spinner.solid(spinner.Neutral), spinner.md()]),
+      spinner([spinner.flat(spinner.Neutral), spinner.md()]),
       span([], [text(\"Loading...\")]),
     ]),
   ])

@@ -12,9 +12,9 @@ pub fn attributes() -> Element(a) {
 - `lg()`: Large Size
     ",
       [
-        spinner([spinner.solid(spinner.Neutral), spinner.sm()]),
-        spinner([spinner.solid(spinner.Neutral), spinner.md()]),
-        spinner([spinner.solid(spinner.Neutral), spinner.lg()]),
+        spinner([spinner.flat(spinner.Neutral), spinner.sm()]),
+        spinner([spinner.flat(spinner.Neutral), spinner.md()]),
+        spinner([spinner.flat(spinner.Neutral), spinner.lg()]),
       ],
       size_code(),
     ),
@@ -30,9 +30,9 @@ import lustre/element/html.{div}
 
 pub fn demo() -> Element(a) {
   div([class(\"flex flex-wrap gap-4 items-center justify-center w-full\")], [
-    spinner([spinner.solid(spinner.Neutral), spinner.sm()]),
-    spinner([spinner.solid(spinner.Neutral), spinner.md()]),
-    spinner([spinner.solid(spinner.Neutral), spinner.lg()]),
+    spinner([spinner.flat(spinner.Neutral), spinner.sm()]),
+    spinner([spinner.flat(spinner.Neutral), spinner.md()]),
+    spinner([spinner.flat(spinner.Neutral), spinner.lg()]),
   ])
 }
 "
