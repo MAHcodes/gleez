@@ -1,6 +1,6 @@
 import gleam/string
 import lustre/attribute.{type Attribute, class}
-import lustre/element.{type Element, text}
+import lustre/element.{type Element}
 import lustre/element/html.{div}
 
 pub type Colors {
@@ -58,13 +58,13 @@ pub fn light(color: Colors) -> Attribute(a) {
 }
 
 pub fn sm() -> Attribute(a) {
-  class("w-8 h-8 border-4")
+  class("w-8 h-8 border-2")
 }
 
 pub fn md() -> Attribute(a) {
-  class("w-12 h-12 border-[6px]")
+  class("w-10 h-10 border-4")
 }
 
 pub fn lg() -> Attribute(a) {
-  class("w-16 h-16 border-8")
+  class("w-12 h-12 border-[6px]")
 }
