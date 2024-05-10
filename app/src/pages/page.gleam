@@ -9,6 +9,7 @@ import pages/docs/components/chip/chip
 import pages/docs/components/divider/divider
 import pages/docs/components/input/input
 import pages/docs/components/kbd/kbd
+import pages/docs/components/spinner/spinner
 import pages/docs/components/link/link
 import pages/docs/components/switch/switch
 import pages/docs/components/tooltip/tooltip
@@ -54,3 +55,5 @@ pub const switch = switch.docs
 pub const kbd = kbd.docs
 
 pub const checkbox = checkbox.docs
+
+pub const spinner = spinner.docs

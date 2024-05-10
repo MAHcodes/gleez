@@ -22,7 +22,7 @@ pub fn main() {
 
 fn init(_) -> #(Model, Effect(Msg)) {
   #(
-    Model(page: route.Home, repo: None),
+    Model(page: route.Spinner, repo: None),
     batch([fetch_stargazers_count(), modem.init(on_url_change), on_load()]),
   )
 }
@@ -47,6 +47,7 @@ fn on_url_change(uri: Uri) -> Msg {
     ["docs", "components", "switch"] -> OnRouteChange(route.Switch)
     ["docs", "components", "kbd"] -> OnRouteChange(route.Kbd)
     ["docs", "components", "checkbox"] -> OnRouteChange(route.Checkbox)
+    ["docs", "components", "spinner"] -> OnRouteChange(route.Spinner)
     _ -> OnRouteChange(route.Home)
   }
 }
@@ -135,6 +136,7 @@ fn with_aside(model: Model) -> Element(Msg) {
         route.Switch -> page.switch()
         route.Kbd -> page.kbd()
         route.Checkbox -> page.checkbox()
+        route.Spinner -> page.spinner()
         _ -> page.home()
       },
     ]),
