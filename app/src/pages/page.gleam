@@ -9,8 +9,8 @@ import pages/docs/components/chip/chip
 import pages/docs/components/divider/divider
 import pages/docs/components/input/input
 import pages/docs/components/kbd/kbd
-import pages/docs/components/spinner/spinner
 import pages/docs/components/link/link
+import pages/docs/components/spinner/spinner
 import pages/docs/components/switch/switch
 import pages/docs/components/tooltip/tooltip
 import pages/docs/guide/colors/colors

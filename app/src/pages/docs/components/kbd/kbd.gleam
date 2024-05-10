@@ -9,7 +9,8 @@ pub fn docs() -> Element(a) {
   prose([], [
     section.intro(
       "Kbd",
-      "The keyboard key component exists to show which key or combination of keys performs a given action.",),
+      "The keyboard key component exists to show which key or combination of keys performs a given action.",
+    ),
     section.installation("gleam run -m gleez add kbd"),
     variants(),
     attributes(),

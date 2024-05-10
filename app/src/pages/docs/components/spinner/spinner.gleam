@@ -9,7 +9,8 @@ pub fn docs() -> Element(a) {
   prose([], [
     section.intro(
       "Spinner",
-      "Spinners provide a visual cue that an action is processing awaiting a course of change or a result.",),
+      "Spinners provide a visual cue that an action is processing awaiting a course of change or a result.",
+    ),
     section.installation("gleam run -m gleez add spinner"),
     variants(),
     attributes(),

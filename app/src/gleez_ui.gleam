@@ -22,7 +22,7 @@ pub fn main() {
 
 fn init(_) -> #(Model, Effect(Msg)) {
   #(
-    Model(page: route.Demo, repo: None),
+    Model(page: route.Home, repo: None),
     batch([fetch_stargazers_count(), modem.init(on_url_change), on_load()]),
   )
 }
