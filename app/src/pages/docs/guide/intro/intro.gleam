@@ -15,7 +15,12 @@ import model/repo.{type Repo}
 fn faq() -> Element(a) {
   fragment([
     h2([], [text("FAQ")]),
-    divider([class("mb-6"), divider.horizontal(divider.Neutral)]),
+    divider([
+      class("mb-6"),
+      divider.solid(divider.Neutral),
+      divider.horizontal(),
+      divider.sm(),
+    ]),
     details([], [
       summary([], [text("What is the origin of the name \"Gleez\"?")]),
       p([], [
@@ -57,7 +62,12 @@ fn fun_fact(repo: Option(Repo)) -> Element(a) {
     Some(r) ->
       div([], [
         h2([], [text("Fun Fact")]),
-        divider([class("mb-6"), divider.horizontal(divider.Neutral)]),
+        divider([
+          class("mb-6"),
+          divider.solid(divider.Neutral),
+          divider.horizontal(),
+          divider.sm(),
+        ]),
         p([class("flex items-center gap-2")], [
           text("You can bump up our "),
           text(int.to_string(r.stargazers_count)),
@@ -78,7 +88,12 @@ fn acknowledgments() -> Element(a) {
 
   fragment([
     h2([], [text("Acknowledgments")]),
-    divider([class("mb-6"), divider.horizontal(divider.Neutral)]),
+    divider([
+      class("mb-6"),
+      divider.solid(divider.Neutral),
+      divider.horizontal(),
+      divider.sm(),
+    ]),
     ul([], [
       li([], [
         a([href("https://github.com/lustre-labs/ui"), ..link_atts], [
@@ -138,7 +153,12 @@ pub fn docs(repo: Option(Repo)) -> Element(a) {
       text(" ✨"),
     ]),
     h2([], [text("Introduction")]),
-    divider([class("mb-6"), divider.horizontal(divider.Neutral)]),
+    divider([
+      class("mb-6"),
+      divider.solid(divider.Neutral),
+      divider.horizontal(),
+      divider.sm(),
+    ]),
     shadcn(),
     fun_fact(repo),
     faq(),

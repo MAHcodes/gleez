@@ -1,12 +1,12 @@
-import components/ui/spinner.{spinner}
+import components/ui/divider.{divider}
 import lustre/attribute.{class}
 import lustre/element.{type Element}
 import lustre/element/html.{div}
 
 pub fn demo() -> Element(a) {
-  div([class("flex flex-wrap gap-4 items-center justify-center w-full")], [
-    spinner([spinner.solid(spinner.Neutral), spinner.sm()]),
-    spinner([spinner.solid(spinner.Neutral), spinner.md()]),
-    spinner([spinner.solid(spinner.Neutral), spinner.lg()]),
+  div([class("flex flex-col items-center gap-8 w-full")], [
+    divider([divider.solid(divider.Neutral), divider.horizontal(), divider.sm()]),
+    divider([divider.solid(divider.Neutral), divider.horizontal(), divider.md()]),
+    divider([divider.solid(divider.Neutral), divider.horizontal(), divider.lg()]),
   ])
 }

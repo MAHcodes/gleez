@@ -1,6 +1,7 @@
 import components/prose.{prose}
 import lustre/element.{type Element}
 import pages/docs/components/divider/variants.{variants}
+import pages/docs/components/divider/attributes.{attributes}
 import pages/docs/sections/section
 
 pub fn docs() -> Element(a) {
@@ -11,5 +12,6 @@ pub fn docs() -> Element(a) {
     ),
     section.installation("gleam run -m gleez add divider"),
     variants(),
+    attributes(),
   ])
 }
