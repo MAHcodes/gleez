@@ -3,9 +3,12 @@
 mkdir -p ./dist/docs/guide/{introduction,installation,colors}
 mkdir -p ./dist/docs/components/{button,input,link,chip,divider,tooltip,avatar,badge,breadcrumbs,switch,kbd,checkbox,spinner,skeleton}
 
+cp ./dist/index.html ./dist/docs/
+cp ./dist/index.html ./dist/docs/guide/
 cp ./dist/index.html ./dist/docs/guide/introduction/
 cp ./dist/index.html ./dist/docs/guide/installation/
 cp ./dist/index.html ./dist/docs/guide/colors/
+cp ./dist/index.html ./dist/docs/components/
 cp ./dist/index.html ./dist/docs/components/button/
 cp ./dist/index.html ./dist/docs/components/input/
 cp ./dist/index.html ./dist/docs/components/link/

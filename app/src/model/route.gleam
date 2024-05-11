@@ -71,32 +71,47 @@ pub const spinner = "/docs/components/spinner"
 
 pub const skeleton = "/docs/components/skeleton"
 
+pub type Status {
+  None
+  New
+  Updated
+}
+
 pub type Page {
-  Page(path: String, sub_pages: List(Page))
+  Page(path: String, sub_pages: List(Page), state: Status)
 }
 
 pub fn pages() -> List(Page) {
   [
-    Page("Guide", [Page(intro, []), Page(installation, []), Page(colors, [])]),
+    Page(
+      "Guide",
+      [
+        Page(intro, [], None),
+        Page(installation, [], None),
+        Page(colors, [], None),
+      ],
+      None,
+    ),
     Page(
       components,
       [
-        Page(button, []),
-        Page(input, []),
-        Page(link, []),
-        Page(chip, []),
-        Page(divider, []),
-        Page(tooltip, []),
-        Page(avatar, []),
-        Page(badge, []),
-        Page(breadcrumbs, []),
-        Page(switch, []),
-        Page(kbd, []),
-        Page(checkbox, []),
-        Page(spinner, []),
-        Page(skeleton, []),
+        Page(button, [], None),
+        Page(input, [], None),
+        Page(link, [], None),
+        Page(chip, [], None),
+        Page(divider, [], Updated),
+        Page(tooltip, [], None),
+        Page(avatar, [], None),
+        Page(badge, [], None),
+        Page(breadcrumbs, [], None),
+        Page(switch, [], None),
+        Page(kbd, [], New),
+        Page(checkbox, [], New),
+        Page(spinner, [], New),
+        Page(skeleton, [], New),
       ]
         |> sort_pages,
+      None,
     ),
   ]
 }

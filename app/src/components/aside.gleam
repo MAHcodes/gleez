@@ -1,8 +1,9 @@
+import components/ui/chip.{chip}
 import components/ui/link.{a}
 import gleam/list
 import gleam/string
 import lustre/attribute.{type Attribute, class, href}
-import lustre/element.{type Element, text}
+import lustre/element.{type Element, fragment, text}
 import lustre/element/html.{div, h2, h3, li, ul}
 import model/route.{type Page, type Pages, is_active}
 
@@ -36,15 +37,24 @@ fn item(route: Pages, page: Page) -> Element(a) {
         h3([], [
           a(
             [
-              class("pl-6 border-l py-1.5"),
+              class("pl-6 border-l py-1.5 flex items-center gap-2"),
               active_variant(is_active(route, page.path)),
               active_border(is_active(route, page.path)),
               href(page.path),
             ],
-            [text(route.page_name(page))],
+            [text(route.page_name(page)), status(page)],
           ),
         ]),
       ])
+  }
+}
+
+fn status(page: Page) -> Element(a) {
+  case page.state {
+    route.None -> fragment([])
+    route.New -> chip([chip.flat(chip.Info), chip.sm()], [text("New")])
+    route.Updated ->
+      chip([chip.flat(chip.Warning), chip.sm()], [text("Updated")])
   }
 }
 
