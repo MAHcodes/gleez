@@ -127,6 +127,32 @@ pub fn to_path(page: Pages) -> String {
   }
 }
 
+pub fn to_pages(path: String) -> Pages {
+  case path {
+    p if p == demo -> Demo
+    p if p == colors -> Colors
+    p if p == intro -> Intro
+    p if p == blog -> Blog
+    p if p == button -> Button
+    p if p == input -> Input
+    p if p == link -> Link
+    p if p == chip -> Chip
+    p if p == divider -> Divider
+    p if p == tooltip -> Tooltip
+    p if p == avatar -> Avatar
+    p if p == avatar -> Components
+    p if p == installation -> Installation
+    p if p == badge -> Badge
+    p if p == breadcrumbs -> Breadcrumbs
+    p if p == switch -> Switch
+    p if p == kbd -> Kbd
+    p if p == checkbox -> Checkbox
+    p if p == spinner -> Spinner
+    p if p == skeleton -> Skeleton
+    _ -> Home
+  }
+}
+
 pub fn is_active(page: Pages, path: String) -> Bool {
   to_path(page) == path
 }

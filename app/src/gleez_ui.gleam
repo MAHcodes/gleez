@@ -11,7 +11,7 @@ import lustre/element.{type Element}
 import lustre/element/html.{div}
 import lustre_http.{type HttpError}
 import model/repo.{type Repo, Repo}
-import model/route.{type Pages}
+import model/route.{type Pages, to_pages}
 import modem
 import pages/page
 
@@ -22,7 +22,7 @@ pub fn main() {
 
 fn init(_) -> #(Model, Effect(Msg)) {
   #(
-    Model(page: route.Home, repo: None),
+    Model(page: to_pages(pathname()), repo: None),
     batch([fetch_stargazers_count(), modem.init(on_url_change), on_load()]),
   )
 }
@@ -63,6 +63,9 @@ fn do_highlight_all() -> Nil
 
 @external(javascript, "./assets/js/ffi.mjs", "attach_all")
 fn do_attach_all() -> Nil
+
+@external(javascript, "./assets/js/ffi.mjs", "pathname")
+fn pathname() -> String
 
 fn attach_all() -> Effect(a) {
   effect.from(fn(_) { do_attach_all() })

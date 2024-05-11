@@ -149,3 +149,7 @@ function do_attach_all() {
 export function attach_all() {
 	window.requestAnimationFrame(do_attach_all);
 }
+
+export function pathname() {
+	return window.location.pathname;
+}
