@@ -24,6 +24,7 @@ pub type Pages {
   Kbd
   Checkbox
   Spinner
+  Skeleton
 }
 
 pub const home = "/"
@@ -68,6 +69,8 @@ pub const checkbox = "/docs/components/checkbox"
 
 pub const spinner = "/docs/components/spinner"
 
+pub const skeleton = "/docs/components/skeleton"
+
 pub type Page {
   Page(path: String, sub_pages: List(Page))
 }
@@ -91,6 +94,7 @@ pub fn pages() -> List(Page) {
         Page(kbd, []),
         Page(checkbox, []),
         Page(spinner, []),
+        Page(skeleton, []),
       ]
         |> sort_pages,
     ),
@@ -119,6 +123,7 @@ pub fn to_path(page: Pages) -> String {
     Kbd -> kbd
     Checkbox -> checkbox
     Spinner -> spinner
+    Skeleton -> skeleton
   }
 }
 

@@ -7,7 +7,7 @@ import lustre/element/html.{div, h2, h3, p, text}
 pub fn examples(examples: List(Element(a))) -> Element(a) {
   div([], [
     h2([], [text("Examples")]),
-    divider([divider.solid(divider.Neutral)]),
+    divider([divider.solid(divider.Neutral), divider.horizontal(), divider.sm()]),
     ..examples
   ])
 }
