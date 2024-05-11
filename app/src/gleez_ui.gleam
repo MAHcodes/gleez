@@ -61,7 +61,7 @@ pub opaque type Msg {
 @external(javascript, "./assets/js/highlight/gleam.ffi.mjs", "highlight_all")
 fn do_highlight_all() -> Nil
 
-@external(javascript, "./assets/js/ffi.js", "attach_all")
+@external(javascript, "./assets/js/ffi.mjs", "attach_all")
 fn do_attach_all() -> Nil
 
 fn attach_all() -> Effect(a) {
