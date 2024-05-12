@@ -1,7 +1,7 @@
 import gleam/list
 import gleam/result
 import gleam/string
-import gleam/uri
+import gleam/uri.{type Uri}
 
 pub type Pages {
   Home
@@ -21,66 +21,101 @@ pub type Pages {
   Badge
   Breadcrumbs
   Switch
+  Kbd
+  Checkbox
+  Spinner
+  Skeleton
+  Slider
 }
 
 pub const home = "/"
 
-pub const demo = "/demo"
+pub const demo = "/demo/"
 
-pub const blog = "/blog"
+pub const blog = "/blog/"
 
-pub const intro = "/docs/guide/introduction"
+pub const intro = "/docs/guide/introduction/"
 
-pub const installation = "/docs/guide/installation"
+pub const installation = "/docs/guide/installation/"
 
-pub const colors = "/docs/guide/colors"
+pub const colors = "/docs/guide/colors/"
 
-pub const docs = "/docs"
+pub const docs = "/docs/"
 
 pub const components = "/docs/components/"
 
-pub const button = "/docs/components/button"
+pub const button = "/docs/components/button/"
 
-pub const input = "/docs/components/input"
+pub const input = "/docs/components/input/"
 
-pub const link = "/docs/components/link"
+pub const link = "/docs/components/link/"
 
-pub const chip = "/docs/components/chip"
+pub const chip = "/docs/components/chip/"
 
-pub const divider = "/docs/components/divider"
+pub const divider = "/docs/components/divider/"
 
-pub const tooltip = "/docs/components/tooltip"
+pub const tooltip = "/docs/components/tooltip/"
 
-pub const avatar = "/docs/components/avatar"
+pub const avatar = "/docs/components/avatar/"
 
-pub const badge = "/docs/components/badge"
+pub const badge = "/docs/components/badge/"
 
-pub const breadcrumbs = "/docs/components/breadcrumbs"
+pub const breadcrumbs = "/docs/components/breadcrumbs/"
 
-pub const switch = "/docs/components/switch"
+pub const switch = "/docs/components/switch/"
+
+pub const kbd = "/docs/components/kbd/"
+
+pub const checkbox = "/docs/components/checkbox/"
+
+pub const spinner = "/docs/components/spinner/"
+
+pub const skeleton = "/docs/components/skeleton/"
+
+pub const slider = "/docs/components/slider/"
+
+pub type Status {
+  None
+  New
+  Updated
+}
 
 pub type Page {
-  Page(path: String, sub_pages: List(Page))
+  Page(path: String, sub_pages: List(Page), state: Status)
 }
 
 pub fn pages() -> List(Page) {
   [
-    Page("Guide", [Page(intro, []), Page(installation, []), Page(colors, [])]),
+    Page(
+      "Guide",
+      [
+        Page(intro, [], None),
+        Page(installation, [], None),
+        Page(colors, [], None),
+      ],
+      None,
+    ),
     Page(
       components,
       [
-        Page(button, []),
-        Page(input, []),
-        Page(link, []),
-        Page(chip, []),
-        Page(divider, []),
-        Page(tooltip, []),
-        Page(avatar, []),
-        Page(badge, []),
-        Page(breadcrumbs, []),
-        Page(switch, []),
+        Page(button, [], None),
+        Page(input, [], None),
+        Page(link, [], None),
+        Page(chip, [], None),
+        Page(divider, [], Updated),
+        Page(tooltip, [], None),
+        Page(avatar, [], None),
+        Page(badge, [], None),
+        Page(breadcrumbs, [], None),
+        Page(switch, [], None),
+        Page(kbd, [], New),
+        Page(checkbox, [], New),
+        Page(spinner, [], New),
+        Page(skeleton, [], New),
+        Page(slider, [], New),
       ]
         |> sort_pages,
+      None,
     ),
   ]
 }
@@ -104,6 +139,38 @@ pub fn to_path(page: Pages) -> String {
     Badge -> badge
     Breadcrumbs -> breadcrumbs
     Switch -> switch
+    Kbd -> kbd
+    Checkbox -> checkbox
+    Spinner -> spinner
+    Skeleton -> skeleton
+    Slider -> slider
+  }
+}
+
+pub fn to_pages(uri: Uri) -> Pages {
+  case uri.path {
+    p if p == demo -> Demo
+    p if p == colors -> Colors
+    p if p == intro -> Intro
+    p if p == blog -> Blog
+    p if p == button -> Button
+    p if p == input -> Input
+    p if p == link -> Link
+    p if p == chip -> Chip
+    p if p == divider -> Divider
+    p if p == tooltip -> Tooltip
+    p if p == avatar -> Avatar
+    p if p == avatar -> Components
+    p if p == installation -> Installation
+    p if p == badge -> Badge
+    p if p == breadcrumbs -> Breadcrumbs
+    p if p == switch -> Switch
+    p if p == kbd -> Kbd
+    p if p == checkbox -> Checkbox
+    p if p == spinner -> Spinner
+    p if p == skeleton -> Skeleton
+    p if p == slider -> Slider
+    _ -> Home
   }
 }
 

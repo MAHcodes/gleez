@@ -12,7 +12,7 @@ import model/route
 pub fn variants(children: List(Element(a))) -> Element(a) {
   div([], [
     h2([], [text("Variants")]),
-    divider([divider.horizontal(divider.Neutral)]),
+    divider([divider.solid(divider.Neutral), divider.horizontal(), divider.sm()]),
     ..children
   ])
 }

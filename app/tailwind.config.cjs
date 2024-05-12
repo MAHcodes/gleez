@@ -5,6 +5,15 @@ module.exports = {
 	future: {
 		hoverOnlyWhenSupported: true,
 	},
+	purge: {
+		safelist: [
+			"animate-fade-in",
+			"animate-fade-out",
+			"hidden",
+			"opacity-0",
+			"invisible",
+		],
+	},
 	theme: {
 		container: {
 			center: true,

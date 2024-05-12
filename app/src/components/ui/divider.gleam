@@ -17,35 +17,62 @@ pub fn divider(attributes: List(Attribute(a))) -> Element(a) {
   div(
     [
       role("separator"),
-      class("shrink-0 border-none self-stretch bg-opacity-35 rounded-full"),
+      class("shrink-0 self-stretch bg-opacity-35"),
       ..attributes
     ],
     [],
   )
 }
 
-pub fn vertical(color: Colors) -> Attribute(a) {
+pub fn solid(color: Colors) -> Attribute(a) {
   color
   |> paint
-  |> string.append(" h-full w-[1px]")
+  |> string.append(" border-solid")
   |> class
 }
 
-pub fn horizontal(color: Colors) -> Attribute(a) {
+pub fn dashed(color: Colors) -> Attribute(a) {
   color
   |> paint
-  |> string.append(" w-full h-[1px]")
+  |> string.append(" border-dashed")
   |> class
+}
+
+pub fn dotted(color: Colors) -> Attribute(a) {
+  color
+  |> paint
+  |> string.append(" border-dotted")
+  |> class
+}
+
+pub fn vertical() -> Attribute(a) {
+  class("h-full w-0 border-y-0 border-l-0")
+}
+
+pub fn horizontal() -> Attribute(a) {
+  class("w-full h-0 border-x-0 border-t-0")
+}
+
+pub fn sm() -> Attribute(a) {
+  class("border")
+}
+
+pub fn md() -> Attribute(a) {
+  class("border-2")
+}
+
+pub fn lg() -> Attribute(a) {
+  class("border-4")
 }
 
 fn paint(color: Colors) -> String {
   case color {
-    Neutral -> "bg-neutral"
-    Primary -> "bg-primary"
-    Secondary -> "bg-secondary"
-    Success -> "bg-success"
-    Info -> "bg-info"
-    Warning -> "bg-warning"
-    Danger -> "bg-danger"
+    Neutral -> "border-neutral"
+    Primary -> "border-primary"
+    Secondary -> "border-secondary"
+    Success -> "border-success"
+    Info -> "border-info"
+    Warning -> "border-warning"
+    Danger -> "border-danger"
   }
 }

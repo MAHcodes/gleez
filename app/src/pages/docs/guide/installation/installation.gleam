@@ -9,7 +9,12 @@ import lustre/element/html.{h1, p}
 pub fn docs() -> Element(a) {
   prose([], [
     h1([], [text("Installation")]),
-    divider([class("mb-6"), divider.horizontal(divider.Neutral)]),
+    divider([
+      class("mb-6"),
+      divider.solid(divider.Neutral),
+      divider.horizontal(),
+      divider.sm(),
+    ]),
     "
 As mentioned earlier, this is **NOT** a component library. Instead, it's a collection of reusable components that you can integrate into your apps. 
 

@@ -11,7 +11,7 @@ import lustre/element.{type Element}
 import lustre/element/html.{div}
 import lustre_http.{type HttpError}
 import model/repo.{type Repo, Repo}
-import model/route.{type Pages}
+import model/route.{type Pages, to_pages}
 import modem
 import pages/page
 
@@ -22,7 +22,7 @@ pub fn main() {
 
 fn init(_) -> #(Model, Effect(Msg)) {
   #(
-    Model(page: route.Home, repo: None),
+    Model(page: to_pages(uri()), repo: None),
     batch([fetch_stargazers_count(), modem.init(on_url_change), on_load()]),
   )
 }
@@ -45,6 +45,11 @@ fn on_url_change(uri: Uri) -> Msg {
     ["docs", "components", "badge"] -> OnRouteChange(route.Badge)
     ["docs", "components", "breadcrumbs"] -> OnRouteChange(route.Breadcrumbs)
     ["docs", "components", "switch"] -> OnRouteChange(route.Switch)
+    ["docs", "components", "kbd"] -> OnRouteChange(route.Kbd)
+    ["docs", "components", "checkbox"] -> OnRouteChange(route.Checkbox)
+    ["docs", "components", "spinner"] -> OnRouteChange(route.Spinner)
+    ["docs", "components", "skeleton"] -> OnRouteChange(route.Skeleton)
+    ["docs", "components", "slider"] -> OnRouteChange(route.Slider)
     _ -> OnRouteChange(route.Home)
   }
 }
@@ -57,8 +62,11 @@ pub opaque type Msg {
 @external(javascript, "./assets/js/highlight/gleam.ffi.mjs", "highlight_all")
 fn do_highlight_all() -> Nil
 
-@external(javascript, "./assets/js/ffi.js", "attach_all")
+@external(javascript, "./assets/js/ffi.mjs", "attach_all")
 fn do_attach_all() -> Nil
+
+@external(javascript, "./assets/js/ffi.mjs", "uri")
+fn uri() -> uri.Uri
 
 fn attach_all() -> Effect(a) {
   effect.from(fn(_) { do_attach_all() })
@@ -131,6 +139,11 @@ fn with_aside(model: Model) -> Element(Msg) {
         route.Badge -> page.badge()
         route.Breadcrumbs -> page.breadcrumbs()
         route.Switch -> page.switch()
+        route.Kbd -> page.kbd()
+        route.Checkbox -> page.checkbox()
+        route.Spinner -> page.spinner()
+        route.Skeleton -> page.skeleton()
+        route.Slider -> page.slider()
         _ -> page.home()
       },
     ]),

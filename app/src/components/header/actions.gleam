@@ -30,7 +30,7 @@ pub fn actions() -> Element(a) {
         ],
       ),
     ),
-    divider([divider.vertical(divider.Neutral)]),
+    divider([divider.solid(divider.Neutral), divider.sm(), divider.vertical()]),
     tooltip(
       [
         tooltip.flat(tooltip.Neutral),

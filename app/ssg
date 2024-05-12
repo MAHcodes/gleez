@@ -1,0 +1,26 @@
+#!/bin/bash
+
+mkdir -p ./dist/docs/guide/{introduction,installation,colors}
+mkdir -p ./dist/docs/components/{button,input,link,chip,divider,tooltip,avatar,badge,breadcrumbs,switch,kbd,checkbox,spinner,skeleton,slider}
+
+cp ./dist/index.html ./dist/docs/
+cp ./dist/index.html ./dist/docs/guide/
+cp ./dist/index.html ./dist/docs/guide/introduction/
+cp ./dist/index.html ./dist/docs/guide/installation/
+cp ./dist/index.html ./dist/docs/guide/colors/
+cp ./dist/index.html ./dist/docs/components/
+cp ./dist/index.html ./dist/docs/components/button/
+cp ./dist/index.html ./dist/docs/components/input/
+cp ./dist/index.html ./dist/docs/components/link/
+cp ./dist/index.html ./dist/docs/components/chip/
+cp ./dist/index.html ./dist/docs/components/divider/
+cp ./dist/index.html ./dist/docs/components/tooltip/
+cp ./dist/index.html ./dist/docs/components/avatar/
+cp ./dist/index.html ./dist/docs/components/badge/
+cp ./dist/index.html ./dist/docs/components/breadcrumbs/
+cp ./dist/index.html ./dist/docs/components/switch/
+cp ./dist/index.html ./dist/docs/components/kbd/
+cp ./dist/index.html ./dist/docs/components/checkbox/
+cp ./dist/index.html ./dist/docs/components/spinner/
+cp ./dist/index.html ./dist/docs/components/skeleton/
+cp ./dist/index.html ./dist/docs/components/slider/

@@ -1,3 +1,6 @@
+import { Some, None } from "/build/dev/javascript/gleam_stdlib/gleam/option.mjs";
+import { Uri } from "/build/dev/javascript/gleam_stdlib/gleam/uri.mjs";
+
 function attach_copy() {
 	const codes = document.querySelectorAll("pre.hljs");
 
@@ -148,4 +151,21 @@ function do_attach_all() {
 
 export function attach_all() {
 	window.requestAnimationFrame(do_attach_all);
+}
+
+const uri_from_url = (url) => {
+	return new Uri(
+		/* scheme   */ new (url.protocol ? Some : None)(url.protocol),
+		/* userinfo */ new None(),
+		/* host     */ new (url.host ? Some : None)(url.host),
+		/* port     */ new (url.port ? Some : None)(url.port),
+		/* path     */ url.pathname,
+		/* query    */ new (url.search ? Some : None)(url.search),
+		/* fragment */ new (url.hash ? Some : None)(url.hash.slice(1)),
+	);
+};
+
+export function uri() {
+	const url = new URL(window.location.href);
+	return uri_from_url(url);
 }

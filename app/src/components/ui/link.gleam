@@ -70,7 +70,6 @@ pub fn link(color: Colors) -> Attribute(a) {
     Warning -> "text-warning"
     Danger -> "text-danger"
   }
-  |> string.append("")
   |> class
 }
 

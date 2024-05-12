@@ -11,7 +11,7 @@ import lustre/ui/icon
 pub fn docs() -> Element(a) {
   prose([], [
     h1([], [text("Colors")]),
-    divider([divider.horizontal(divider.Neutral)]),
+    divider([divider.solid(divider.Neutral), divider.horizontal(), divider.sm()]),
     p([], [
       text("Gleez"),
       code([], [text("Colors")]),

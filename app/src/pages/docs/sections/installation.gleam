@@ -7,7 +7,12 @@ import lustre/element/html.{div, h2, text}
 pub fn installation(command: String) -> Element(a) {
   div([], [
     h2([], [text("Installation")]),
-    divider([class("mb-6"), divider.horizontal(divider.Neutral)]),
+    divider([
+      class("mb-6"),
+      divider.solid(divider.Neutral),
+      divider.horizontal(),
+      divider.sm(),
+    ]),
     snippet(command, "shell"),
   ])
 }

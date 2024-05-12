@@ -1,18 +1,12 @@
-import components/ui/switch.{switch}
-import lustre/attribute.{class, disabled}
-import lustre/element.{type Element, text}
+import components/ui/slider.{slider}
+import lustre/attribute.{class}
+import lustre/element.{type Element}
 import lustre/element/html.{div}
 
 pub fn demo() -> Element(a) {
-  div([class("flex flex-wrap gap-4 items-center justify-center w-full")], [
-    switch([switch.solid(switch.Neutral), switch.sm(), disabled(True)], [
-      text("Disabled"),
-    ]),
-    switch([switch.outlined(switch.Neutral), switch.sm(), disabled(True)], [
-      text("Disabled"),
-    ]),
-    switch([switch.ghost(switch.Neutral), switch.sm(), disabled(True)], [
-      text("Disabled"),
-    ]),
+  div([class("flex flex-col gap-2 py-2 w-full max-w-xs")], [
+    slider([slider.solid(slider.Neutral), slider.sm()]),
+    slider([slider.solid(slider.Neutral), slider.md()]),
+    slider([slider.solid(slider.Neutral), slider.lg()]),
   ])
 }
