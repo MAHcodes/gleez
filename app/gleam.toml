@@ -24,7 +24,7 @@ plinth = ">= 0.2.0 and < 1.0.0"
 gleam_javascript = ">= 0.8.0 and < 1.0.0"
 kirala_markdown = ">= 1.0.2 and < 2.0.0"
 lustre_http = ">= 0.5.2 and < 1.0.0"
-lustre = ">= 4.2.0 and < 5.0.0"
+lustre = ">= 4.2.2 and < 5.0.0"
 
 [dev-dependencies]
 gleeunit = ">= 1.0.0 and < 2.0.0"

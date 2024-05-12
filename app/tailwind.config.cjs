@@ -1,18 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
 	darkMode: "class",
-	content: ["./src/**/*.{html,gleam,js,ts,css}"],
+	content: ["./src/**/*.{html,gleam,js,mjs,ts,css}"],
 	future: {
 		hoverOnlyWhenSupported: true,
-	},
-	purge: {
-		safelist: [
-			"animate-fade-in",
-			"animate-fade-out",
-			"hidden",
-			"opacity-0",
-			"invisible",
-		],
 	},
 	theme: {
 		container: {
