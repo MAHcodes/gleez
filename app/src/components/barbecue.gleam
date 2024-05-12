@@ -16,7 +16,7 @@ fn page_segments(page: Pages) -> List(String) {
 }
 
 fn segment_path(page: Pages, at: Int) -> String {
-  "/" <> string.join(list.split(page_segments(page), at + 1).0, "/")
+  "/" <> string.join(list.split(page_segments(page), at + 1).0, "/") <> "/"
 }
 
 pub fn barbecue(page: Pages) -> Element(a) {
