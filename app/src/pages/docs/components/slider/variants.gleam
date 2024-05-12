@@ -10,7 +10,7 @@ pub fn variants() -> Element(a) {
       "Solid",
       "",
       [
-        div([class("flex flex-col gap-2 py-2 w-full max-w-xs")], [
+        div([class("flex flex-col gap-4 w-full max-w-xs")], [
           slider([slider.solid(slider.Neutral), slider.md()]),
           slider([slider.solid(slider.Primary), slider.md()]),
           slider([slider.solid(slider.Secondary), slider.md()]),
@@ -26,7 +26,7 @@ pub fn variants() -> Element(a) {
       "Outlined",
       "",
       [
-        div([class("flex flex-col gap-2 py-2 w-full max-w-xs")], [
+        div([class("flex flex-col gap-4 w-full max-w-xs")], [
           slider([slider.outlined(slider.Neutral), slider.md()]),
           slider([slider.outlined(slider.Primary), slider.md()]),
           slider([slider.outlined(slider.Secondary), slider.md()]),
@@ -42,7 +42,7 @@ pub fn variants() -> Element(a) {
       "Flat",
       "",
       [
-        div([class("flex flex-col gap-2 py-2 w-full max-w-xs")], [
+        div([class("flex flex-col gap-4 w-full max-w-xs")], [
           slider([slider.flat(slider.Neutral), slider.md()]),
           slider([slider.flat(slider.Primary), slider.md()]),
           slider([slider.flat(slider.Secondary), slider.md()]),
@@ -58,7 +58,7 @@ pub fn variants() -> Element(a) {
       "Ghost",
       "",
       [
-        div([class("flex flex-col gap-2 py-2 w-full max-w-xs")], [
+        div([class("flex flex-col gap-4 w-full max-w-xs")], [
           slider([slider.ghost(slider.Neutral), slider.md()]),
           slider([slider.ghost(slider.Primary), slider.md()]),
           slider([slider.ghost(slider.Secondary), slider.md()]),
@@ -81,7 +81,7 @@ import lustre/element.{type Element}
 import lustre/element/html.{div}
 
 pub fn demo() -> Element(a) {
-  div([class(\"flex flex-col gap-2 py-2 w-full max-w-xs\")], [
+  div([class(\"flex flex-col gap-4 w-full max-w-xs\")], [
     slider([slider.solid(slider.Neutral), slider.md()]),
     slider([slider.solid(slider.Primary), slider.md()]),
     slider([slider.solid(slider.Secondary), slider.md()]),
@@ -102,7 +102,7 @@ import lustre/element.{type Element}
 import lustre/element/html.{div}
 
 pub fn demo() -> Element(a) {
-  div([class(\"flex flex-col gap-2 py-2 w-full max-w-xs\")], [
+  div([class(\"flex flex-col gap-4 w-full max-w-xs\")], [
     slider([slider.outlined(slider.Neutral), slider.md()]),
     slider([slider.outlined(slider.Primary), slider.md()]),
     slider([slider.outlined(slider.Secondary), slider.md()]),
@@ -123,7 +123,7 @@ import lustre/element.{type Element}
 import lustre/element/html.{div}
 
 pub fn demo() -> Element(a) {
-  div([class(\"flex flex-col gap-2 py-2 w-full max-w-xs\")], [
+  div([class(\"flex flex-col gap-4 w-full max-w-xs\")], [
     slider([slider.flat(slider.Neutral), slider.md()]),
     slider([slider.flat(slider.Primary), slider.md()]),
     slider([slider.flat(slider.Secondary), slider.md()]),
@@ -144,7 +144,7 @@ import lustre/element.{type Element}
 import lustre/element/html.{div}
 
 pub fn demo() -> Element(a) {
-  div([class(\"flex flex-col gap-2 py-2 w-full max-w-xs\")], [
+  div([class(\"flex flex-col gap-4 w-full max-w-xs\")], [
     slider([slider.ghost(slider.Neutral), slider.md()]),
     slider([slider.ghost(slider.Primary), slider.md()]),
     slider([slider.ghost(slider.Secondary), slider.md()]),
