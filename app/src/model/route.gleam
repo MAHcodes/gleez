@@ -1,7 +1,7 @@
 import gleam/list
 import gleam/result
 import gleam/string
-import gleam/uri
+import gleam/uri.{type Uri}
 
 pub type Pages {
   Home
@@ -30,49 +30,49 @@ pub type Pages {
 
 pub const home = "/"
 
-pub const demo = "/demo"
+pub const demo = "/demo/"
 
-pub const blog = "/blog"
+pub const blog = "/blog/"
 
-pub const intro = "/docs/guide/introduction"
+pub const intro = "/docs/guide/introduction/"
 
-pub const installation = "/docs/guide/installation"
+pub const installation = "/docs/guide/installation/"
 
-pub const colors = "/docs/guide/colors"
+pub const colors = "/docs/guide/colors/"
 
-pub const docs = "/docs"
+pub const docs = "/docs/"
 
 pub const components = "/docs/components/"
 
-pub const button = "/docs/components/button"
+pub const button = "/docs/components/button/"
 
-pub const input = "/docs/components/input"
+pub const input = "/docs/components/input/"
 
-pub const link = "/docs/components/link"
+pub const link = "/docs/components/link/"
 
-pub const chip = "/docs/components/chip"
+pub const chip = "/docs/components/chip/"
 
-pub const divider = "/docs/components/divider"
+pub const divider = "/docs/components/divider/"
 
-pub const tooltip = "/docs/components/tooltip"
+pub const tooltip = "/docs/components/tooltip/"
 
-pub const avatar = "/docs/components/avatar"
+pub const avatar = "/docs/components/avatar/"
 
-pub const badge = "/docs/components/badge"
+pub const badge = "/docs/components/badge/"
 
-pub const breadcrumbs = "/docs/components/breadcrumbs"
+pub const breadcrumbs = "/docs/components/breadcrumbs/"
 
-pub const switch = "/docs/components/switch"
+pub const switch = "/docs/components/switch/"
 
-pub const kbd = "/docs/components/kbd"
+pub const kbd = "/docs/components/kbd/"
 
-pub const checkbox = "/docs/components/checkbox"
+pub const checkbox = "/docs/components/checkbox/"
 
-pub const spinner = "/docs/components/spinner"
+pub const spinner = "/docs/components/spinner/"
 
-pub const skeleton = "/docs/components/skeleton"
+pub const skeleton = "/docs/components/skeleton/"
 
-pub const slider = "/docs/components/slider"
+pub const slider = "/docs/components/slider/"
 
 pub type Status {
   None
@@ -147,8 +147,8 @@ pub fn to_path(page: Pages) -> String {
   }
 }
 
-pub fn to_pages(path: String) -> Pages {
-  case path {
+pub fn to_pages(uri: Uri) -> Pages {
+  case uri.path {
     p if p == demo -> Demo
     p if p == colors -> Colors
     p if p == intro -> Intro
