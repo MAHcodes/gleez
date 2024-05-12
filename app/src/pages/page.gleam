@@ -8,6 +8,7 @@ import pages/docs/components/checkbox/checkbox
 import pages/docs/components/chip/chip
 import pages/docs/components/divider/divider
 import pages/docs/components/input/input
+import pages/docs/components/slider/slider
 import pages/docs/components/kbd/kbd
 import pages/docs/components/link/link
 import pages/docs/components/spinner/spinner
@@ -60,3 +61,5 @@ pub const checkbox = checkbox.docs
 pub const spinner = spinner.docs
 
 pub const skeleton = skeleton.docs
+
+pub const slider = slider.docs

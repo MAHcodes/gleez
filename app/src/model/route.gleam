@@ -25,6 +25,7 @@ pub type Pages {
   Checkbox
   Spinner
   Skeleton
+  Slider
 }
 
 pub const home = "/"
@@ -71,6 +72,8 @@ pub const spinner = "/docs/components/spinner"
 
 pub const skeleton = "/docs/components/skeleton"
 
+pub const slider = "/docs/components/slider"
+
 pub type Status {
   None
   New
@@ -109,6 +112,7 @@ pub fn pages() -> List(Page) {
         Page(checkbox, [], New),
         Page(spinner, [], New),
         Page(skeleton, [], New),
+        Page(slider, [], New),
       ]
         |> sort_pages,
       None,
@@ -139,6 +143,7 @@ pub fn to_path(page: Pages) -> String {
     Checkbox -> checkbox
     Spinner -> spinner
     Skeleton -> skeleton
+    Slider -> slider
   }
 }
 
@@ -164,6 +169,7 @@ pub fn to_pages(path: String) -> Pages {
     p if p == checkbox -> Checkbox
     p if p == spinner -> Spinner
     p if p == skeleton -> Skeleton
+    p if p == slider -> Slider
     _ -> Home
   }
 }

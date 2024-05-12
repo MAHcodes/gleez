@@ -4,7 +4,7 @@ import gleam/list
 import gleam/string
 import lustre/attribute.{type Attribute, class, href}
 import lustre/element.{type Element, fragment, text}
-import lustre/element/html.{div, h2, h3, li, ul}
+import lustre/element/html.{div, h2, h3, li, span, ul}
 import model/route.{type Page, type Pages, is_active}
 
 pub fn aside(route: Pages) -> Element(a) {
@@ -42,7 +42,7 @@ fn item(route: Pages, page: Page) -> Element(a) {
               active_border(is_active(route, page.path)),
               href(page.path),
             ],
-            [text(route.page_name(page)), status(page)],
+            [span([], [text(route.page_name(page))]), status(page)],
           ),
         ]),
       ])
