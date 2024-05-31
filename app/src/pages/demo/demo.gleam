@@ -1,12 +1,16 @@
-import components/ui/slider.{slider}
+import components/ui/radio.{radio}
+import components/ui/checkbox.{checkbox}
 import lustre/attribute.{class}
-import lustre/element.{type Element}
+import lustre/element.{type Element, text}
 import lustre/element/html.{div}
 
 pub fn demo() -> Element(a) {
-  div([class("flex flex-col gap-2 py-2 w-full max-w-xs")], [
-    slider([slider.solid(slider.Neutral), slider.sm()]),
-    slider([slider.solid(slider.Neutral), slider.md()]),
-    slider([slider.solid(slider.Neutral), slider.lg()]),
+  div([class("flex flex-col flex-wrap gap-4 justify-center w-full")], [
+    radio([radio.ghost(radio.Neutral), radio.sm()], [text("Disabled")]),
+    checkbox([checkbox.ghost(checkbox.Neutral), checkbox.sm()], [text("Disabled")]),
+    checkbox([checkbox.ghost(checkbox.Neutral), checkbox.md()], [text("Disabled")]),
+    radio([radio.ghost(radio.Neutral), radio.md()], [text("Disabled")]),
+    checkbox([checkbox.ghost(checkbox.Neutral), checkbox.lg()], [text("Disabled")]),
+    radio([radio.ghost(radio.Neutral), radio.lg()], [text("Disabled")]),
   ])
 }
