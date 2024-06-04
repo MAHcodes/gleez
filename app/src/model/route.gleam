@@ -26,6 +26,7 @@ pub type Pages {
   Spinner
   Skeleton
   Slider
+  Select
 }
 
 pub const home = "/"
@@ -74,6 +75,8 @@ pub const skeleton = "/docs/components/skeleton/"
 
 pub const slider = "/docs/components/slider/"
 
+pub const select = "/docs/components/select/"
+
 pub type Status {
   None
   New
@@ -102,17 +105,17 @@ pub fn pages() -> List(Page) {
         Page(input, [], None),
         Page(link, [], None),
         Page(chip, [], None),
-        Page(divider, [], Updated),
+        Page(divider, [], None),
         Page(tooltip, [], None),
         Page(avatar, [], None),
         Page(badge, [], None),
         Page(breadcrumbs, [], None),
         Page(switch, [], None),
-        Page(kbd, [], New),
-        Page(checkbox, [], New),
-        Page(spinner, [], New),
-        Page(skeleton, [], New),
-        Page(slider, [], New),
+        Page(kbd, [], None),
+        Page(checkbox, [], None),
+        Page(spinner, [], None),
+        Page(skeleton, [], None),
+        Page(select, [], New),
       ]
         |> sort_pages,
       None,
@@ -144,6 +147,7 @@ pub fn to_path(page: Pages) -> String {
     Spinner -> spinner
     Skeleton -> skeleton
     Slider -> slider
+    Select -> select
   }
 }
 
@@ -170,6 +174,7 @@ pub fn to_pages(uri: Uri) -> Pages {
     p if p == spinner -> Spinner
     p if p == skeleton -> Skeleton
     p if p == slider -> Slider
+    p if p == select -> Select
     _ -> Home
   }
 }

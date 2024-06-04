@@ -50,6 +50,7 @@ fn on_url_change(uri: Uri) -> Msg {
     ["docs", "components", "spinner"] -> OnRouteChange(route.Spinner)
     ["docs", "components", "skeleton"] -> OnRouteChange(route.Skeleton)
     ["docs", "components", "slider"] -> OnRouteChange(route.Slider)
+    ["docs", "components", "select"] -> OnRouteChange(route.Select)
     _ -> OnRouteChange(route.Home)
   }
 }
@@ -144,6 +145,7 @@ fn with_aside(model: Model) -> Element(Msg) {
         route.Spinner -> page.spinner()
         route.Skeleton -> page.skeleton()
         route.Slider -> page.slider()
+        route.Select -> page.select()
         _ -> page.home()
       },
     ]),
