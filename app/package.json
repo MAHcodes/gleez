@@ -14,7 +14,7 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "tsc && vite build && ./ssg",
     "preview": "vite preview"
   },
   "type": "module",
