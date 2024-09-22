@@ -145,7 +145,7 @@ pub fn to_path(page: Pages) -> String {
     Divider -> divider
     Tooltip -> tooltip
     Avatar -> avatar
-    Components -> avatar
+    Components -> alert
     Installation -> installation
     Badge -> badge
     Breadcrumbs -> breadcrumbs
@@ -174,7 +174,7 @@ pub fn to_pages(uri: Uri) -> Pages {
     p if p == divider -> Divider
     p if p == tooltip -> Tooltip
     p if p == avatar -> Avatar
-    p if p == avatar -> Components
+    p if p == alert -> Components
     p if p == installation -> Installation
     p if p == badge -> Badge
     p if p == breadcrumbs -> Breadcrumbs

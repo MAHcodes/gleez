@@ -131,7 +131,7 @@ fn with_aside(model: Model) -> Element(Msg) {
         route.Intro -> page.intro(model.repo)
         route.Installation -> page.installation()
         route.Colors -> page.colors()
-        route.Components -> page.avatar()
+        route.Components -> page.alert()
         route.Button -> page.button()
         route.Input -> page.input()
         route.Link -> page.link()
