@@ -17,5 +17,8 @@
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "@chouqueth/gleam": "^1.4.1"
+  }
 }
