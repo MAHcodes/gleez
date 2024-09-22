@@ -1,6 +1,6 @@
 {
   "name": "gleez",
-  "version": "0.0.1",
+  "version": "0.3.0",
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.12",
     "autoprefixer": "^10.4.19",
