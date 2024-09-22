@@ -145,7 +145,7 @@ pub fn to_path(page: Pages) -> String {
     Divider -> divider
     Tooltip -> tooltip
     Avatar -> avatar
-    Components -> avatar
+    Components -> alert
     Installation -> installation
     Badge -> badge
     Breadcrumbs -> breadcrumbs
