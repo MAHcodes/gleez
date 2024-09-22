@@ -1,5 +1,6 @@
 import pages/blog/blog
 import pages/demo/demo
+import pages/docs/components/alert/alert
 import pages/docs/components/avatar/avatar
 import pages/docs/components/badge/badge
 import pages/docs/components/breadcrumbs/breadcrumbs
@@ -8,11 +9,11 @@ import pages/docs/components/checkbox/checkbox
 import pages/docs/components/chip/chip
 import pages/docs/components/divider/divider
 import pages/docs/components/input/input
-import pages/docs/components/slider/slider
 import pages/docs/components/kbd/kbd
 import pages/docs/components/link/link
-import pages/docs/components/spinner/spinner
 import pages/docs/components/skeleton/skeleton
+import pages/docs/components/slider/slider
+import pages/docs/components/spinner/spinner
 import pages/docs/components/switch/switch
 import pages/docs/components/tooltip/tooltip
 import pages/docs/guide/colors/colors
@@ -63,3 +64,5 @@ pub const spinner = spinner.docs
 pub const skeleton = skeleton.docs
 
 pub const slider = slider.docs
+
+pub const alert = alert.docs

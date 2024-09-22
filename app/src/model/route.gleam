@@ -26,6 +26,7 @@ pub type Pages {
   Spinner
   Skeleton
   Slider
+  Alert
 }
 
 pub const home = "/"
@@ -74,6 +75,8 @@ pub const skeleton = "/docs/components/skeleton/"
 
 pub const slider = "/docs/components/slider/"
 
+pub const alert = "/docs/components/alert/"
+
 pub type Status {
   None
   New
@@ -113,6 +116,7 @@ pub fn pages() -> List(Page) {
         Page(spinner, [], New),
         Page(skeleton, [], New),
         Page(slider, [], New),
+        Page(alert, [], New),
       ]
         |> sort_pages,
       None,
@@ -144,6 +148,7 @@ pub fn to_path(page: Pages) -> String {
     Spinner -> spinner
     Skeleton -> skeleton
     Slider -> slider
+    Alert -> alert
   }
 }
 
