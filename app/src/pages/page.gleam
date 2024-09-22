@@ -12,9 +12,10 @@ import pages/docs/components/input/input
 import pages/docs/components/kbd/kbd
 import pages/docs/components/link/link
 import pages/docs/components/select/select
+import pages/docs/components/spinner/spinner
+import pages/docs/components/radio/radio
 import pages/docs/components/skeleton/skeleton
 import pages/docs/components/slider/slider
-import pages/docs/components/spinner/spinner
 import pages/docs/components/switch/switch
 import pages/docs/components/tooltip/tooltip
 import pages/docs/guide/colors/colors
@@ -69,3 +70,5 @@ pub const slider = slider.docs
 pub const select = select.docs
 
 pub const alert = alert.docs
+
+pub const radio = radio.docs

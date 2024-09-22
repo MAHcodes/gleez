@@ -1,4 +1,4 @@
-import components/ui/checkbox.{checkbox}
+import components/ui/radio.{radio}
 import lustre/attribute.{checked, disabled}
 import lustre/element.{type Element, text}
 import pages/docs/sections/section
@@ -9,10 +9,10 @@ pub fn examples() -> Element(a) {
       "Disabled",
       "",
       [
-        checkbox(
+        radio(
           [
-            checkbox.solid(checkbox.Neutral),
-            checkbox.md(),
+            radio.ghost(radio.Neutral),
+            radio.md(),
             checked(True),
             disabled(True),
           ],
@@ -26,17 +26,17 @@ pub fn examples() -> Element(a) {
 
 fn disabled_code() -> String {
   "
-import components/ui/checkbox.{checkbox}
-import lustre/attribute.{checked, class, disabled}
+import components/ui/radio.{radio}
+import lustre/attribute.{class, checked, disabled}
 import lustre/element.{type Element, text}
 import lustre/element/html.{div}
 
 pub fn demo() -> Element(a) {
   div([class(\"flex flex-wrap gap-4 items-center justify-center w-full\")], [
-    checkbox(
+    radio(
       [
-        checkbox.solid(checkbox.Neutral),
-        checkbox.md(),
+        radio.ghost(radio.Neutral),
+        radio.md(),
         checked(True),
         disabled(True),
       ],

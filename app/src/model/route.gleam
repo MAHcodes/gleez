@@ -28,6 +28,7 @@ pub type Pages {
   Slider
   Select
   Alert
+  Radio
 }
 
 pub const home = "/"
@@ -80,6 +81,8 @@ pub const select = "/docs/components/select/"
 
 pub const alert = "/docs/components/alert/"
 
+pub const radio = "/docs/components/radio/"
+
 pub type Status {
   None
   New
@@ -120,6 +123,7 @@ pub fn pages() -> List(Page) {
         Page(skeleton, [], None),
         Page(select, [], New),
         Page(alert, [], New),
+        Page(radio, [], New),
       ]
         |> sort_pages,
       None,
@@ -153,6 +157,7 @@ pub fn to_path(page: Pages) -> String {
     Slider -> slider
     Select -> select
     Alert -> alert
+    Radio -> radio
   }
 }
 
@@ -181,6 +186,7 @@ pub fn to_pages(uri: Uri) -> Pages {
     p if p == slider -> Slider
     p if p == select -> Select
     p if p == alert -> Alert
+    p if p == radio -> Radio
     _ -> Home
   }
 }
