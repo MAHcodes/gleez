@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir -p ./dist/docs/guide/{introduction,installation,colors}
-mkdir -p ./dist/docs/components/{button,input,link,chip,divider,tooltip,avatar,badge,breadcrumbs,switch,kbd,checkbox,spinner,skeleton,slider}
+mkdir -p ./dist/docs/components/{button,input,link,chip,divider,tooltip,avatar,badge,breadcrumbs,switch,kbd,checkbox,spinner,skeleton,slider,radio,select,alert}
 
 cp ./dist/index.html ./dist/docs/
 cp ./dist/index.html ./dist/docs/guide/
@@ -24,3 +24,6 @@ cp ./dist/index.html ./dist/docs/components/checkbox/
 cp ./dist/index.html ./dist/docs/components/spinner/
 cp ./dist/index.html ./dist/docs/components/skeleton/
 cp ./dist/index.html ./dist/docs/components/slider/
+cp ./dist/index.html ./dist/docs/components/radio/
+cp ./dist/index.html ./dist/docs/components/select/
+cp ./dist/index.html ./dist/docs/components/alert/
