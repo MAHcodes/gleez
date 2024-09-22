@@ -12,7 +12,6 @@ import pages/docs/components/input/input
 import pages/docs/components/kbd/kbd
 import pages/docs/components/link/link
 import pages/docs/components/select/select
-import pages/docs/components/spinner/spinner
 import pages/docs/components/skeleton/skeleton
 import pages/docs/components/slider/slider
 import pages/docs/components/spinner/spinner
