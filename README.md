@@ -28,7 +28,7 @@ You can either copy and paste the components directly, or install them using `gl
 To install the gleez cli:
 
 ```sh
-gleam add gleez
+gleam add gleez --dev
 ```
 
 ## :rainbow: Colors
