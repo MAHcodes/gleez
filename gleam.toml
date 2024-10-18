@@ -1,7 +1,7 @@
 name = "gleez"
-version = "0.3.0"
+version = "0.3.1"
 
-description = "gleez cli, an experimental source installer"
+description = "Elegant, Modern, and Customizable TailwindCSS components for ✨ Lustre ✨ "
 licences = ["MIT"]
 repository = { type = "github", user = "MAHcodes", repo = "gleez" }
 links = [{ title = "Website", href = "https://gleez.netlify.app/" }]
