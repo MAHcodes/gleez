@@ -121,6 +121,7 @@ pub fn pages() -> List(Page) {
         Page(checkbox, [], None),
         Page(spinner, [], None),
         Page(skeleton, [], None),
+        Page(slider, [], None),
         Page(select, [], New),
         Page(alert, [], New),
         Page(radio, [], New),
